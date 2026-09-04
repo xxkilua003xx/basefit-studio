@@ -43,7 +43,6 @@
 
         header {
             width: 100%;
-
             padding: 22px 7%;
 
             display: flex;
@@ -65,11 +64,9 @@
 
         .logo {
             color: #ffffff;
-
             text-decoration: none;
 
             font-size: 23px;
-
             font-weight: 800;
 
             letter-spacing: 1px;
@@ -81,9 +78,13 @@
         }
 
 
+        .logo:hover {
+            opacity: 0.9;
+        }
+
+
         nav {
             display: flex;
-
             gap: 30px;
         }
 
@@ -99,7 +100,8 @@
         }
 
 
-        nav a:hover {
+        nav a:hover,
+        nav a.active {
             color: #45e17a;
         }
 
@@ -110,7 +112,6 @@
 
         .container {
             width: min(1100px, 90%);
-
             margin: 0 auto;
         }
 
@@ -121,14 +122,12 @@
 
         .page-title {
             text-align: center;
-
             padding: 80px 0 50px;
         }
 
 
         .page-title h1 {
             font-size: clamp(38px, 6vw, 52px);
-
             margin-bottom: 15px;
         }
 
@@ -162,7 +161,7 @@
 
             gap: 25px;
 
-            padding-bottom: 25px;
+            padding-bottom: 30px;
         }
 
 
@@ -180,10 +179,14 @@
             padding: 30px;
 
             transition: 0.3s;
+
+            position: relative;
         }
 
 
         .calculator:hover {
+            transform: translateY(-3px);
+
             border-color: #35434f;
         }
 
@@ -198,7 +201,7 @@
         .calculator-description {
             color: #8e9aa7;
 
-            line-height: 1.6;
+            line-height: 1.7;
 
             margin-bottom: 25px;
 
@@ -245,18 +248,29 @@
             outline: none;
 
             font-family: inherit;
+
+            transition: 0.3s;
+        }
+
+
+        .input-group input:hover,
+        .input-group select:hover {
+            border-color: #3b4955;
         }
 
 
         .input-group input:focus,
         .input-group select:focus {
             border-color: #45e17a;
+
+            box-shadow:
+                0 0 0 2px
+                rgba(69, 225, 122, 0.08);
         }
 
 
         .input-group select option {
             background: #0b1015;
-
             color: #ffffff;
         }
 
@@ -297,6 +311,11 @@
         }
 
 
+        .calculate-button:active {
+            transform: translateY(0);
+        }
+
+
         /* =========================
            RESULTADO
         ========================= */
@@ -313,11 +332,28 @@
             background: #10171d;
 
             border: 1px solid #2b3944;
+
+            animation: resultAppear 0.25s ease;
         }
 
 
         .result.show {
             display: block;
+        }
+
+
+        @keyframes resultAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
         }
 
 
@@ -389,11 +425,57 @@
 
 
         /* =========================
+           DESTAQUE DE RESULTADO
+        ========================= */
+
+        .result-highlight {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 10px;
+
+            margin-top: 15px;
+        }
+
+
+        .highlight-box {
+            padding: 14px;
+
+            background: #0b1015;
+
+            border: 1px solid #202b34;
+
+            border-radius: 8px;
+
+            text-align: center;
+        }
+
+
+        .highlight-box span {
+            display: block;
+
+            color: #707c88;
+
+            font-size: 11px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .highlight-box strong {
+            color: #ffffff;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
            AVISO
         ========================= */
 
         .warning {
-            margin-top: 30px;
+            margin-top: 10px;
 
             margin-bottom: 80px;
 
@@ -486,6 +568,11 @@
                 text-align: left;
             }
 
+
+            .result-highlight {
+                grid-template-columns: 1fr;
+            }
+
         }
 
     </style>
@@ -527,7 +614,10 @@
                 Exercícios
             </a>
 
-            <a href="calculadoras.html">
+            <a
+                href="calculadoras.html"
+                class="active"
+            >
                 Calculadoras
             </a>
 
@@ -573,6 +663,10 @@
         </section>
 
 
+        <!-- =========================
+             CALCULADORAS
+        ========================= -->
+
         <section class="container">
 
 
@@ -580,7 +674,7 @@
 
 
                 <!-- =========================
-                     IMC
+                     CALCULADORA DE IMC
                 ========================= -->
 
                 <div class="calculator">
@@ -613,6 +707,7 @@
                             id="peso"
                             placeholder="Ex: 75"
                             min="1"
+                            max="500"
                             step="0.1"
                         >
 
@@ -633,6 +728,7 @@
                             id="altura"
                             placeholder="Ex: 1.75"
                             min="0.5"
+                            max="2.5"
                             step="0.01"
                         >
 
@@ -640,6 +736,7 @@
 
 
                     <button
+                        type="button"
                         class="calculate-button"
                         onclick="calcularIMC()"
                     >
@@ -655,7 +752,9 @@
                     >
 
                         <div class="result-title">
+
                             Seu resultado
+
                         </div>
 
 
@@ -670,6 +769,38 @@
                             class="result-text"
                         ></div>
 
+
+                        <div class="result-highlight">
+
+
+                            <div class="highlight-box">
+
+                                <span>
+                                    Referência inferior
+                                </span>
+
+                                <strong>
+                                    18,5
+                                </strong>
+
+                            </div>
+
+
+                            <div class="highlight-box">
+
+                                <span>
+                                    Referência superior
+                                </span>
+
+                                <strong>
+                                    24,9
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
                     </div>
 
 
@@ -677,7 +808,7 @@
 
 
                 <!-- =========================
-                     TMB
+                     CALCULADORA DE TMB
                 ========================= -->
 
                 <div class="calculator">
@@ -691,8 +822,7 @@
                     <p class="calculator-description">
 
                         Estime sua Taxa Metabólica Basal
-                        utilizando a fórmula de
-                        Mifflin-St Jeor.
+                        utilizando a fórmula de Mifflin-St Jeor.
 
                     </p>
 
@@ -731,6 +861,7 @@
                             id="pesoTMB"
                             placeholder="Ex: 75"
                             min="1"
+                            max="500"
                             step="0.1"
                         >
 
@@ -751,6 +882,7 @@
                             id="alturaTMB"
                             placeholder="Ex: 175"
                             min="50"
+                            max="250"
                             step="1"
                         >
 
@@ -787,6 +919,7 @@
 
 
                     <button
+                        type="button"
                         class="calculate-button"
                         onclick="calcularTMB()"
                     >
@@ -802,7 +935,9 @@
                     >
 
                         <div class="result-title">
+
                             Estimativa da sua TMB
+
                         </div>
 
 
@@ -859,6 +994,7 @@
                             id="tdeeTMB"
                             placeholder="Ex: 1700"
                             min="1"
+                            max="10000"
                             step="1"
                         >
 
@@ -906,6 +1042,7 @@
 
 
                     <button
+                        type="button"
                         class="calculate-button"
                         onclick="calcularTDEE()"
                     >
@@ -951,8 +1088,9 @@
                                     TMB informada
                                 </span>
 
-                                <strong id="tdeeBase">
-                                </strong>
+                                <strong
+                                    id="tdeeBase"
+                                ></strong>
 
                             </div>
 
@@ -963,8 +1101,9 @@
                                     Multiplicador
                                 </span>
 
-                                <strong id="tdeeMultiplicador">
-                                </strong>
+                                <strong
+                                    id="tdeeMultiplicador"
+                                ></strong>
 
                             </div>
 
@@ -978,7 +1117,7 @@
 
 
                 <!-- =========================
-                     OBJETIVO
+                     CALORIAS POR OBJETIVO
                 ========================= -->
 
                 <div class="calculator">
@@ -992,7 +1131,7 @@
                     <p class="calculator-description">
 
                         Utilize seu gasto diário estimado
-                        para visualizar uma faixa aproximada
+                        para visualizar uma referência aproximada
                         conforme seu objetivo.
 
                     </p>
@@ -1012,6 +1151,7 @@
                             id="caloriasBase"
                             placeholder="Ex: 2500"
                             min="1"
+                            max="10000"
                             step="1"
                         >
 
@@ -1051,6 +1191,7 @@
 
 
                     <button
+                        type="button"
                         class="calculate-button"
                         onclick="calcularObjetivo()"
                     >
@@ -1083,6 +1224,41 @@
                             class="result-text"
                         ></div>
 
+
+                        <div class="result-highlight">
+
+
+                            <div class="highlight-box">
+
+                                <span>
+                                    Gasto informado
+                                </span>
+
+                                <strong
+                                    id="objetivoBase"
+                                >
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="highlight-box">
+
+                                <span>
+                                    Ajuste aplicado
+                                </span>
+
+                                <strong
+                                    id="objetivoAjuste"
+                                >
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                        </div>
 
                     </div>
 
@@ -1132,6 +1308,7 @@
 
 
                     <button
+                        type="button"
                         class="calculate-button"
                         onclick="calcularFC()"
                     >
@@ -1164,6 +1341,191 @@
                             class="result-text"
                         ></div>
 
+
+                        <div class="result-list">
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Idade utilizada
+                                </span>
+
+                                <strong
+                                    id="idadeUtilizadaFC"
+                                ></strong>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Fórmula
+                                </span>
+
+                                <strong>
+                                    220 − idade
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =========================
+                     ZONA DE FREQUÊNCIA
+                ========================= -->
+
+                <div class="calculator">
+
+
+                    <h2>
+                        📈 Zona de frequência cardíaca
+                    </h2>
+
+
+                    <p class="calculator-description">
+
+                        Visualize uma referência aproximada
+                        de intensidade a partir da frequência
+                        cardíaca máxima estimada.
+
+                    </p>
+
+
+                    <div class="input-group">
+
+                        <label for="fcMaxZona">
+
+                            Frequência cardíaca máxima (bpm)
+
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="fcMaxZona"
+                            placeholder="Ex: 190"
+                            min="1"
+                            max="250"
+                            step="1"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="calculate-button"
+                        onclick="calcularZonaFC()"
+                    >
+
+                        Calcular zonas
+
+                    </button>
+
+
+                    <div
+                        id="resultadoZonaFC"
+                        class="result"
+                    >
+
+                        <div class="result-title">
+
+                            Zonas estimadas
+
+                        </div>
+
+
+                        <div class="result-list">
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Zona 1 — muito leve
+                                </span>
+
+                                <strong
+                                    id="zona1"
+                                ></strong>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Zona 2 — leve
+                                </span>
+
+                                <strong
+                                    id="zona2"
+                                ></strong>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Zona 3 — moderada
+                                </span>
+
+                                <strong
+                                    id="zona3"
+                                ></strong>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Zona 4 — alta
+                                </span>
+
+                                <strong
+                                    id="zona4"
+                                ></strong>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Zona 5 — muito alta
+                                </span>
+
+                                <strong
+                                    id="zona5"
+                                ></strong>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div
+                            class="result-text"
+                            style="margin-top: 15px;"
+                        >
+
+                            As zonas são referências matemáticas
+                            baseadas na frequência máxima informada
+                            e não representam uma prescrição individual.
+
+                        </div>
+
                     </div>
 
 
@@ -1181,7 +1543,6 @@
 
 
                 <strong>Importante:</strong>
-
 
                 Os resultados apresentados pelas calculadoras
                 são estimativas para fins informativos e podem
@@ -1229,15 +1590,62 @@
 
 
         /* =========================
-           FUNÇÃO AUXILIAR
+           FUNÇÕES AUXILIARES
         ========================= */
+
+        function obterNumero(id) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (!elemento) {
+                return NaN;
+            }
+
+            return parseFloat(
+                elemento.value.replace(",", ".")
+            );
+
+        }
+
 
         function mostrarResultado(id) {
 
-            document
-                .getElementById(id)
-                .classList
-                .add("show");
+            const resultado =
+                document.getElementById(id);
+
+            if (!resultado) {
+                return;
+            }
+
+            resultado.classList.add("show");
+
+        }
+
+
+        function esconderResultado(id) {
+
+            const resultado =
+                document.getElementById(id);
+
+            if (!resultado) {
+                return;
+            }
+
+            resultado.classList.remove("show");
+
+        }
+
+
+        function formatarNumero(numero, casas = 0) {
+
+            return numero.toLocaleString(
+                "pt-BR",
+                {
+                    minimumFractionDigits: casas,
+                    maximumFractionDigits: casas
+                }
+            );
 
         }
 
@@ -1250,15 +1658,11 @@
 
 
             const peso =
-                parseFloat(
-                    document.getElementById("peso").value
-                );
+                obterNumero("peso");
 
 
             const altura =
-                parseFloat(
-                    document.getElementById("altura").value
-                );
+                obterNumero("altura");
 
 
             if (
@@ -1270,6 +1674,21 @@
 
                 alert(
                     "Digite um peso e uma altura válidos."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                peso > 500 ||
+                altura < 0.5 ||
+                altura > 2.5
+            ) {
+
+                alert(
+                    "Verifique os valores informados."
                 );
 
                 return;
@@ -1330,7 +1749,8 @@
             document
                 .getElementById("valorIMC")
                 .textContent =
-                    imc.toFixed(1);
+                    "IMC: " +
+                    formatarNumero(imc, 1);
 
 
             document
@@ -1352,25 +1772,21 @@
 
 
             const idade =
-                parseFloat(
-                    document.getElementById("idade").value
-                );
+                obterNumero("idade");
 
 
             const peso =
-                parseFloat(
-                    document.getElementById("pesoTMB").value
-                );
+                obterNumero("pesoTMB");
 
 
             const altura =
-                parseFloat(
-                    document.getElementById("alturaTMB").value
-                );
+                obterNumero("alturaTMB");
 
 
             const sexo =
-                document.getElementById("sexo").value;
+                document
+                    .getElementById("sexo")
+                    .value;
 
 
             if (
@@ -1385,6 +1801,22 @@
 
                 alert(
                     "Preencha todos os campos corretamente."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                idade > 120 ||
+                peso > 500 ||
+                altura < 50 ||
+                altura > 250
+            ) {
+
+                alert(
+                    "Verifique os valores informados."
                 );
 
                 return;
@@ -1427,7 +1859,7 @@
             document
                 .getElementById("valorTMB")
                 .textContent =
-                    tmbArredondada +
+                    formatarNumero(tmbArredondada) +
                     " kcal/dia";
 
 
@@ -1444,15 +1876,11 @@
 
 
             const tmb =
-                parseFloat(
-                    document.getElementById("tdeeTMB").value
-                );
+                obterNumero("tdeeTMB");
 
 
             const atividade =
-                parseFloat(
-                    document.getElementById("atividade").value
-                );
+                obterNumero("atividade");
 
 
             if (
@@ -1470,6 +1898,17 @@
             }
 
 
+            if (tmb > 10000) {
+
+                alert(
+                    "Verifique o valor da TMB informado."
+                );
+
+                return;
+
+            }
+
+
             const gasto =
                 tmb * atividade;
 
@@ -1477,14 +1916,18 @@
             document
                 .getElementById("valorTDEE")
                 .textContent =
-                    Math.round(gasto) +
+                    formatarNumero(
+                        Math.round(gasto)
+                    ) +
                     " kcal/dia";
 
 
             document
                 .getElementById("tdeeBase")
                 .textContent =
-                    Math.round(tmb) +
+                    formatarNumero(
+                        Math.round(tmb)
+                    ) +
                     " kcal";
 
 
@@ -1500,20 +1943,20 @@
 
 
         /* =========================
-           OBJETIVO
+           CALORIAS POR OBJETIVO
         ========================= */
 
         function calcularObjetivo() {
 
 
             const calorias =
-                parseFloat(
-                    document.getElementById("caloriasBase").value
-                );
+                obterNumero("caloriasBase");
 
 
             const objetivo =
-                document.getElementById("objetivo").value;
+                document
+                    .getElementById("objetivo")
+                    .value;
 
 
             if (
@@ -1531,15 +1974,31 @@
             }
 
 
+            if (calorias > 10000) {
+
+                alert(
+                    "Verifique o gasto diário informado."
+                );
+
+                return;
+
+            }
+
+
             let resultado;
 
             let texto;
+
+            let ajuste;
 
 
             if (objetivo === "manter") {
 
                 resultado =
                     calorias;
+
+                ajuste =
+                    "0 kcal";
 
                 texto =
                     "Para manutenção, a estimativa utiliza o gasto diário informado como referência.";
@@ -1552,6 +2011,9 @@
                 resultado =
                     calorias - 300;
 
+                ajuste =
+                    "-300 kcal";
+
                 texto =
                     "Foi aplicada uma redução aproximada de 300 kcal em relação ao gasto informado.";
 
@@ -1562,6 +2024,9 @@
 
                 resultado =
                     calorias + 300;
+
+                ajuste =
+                    "+300 kcal";
 
                 texto =
                     "Foi aplicado um acréscimo aproximado de 300 kcal em relação ao gasto informado.";
@@ -1580,7 +2045,9 @@
             document
                 .getElementById("valorObjetivo")
                 .textContent =
-                    Math.round(resultado) +
+                    formatarNumero(
+                        Math.round(resultado)
+                    ) +
                     " kcal/dia";
 
 
@@ -1591,7 +2058,24 @@
                     " Essa é apenas uma estimativa informativa e não uma prescrição nutricional.";
 
 
-            mostrarResultado("resultadoObjetivo");
+            document
+                .getElementById("objetivoBase")
+                .textContent =
+                    formatarNumero(
+                        Math.round(calorias)
+                    ) +
+                    " kcal";
+
+
+            document
+                .getElementById("objetivoAjuste")
+                .textContent =
+                    ajuste;
+
+
+            mostrarResultado(
+                "resultadoObjetivo"
+            );
 
         }
 
@@ -1604,9 +2088,7 @@
 
 
             const idade =
-                parseFloat(
-                    document.getElementById("idadeFC").value
-                );
+                obterNumero("idadeFC");
 
 
             if (
@@ -1646,9 +2128,186 @@
                     "Estimativa baseada na fórmula 220 − idade. A frequência cardíaca real pode variar entre indivíduos.";
 
 
-            mostrarResultado("resultadoFC");
+            document
+                .getElementById("idadeUtilizadaFC")
+                .textContent =
+                    idade +
+                    " anos";
+
+
+            mostrarResultado(
+                "resultadoFC"
+            );
 
         }
+
+
+        /* =========================
+           ZONAS DE FREQUÊNCIA
+        ========================= */
+
+        function calcularZonaFC() {
+
+
+            const fcMaxima =
+                obterNumero("fcMaxZona");
+
+
+            if (
+                isNaN(fcMaxima) ||
+                fcMaxima <= 0 ||
+                fcMaxima > 250
+            ) {
+
+                alert(
+                    "Digite uma frequência cardíaca máxima válida."
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Faixas aproximadas baseadas
+             * em percentuais da FC máxima.
+             */
+
+            const zona1Min =
+                Math.round(fcMaxima * 0.50);
+
+            const zona1Max =
+                Math.round(fcMaxima * 0.60);
+
+
+            const zona2Min =
+                Math.round(fcMaxima * 0.60);
+
+            const zona2Max =
+                Math.round(fcMaxima * 0.70);
+
+
+            const zona3Min =
+                Math.round(fcMaxima * 0.70);
+
+            const zona3Max =
+                Math.round(fcMaxima * 0.80);
+
+
+            const zona4Min =
+                Math.round(fcMaxima * 0.80);
+
+            const zona4Max =
+                Math.round(fcMaxima * 0.90);
+
+
+            const zona5Min =
+                Math.round(fcMaxima * 0.90);
+
+            const zona5Max =
+                Math.round(fcMaxima);
+
+
+            document
+                .getElementById("zona1")
+                .textContent =
+                    zona1Min +
+                    "–" +
+                    zona1Max +
+                    " bpm";
+
+
+            document
+                .getElementById("zona2")
+                .textContent =
+                    zona2Min +
+                    "–" +
+                    zona2Max +
+                    " bpm";
+
+
+            document
+                .getElementById("zona3")
+                .textContent =
+                    zona3Min +
+                    "–" +
+                    zona3Max +
+                    " bpm";
+
+
+            document
+                .getElementById("zona4")
+                .textContent =
+                    zona4Min +
+                    "–" +
+                    zona4Max +
+                    " bpm";
+
+
+            document
+                .getElementById("zona5")
+                .textContent =
+                    zona5Min +
+                    "–" +
+                    zona5Max +
+                    " bpm";
+
+
+            mostrarResultado(
+                "resultadoZonaFC"
+            );
+
+        }
+
+
+        /* =========================
+           ENTER PARA CALCULAR
+        ========================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key !== "Enter") {
+                    return;
+                }
+
+
+                const elemento =
+                    document.activeElement;
+
+
+                if (
+                    elemento &&
+                    elemento.tagName === "INPUT"
+                ) {
+
+                    const card =
+                        elemento.closest(
+                            ".calculator"
+                        );
+
+
+                    if (!card) {
+                        return;
+                    }
+
+
+                    const botao =
+                        card.querySelector(
+                            ".calculate-button"
+                        );
+
+
+                    if (botao) {
+                        botao.click();
+                    }
+
+                }
+
+            }
+        );
+
 
     </script>
 
