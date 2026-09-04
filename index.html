@@ -2,8 +2,13 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>BaseFit Studio | Treine. Acompanhe. Evolua.</title>
 
@@ -20,74 +25,105 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
             font-family: Arial, Helvetica, sans-serif;
+
             background: #080c10;
+
             color: #ffffff;
         }
+
 
         /* =========================
            HEADER
         ========================= */
 
         header {
+
             width: 100%;
+
             padding: 22px 7%;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             border-bottom: 1px solid #1b232c;
 
             position: sticky;
+
             top: 0;
 
             background: rgba(8, 12, 16, 0.95);
+
             backdrop-filter: blur(10px);
 
             z-index: 100;
         }
 
+
         .logo {
+
             font-size: 23px;
+
             font-weight: 800;
+
             letter-spacing: 1px;
         }
 
+
         .logo span {
+
             color: #45e17a;
         }
 
+
         nav {
+
             display: flex;
+
             gap: 30px;
         }
 
+
         nav a {
+
             color: #aeb8c4;
+
             text-decoration: none;
+
             font-size: 15px;
+
             transition: 0.3s;
         }
 
+
         nav a:hover {
+
             color: #45e17a;
         }
+
 
         /* =========================
            HERO
         ========================= */
 
         .hero {
+
             min-height: 720px;
 
             padding: 100px 7%;
 
             display: grid;
+
             grid-template-columns: 1.1fr 0.9fr;
 
             gap: 60px;
@@ -95,7 +131,9 @@
             align-items: center;
         }
 
+
         .tag {
+
             display: inline-block;
 
             padding: 9px 15px;
@@ -113,7 +151,9 @@
             margin-bottom: 25px;
         }
 
+
         .hero h1 {
+
             font-size: clamp(52px, 7vw, 88px);
 
             line-height: 0.95;
@@ -121,11 +161,15 @@
             margin-bottom: 30px;
         }
 
+
         .hero h1 span {
+
             color: #45e17a;
         }
 
+
         .hero-text {
+
             max-width: 620px;
 
             color: #a8b2be;
@@ -137,7 +181,9 @@
             margin-bottom: 35px;
         }
 
+
         .buttons {
+
             display: flex;
 
             gap: 15px;
@@ -145,7 +191,9 @@
             flex-wrap: wrap;
         }
 
+
         .btn {
+
             display: inline-block;
 
             padding: 15px 24px;
@@ -159,35 +207,47 @@
             transition: 0.3s;
         }
 
+
         .btn-primary {
+
             background: #45e17a;
 
             color: #071009;
         }
 
+
         .btn-primary:hover {
+
             transform: translateY(-2px);
 
-            box-shadow: 0 10px 30px rgba(69, 225, 122, 0.2);
+            box-shadow:
+                0 10px 30px
+                rgba(69, 225, 122, 0.2);
         }
 
+
         .btn-secondary {
+
             border: 1px solid #303b47;
 
             color: #ffffff;
         }
 
+
         .btn-secondary:hover {
+
             border-color: #45e17a;
 
             color: #45e17a;
         }
+
 
         /* =========================
            HERO VISUAL
         ========================= */
 
         .hero-visual {
+
             position: relative;
 
             min-height: 430px;
@@ -199,7 +259,9 @@
             align-items: center;
         }
 
+
         .visual-card {
+
             width: 320px;
 
             height: 400px;
@@ -226,12 +288,15 @@
             text-align: center;
 
             box-shadow:
-                0 30px 80px rgba(0, 0, 0, 0.45);
+                0 30px 80px
+                rgba(0, 0, 0, 0.45);
 
             position: relative;
         }
 
+
         .visual-icon {
+
             width: 105px;
 
             height: 105px;
@@ -253,13 +318,17 @@
             margin-bottom: 25px;
         }
 
+
         .visual-card h2 {
+
             font-size: 28px;
 
             margin-bottom: 10px;
         }
 
+
         .visual-card p {
+
             color: #84909c;
 
             font-size: 14px;
@@ -269,7 +338,9 @@
             line-height: 1.6;
         }
 
+
         .floating-card {
+
             position: absolute;
 
             padding: 15px 18px;
@@ -280,14 +351,18 @@
 
             border: 1px solid #293540;
 
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow:
+                0 20px 40px
+                rgba(0, 0, 0, 0.3);
 
             font-size: 13px;
 
             color: #b9c3ce;
         }
 
+
         .floating-card strong {
+
             display: block;
 
             color: #45e17a;
@@ -297,31 +372,41 @@
             margin-bottom: 4px;
         }
 
+
         .floating-one {
+
             top: 30px;
 
             right: 0;
         }
 
+
         .floating-two {
+
             bottom: 30px;
 
             left: 0;
         }
 
+
         /* =========================
-           QUICK ACCESS
+           SEÇÕES
         ========================= */
 
         .section {
+
             padding: 100px 7%;
         }
 
+
         .section-dark {
+
             background: #0e141a;
         }
 
+
         .section-title {
+
             text-align: center;
 
             max-width: 650px;
@@ -329,19 +414,29 @@
             margin: 0 auto 50px;
         }
 
+
         .section-title h2 {
+
             font-size: 40px;
 
             margin-bottom: 15px;
         }
 
+
         .section-title p {
+
             color: #8995a2;
 
             line-height: 1.6;
         }
 
+
+        /* =========================
+           RECURSOS
+        ========================= */
+
         .cards {
+
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
@@ -349,7 +444,9 @@
             gap: 22px;
         }
 
+
         .card {
+
             padding: 32px;
 
             border-radius: 16px;
@@ -359,39 +456,71 @@
             border: 1px solid #232e38;
 
             transition: 0.3s;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            display: block;
         }
+
 
         .card:hover {
-            transform: translateY(-5px);
 
-            border-color: #3b6749;
+            transform: translateY(-7px);
+
+            border-color: #45e17a;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.25);
         }
 
+
         .card-icon {
+
             font-size: 32px;
 
             margin-bottom: 20px;
         }
 
+
         .card h3 {
+
             font-size: 21px;
 
             margin-bottom: 12px;
         }
 
+
         .card p {
+
             color: #8e9aa7;
 
             line-height: 1.6;
 
             font-size: 15px;
+
+            margin-bottom: 20px;
         }
 
+
+        .card-link {
+
+            color: #45e17a;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
         /* =========================
-           OBJECTIVES
+           OBJETIVOS
         ========================= */
 
         .objectives {
+
             display: grid;
 
             grid-template-columns: repeat(4, 1fr);
@@ -399,7 +528,9 @@
             gap: 16px;
         }
 
+
         .objective {
+
             padding: 25px;
 
             border-radius: 14px;
@@ -413,37 +544,69 @@
             transition: 0.3s;
         }
 
+
         .objective:hover {
+
             border-color: #45e17a;
 
             transform: translateY(-4px);
         }
 
+
         .objective-icon {
+
             font-size: 30px;
 
             margin-bottom: 14px;
         }
 
+
         .objective h3 {
+
             font-size: 17px;
 
             margin-bottom: 8px;
         }
 
+
         .objective p {
+
             color: #7f8b97;
 
             font-size: 13px;
 
             line-height: 1.5;
+
+            margin-bottom: 18px;
         }
 
+
+        .objective a {
+
+            display: inline-block;
+
+            color: #45e17a;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+        .objective a:hover {
+
+            text-decoration: underline;
+        }
+
+
         /* =========================
-           ABOUT
+           SOBRE
         ========================= */
 
         .about {
+
             display: grid;
 
             grid-template-columns: 1fr 1fr;
@@ -453,17 +616,23 @@
             align-items: center;
         }
 
+
         .about h2 {
+
             font-size: 42px;
 
             margin-bottom: 20px;
         }
 
+
         .about h2 span {
+
             color: #45e17a;
         }
 
+
         .about p {
+
             color: #929daa;
 
             line-height: 1.8;
@@ -471,7 +640,9 @@
             margin-bottom: 20px;
         }
 
+
         .about-box {
+
             padding: 35px;
 
             border-radius: 18px;
@@ -481,15 +652,21 @@
             border: 1px solid #27323d;
         }
 
+
         .about-box h3 {
+
             margin-bottom: 20px;
         }
 
+
         .about-list {
+
             list-style: none;
         }
 
+
         .about-list li {
+
             padding: 12px 0;
 
             border-bottom: 1px solid #222c35;
@@ -497,15 +674,135 @@
             color: #aab4bf;
         }
 
+
         .about-list li:last-child {
+
             border-bottom: none;
         }
+
+
+        /* =========================
+           NOVA SEÇÃO
+           COMO FUNCIONA
+        ========================= */
+
+        .steps {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .step {
+
+            padding: 30px;
+
+            background: #141b22;
+
+            border: 1px solid #232e38;
+
+            border-radius: 16px;
+
+            position: relative;
+        }
+
+
+        .step-number {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #45e17a;
+
+            color: #071009;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .step h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .step p {
+
+            color: #8e9aa7;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CHAMADA FINAL
+        ========================= */
+
+        .cta {
+
+            padding: 100px 7%;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #16231b,
+                    #080c10 65%
+                );
+        }
+
+
+        .cta h2 {
+
+            font-size: 42px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .cta h2 span {
+
+            color: #45e17a;
+        }
+
+
+        .cta p {
+
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+
+            color: #929daa;
+
+            line-height: 1.7;
+        }
+
 
         /* =========================
            FOOTER
         ========================= */
 
         footer {
+
             padding: 40px 7%;
 
             border-top: 1px solid #1b232c;
@@ -517,9 +814,12 @@
             background: #080c10;
         }
 
+
         footer strong {
+
             color: #45e17a;
         }
+
 
         /* =========================
            MOBILE
@@ -531,7 +831,9 @@
                 display: none;
             }
 
+
             .hero {
+
                 grid-template-columns: 1fr;
 
                 padding-top: 70px;
@@ -539,61 +841,102 @@
                 text-align: center;
             }
 
+
             .hero-text {
+
                 margin-left: auto;
+
                 margin-right: auto;
             }
 
+
             .buttons {
+
                 justify-content: center;
             }
 
+
             .hero-visual {
+
                 min-height: 400px;
             }
 
+
             .cards {
+
                 grid-template-columns: 1fr;
             }
 
+
             .objectives {
+
                 grid-template-columns: repeat(2, 1fr);
             }
 
+
             .about {
+
                 grid-template-columns: 1fr;
             }
+
+
+            .steps {
+
+                grid-template-columns: 1fr;
+            }
+
         }
+
 
         @media (max-width: 500px) {
 
             .hero {
+
                 padding-left: 5%;
+
                 padding-right: 5%;
             }
+
 
             .section {
+
                 padding-left: 5%;
+
                 padding-right: 5%;
             }
 
+
             .hero h1 {
+
                 font-size: 52px;
             }
 
+
             .visual-card {
+
                 width: 270px;
 
                 height: 350px;
             }
 
+
             .floating-card {
+
                 display: none;
             }
 
+
             .objectives {
+
                 grid-template-columns: 1fr;
             }
+
+
+            .cta h2 {
+
+                font-size: 34px;
+            }
+
         }
 
     </style>
@@ -603,25 +946,37 @@
 
 <body>
 
+
     <!-- =========================
          HEADER
-    ========================== -->
+    ========================= -->
 
     <header>
 
         <div class="logo">
+
             BASE<span>FIT</span> STUDIO
+
         </div>
+
 
         <nav>
 
-            <a href="#inicio">Início</a>
+            <a href="#inicio">
+                Início
+            </a>
 
-            <a href="#recursos">Recursos</a>
+            <a href="#recursos">
+                Recursos
+            </a>
 
-            <a href="#objetivos">Objetivos</a>
+            <a href="#objetivos">
+                Objetivos
+            </a>
 
-            <a href="#sobre">Sobre</a>
+            <a href="#sobre">
+                Sobre
+            </a>
 
         </nav>
 
@@ -630,38 +985,65 @@
 
     <main>
 
+
         <!-- =========================
              HERO
-        ========================== -->
+        ========================= -->
 
-        <section class="hero" id="inicio">
+        <section
+            class="hero"
+            id="inicio"
+        >
 
             <div>
 
                 <div class="tag">
+
                     TREINAMENTO • EVOLUÇÃO • PERFORMANCE
+
                 </div>
 
+
                 <h1>
+
                     Treine.<br>
+
                     Acompanhe.<br>
+
                     <span>Evolua.</span>
+
                 </h1>
 
+
                 <p class="hero-text">
-                    O BaseFit Studio reúne treinos, exercícios,
-                    ferramentas e informações para ajudar você
-                    a construir uma rotina de treinamento melhor.
+
+                    O BaseFit Studio reúne treinos,
+                    exercícios, ferramentas e informações
+                    para ajudar você a construir uma rotina
+                    de treinamento melhor.
+
                 </p>
+
 
                 <div class="buttons">
 
-                    <a href="#recursos" class="btn btn-primary">
+                    <a
+                        href="#recursos"
+                        class="btn btn-primary"
+                    >
+
                         Explorar recursos
+
                     </a>
 
-                    <a href="#objetivos" class="btn btn-secondary">
+
+                    <a
+                        href="#objetivos"
+                        class="btn btn-secondary"
+                    >
+
                         Encontrar meu objetivo
+
                     </a>
 
                 </div>
@@ -671,34 +1053,53 @@
 
             <div class="hero-visual">
 
+
                 <div class="floating-card floating-one">
-                    <strong>+ Evolução</strong>
+
+                    <strong>
+                        + Evolução
+                    </strong>
+
                     Consistência todos os dias
+
                 </div>
 
 
                 <div class="visual-card">
 
                     <div class="visual-icon">
+
                         🏋️
+
                     </div>
 
+
                     <h2>
+
                         BaseFit
+
                     </h2>
 
+
                     <p>
+
                         Sua base para treinar melhor,
                         acompanhar sua evolução e
                         alcançar seus objetivos.
+
                     </p>
 
                 </div>
 
 
                 <div class="floating-card floating-two">
-                    <strong>FOCO</strong>
+
+                    <strong>
+                        FOCO
+                    </strong>
+
                     Treino • Disciplina • Resultado
+
                 </div>
 
             </div>
@@ -708,9 +1109,12 @@
 
         <!-- =========================
              RECURSOS
-        ========================== -->
+        ========================= -->
 
-        <section class="section section-dark" id="recursos">
+        <section
+            class="section section-dark"
+            id="recursos"
+        >
 
             <div class="section-title">
 
@@ -719,8 +1123,11 @@
                 </h2>
 
                 <p>
-                    Explore as principais ferramentas
-                    que vamos construir dentro do BaseFit Studio.
+
+                    Encontre ferramentas e informações
+                    para organizar melhor sua jornada
+                    de treinamento.
+
                 </p>
 
             </div>
@@ -728,7 +1135,13 @@
 
             <div class="cards">
 
-                <div class="card">
+
+                <!-- TREINOS -->
+
+                <a
+                    href="treinos.html"
+                    class="card"
+                >
 
                     <div class="card-icon">
                         💪
@@ -739,14 +1152,27 @@
                     </h3>
 
                     <p>
+
                         Treinos organizados por objetivo,
                         nível de experiência e modalidade.
+
                     </p>
 
-                </div>
+                    <span class="card-link">
+
+                        Explorar treinos →
+
+                    </span>
+
+                </a>
 
 
-                <div class="card">
+                <!-- EXERCÍCIOS -->
+
+                <a
+                    href="exercicios.html"
+                    class="card"
+                >
 
                     <div class="card-icon">
                         🏋️
@@ -757,14 +1183,28 @@
                     </h3>
 
                     <p>
-                        Consulte exercícios, músculos trabalhados,
-                        execução e informações importantes.
+
+                        Consulte exercícios, músculos
+                        trabalhados, execução e informações
+                        importantes.
+
                     </p>
 
-                </div>
+                    <span class="card-link">
+
+                        Ver exercícios →
+
+                    </span>
+
+                </a>
 
 
-                <div class="card">
+                <!-- CALCULADORAS -->
+
+                <a
+                    href="calculadoras.html"
+                    class="card"
+                >
 
                     <div class="card-icon">
                         🧮
@@ -775,11 +1215,21 @@
                     </h3>
 
                     <p>
+
                         Ferramentas para realizar cálculos
-                        relacionados ao treinamento e composição corporal.
+                        relacionados ao treinamento e
+                        composição corporal.
+
                     </p>
 
-                </div>
+                    <span class="card-link">
+
+                        Abrir calculadoras →
+
+                    </span>
+
+                </a>
+
 
             </div>
 
@@ -788,9 +1238,12 @@
 
         <!-- =========================
              OBJETIVOS
-        ========================== -->
+        ========================= -->
 
-        <section class="section" id="objetivos">
+        <section
+            class="section"
+            id="objetivos"
+        >
 
             <div class="section-title">
 
@@ -799,14 +1252,19 @@
                 </h2>
 
                 <p>
+
                     Encontre conteúdos e treinos de acordo
                     com aquilo que você deseja alcançar.
+
                 </p>
 
             </div>
 
 
             <div class="objectives">
+
+
+                <!-- EMAGRECIMENTO -->
 
                 <div class="objective">
 
@@ -819,12 +1277,22 @@
                     </h3>
 
                     <p>
+
                         Estratégias de treinamento
                         para auxiliar na perda de gordura.
+
                     </p>
+
+                    <a href="treinos.html">
+
+                        Ver treinos →
+
+                    </a>
 
                 </div>
 
+
+                <!-- HIPERTROFIA -->
 
                 <div class="objective">
 
@@ -837,12 +1305,22 @@
                     </h3>
 
                     <p>
+
                         Treinamento voltado para
                         desenvolvimento muscular.
+
                     </p>
+
+                    <a href="treinos.html">
+
+                        Ver treinos →
+
+                    </a>
 
                 </div>
 
+
+                <!-- FORÇA -->
 
                 <div class="objective">
 
@@ -855,12 +1333,22 @@
                     </h3>
 
                     <p>
+
                         Desenvolvimento da capacidade
                         de produzir força.
+
                     </p>
+
+                    <a href="treinos.html">
+
+                        Ver treinos →
+
+                    </a>
 
                 </div>
 
+
+                <!-- CONDICIONAMENTO -->
 
                 <div class="objective">
 
@@ -873,11 +1361,114 @@
                     </h3>
 
                     <p>
+
                         Melhore resistência,
                         disposição e condicionamento.
+
+                    </p>
+
+                    <a href="treinos.html">
+
+                        Ver treinos →
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMO FUNCIONA
+        ========================= -->
+
+        <section class="section section-dark">
+
+            <div class="section-title">
+
+                <h2>
+                    Sua evolução começa aqui
+                </h2>
+
+                <p>
+
+                    O BaseFit Studio foi pensado para
+                    deixar sua jornada de treinamento
+                    mais organizada.
+
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Defina seu objetivo
+                    </h3>
+
+                    <p>
+
+                        Escolha aquilo que você deseja
+                        desenvolver e encontre conteúdos
+                        relacionados ao seu objetivo.
+
                     </p>
 
                 </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Conheça os exercícios
+                    </h3>
+
+                    <p>
+
+                        Consulte nossa biblioteca para
+                        entender os exercícios, músculos
+                        trabalhados e formas de execução.
+
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Acompanhe sua evolução
+                    </h3>
+
+                    <p>
+
+                        Utilize as ferramentas do BaseFit
+                        para organizar informações e
+                        acompanhar seu desenvolvimento.
+
+                    </p>
+
+                </div>
+
 
             </div>
 
@@ -886,30 +1477,44 @@
 
         <!-- =========================
              SOBRE
-        ========================== -->
+        ========================= -->
 
-        <section class="section section-dark" id="sobre">
+        <section
+            class="section section-dark"
+            id="sobre"
+        >
 
             <div class="about">
+
 
                 <div>
 
                     <h2>
+
                         Uma boa evolução começa com uma
                         <span>boa base.</span>
+
                     </h2>
 
-                    <p>
-                        O BaseFit Studio foi pensado para reunir
-                        informações e ferramentas em um único lugar,
-                        tornando o processo de treinamento mais simples
-                        de entender e acompanhar.
-                    </p>
 
                     <p>
-                        Nosso objetivo é construir uma plataforma
-                        moderna, prática e útil tanto para quem está
-                        começando quanto para quem já treina.
+
+                        O BaseFit Studio foi pensado para
+                        reunir informações e ferramentas
+                        em um único lugar, tornando o
+                        processo de treinamento mais simples
+                        de entender e acompanhar.
+
+                    </p>
+
+
+                    <p>
+
+                        Nosso objetivo é construir uma
+                        plataforma moderna, prática e útil
+                        tanto para quem está começando
+                        quanto para quem já treina.
+
                     </p>
 
                 </div>
@@ -918,8 +1523,11 @@
                 <div class="about-box">
 
                     <h3>
+
                         O que vamos encontrar aqui?
+
                     </h3>
+
 
                     <ul class="about-list">
 
@@ -947,25 +1555,81 @@
 
                 </div>
 
+
             </div>
 
         </section>
+
+
+        <!-- =========================
+             CTA FINAL
+        ========================= -->
+
+        <section class="cta">
+
+            <h2>
+
+                Construa sua
+                <span>melhor versão.</span>
+
+            </h2>
+
+
+            <p>
+
+                Explore os recursos do BaseFit Studio
+                e comece a organizar sua jornada de
+                treinamento.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="treinos.html"
+                    class="btn btn-primary"
+                >
+
+                    Começar pelos treinos
+
+                </a>
+
+
+                <a
+                    href="exercicios.html"
+                    class="btn btn-secondary"
+                >
+
+                    Explorar exercícios
+
+                </a>
+
+            </div>
+
+        </section>
+
 
     </main>
 
 
     <!-- =========================
          FOOTER
-    ========================== -->
+    ========================= -->
 
     <footer>
 
         <p>
-            © 2026 <strong>BaseFit Studio</strong>
+
+            © 2026
+            <strong>BaseFit Studio</strong>
+
             — Treine. Acompanhe. Evolua.
+
         </p>
 
     </footer>
+
 
 </body>
 
