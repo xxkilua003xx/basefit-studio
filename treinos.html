@@ -2,8 +2,13 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Treinos | BaseFit Studio</title>
 
@@ -26,172 +31,697 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
+
             background: #080c10;
+
             color: #ffffff;
         }
 
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
+            width: 100%;
+
             padding: 22px 7%;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             border-bottom: 1px solid #1b232c;
+
+            position: sticky;
+
+            top: 0;
+
+            background: rgba(8, 12, 16, 0.95);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 100;
         }
 
+
         .logo {
+
+            text-decoration: none;
+
+            color: #ffffff;
+
             font-size: 23px;
+
             font-weight: 800;
+
             letter-spacing: 1px;
+
         }
+
 
         .logo span {
             color: #45e17a;
         }
 
-        nav {
-            display: flex;
-            gap: 30px;
+
+        .logo:hover {
+            opacity: 0.9;
         }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 30px;
+
+        }
+
 
         nav a {
+
             color: #aeb8c4;
+
             text-decoration: none;
+
             font-size: 15px;
+
+            transition: 0.3s;
+
         }
+
 
         nav a:hover {
+
             color: #45e17a;
+
         }
 
-        .container {
-            width: min(1100px, 90%);
-            margin: auto;
-        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
+
+            padding: 90px 7% 55px;
+
             text-align: center;
-            padding: 80px 0 60px;
+
         }
 
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 span {
-            color: #45e17a;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-            color: #929daa;
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        .section {
-            padding: 30px 0 90px;
-        }
-
-        .section-title {
-            margin-bottom: 30px;
-        }
-
-        .section-title h2 {
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
-
-        .section-title p {
-            color: #87929e;
-        }
-
-        .workouts {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .workout {
-            background: #141b22;
-            border: 1px solid #26313b;
-            border-radius: 16px;
-            padding: 28px;
-            transition: 0.3s;
-        }
-
-        .workout:hover {
-            transform: translateY(-5px);
-            border-color: #45e17a;
-        }
-
-        .workout-icon {
-            font-size: 34px;
-            margin-bottom: 20px;
-        }
-
-        .workout h3 {
-            font-size: 21px;
-            margin-bottom: 12px;
-        }
-
-        .workout p {
-            color: #929daa;
-            line-height: 1.6;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .workout-info {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
 
         .tag {
-            padding: 6px 10px;
-            border-radius: 20px;
-            background: #0d1319;
-            border: 1px solid #26313b;
-            color: #aab5c0;
+
+            display: inline-block;
+
+            padding: 9px 16px;
+
+            border: 1px solid #293640;
+
+            border-radius: 30px;
+
+            color: #45e17a;
+
             font-size: 12px;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 22px;
+
         }
+
+
+        .hero h1 {
+
+            font-size: clamp(45px, 6vw, 70px);
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero h1 span {
+
+            color: #45e17a;
+
+        }
+
+
+        .hero p {
+
+            max-width: 680px;
+
+            margin: auto;
+
+            color: #929daa;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+
+            width: min(1150px, 90%);
+
+            margin: auto;
+
+        }
+
+
+        /* =========================
+           FILTROS
+        ========================= */
+
+        .filters {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .filter {
+
+            padding: 11px 20px;
+
+            border-radius: 30px;
+
+            background: #121920;
+
+            border: 1px solid #27333d;
+
+            color: #aeb8c4;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .filter:hover {
+
+            border-color: #45e17a;
+
+            color: #45e17a;
+
+        }
+
+
+        .filter.active {
+
+            background: #45e17a;
+
+            border-color: #45e17a;
+
+            color: #071009;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           TREINOS
+        ========================= */
+
+        .training-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 22px;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        .training-card {
+
+            background: #141b22;
+
+            border: 1px solid #26313b;
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .training-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #45e17a;
+
+        }
+
+
+        .training-card.hidden {
+
+            display: none;
+
+        }
+
+
+        .training-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .training-icon {
+
+            width: 58px;
+
+            height: 58px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 14px;
+
+            background: #18251d;
+
+            border: 1px solid #2b5038;
+
+            font-size: 27px;
+
+        }
+
+
+        .level {
+
+            padding: 7px 11px;
+
+            border-radius: 20px;
+
+            background: #0d1319;
+
+            border: 1px solid #29343e;
+
+            color: #9ca8b4;
+
+            font-size: 11px;
+
+        }
+
+
+        .training-card h2 {
+
+            font-size: 23px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .training-description {
+
+            color: #8e9aa7;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        /* =========================
+           INFORMAÇÕES DO TREINO
+        ========================= */
+
+        .training-info {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .info {
+
+            padding: 13px 10px;
+
+            background: #10161c;
+
+            border: 1px solid #232e38;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+        }
+
+
+        .info strong {
+
+            display: block;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .info span {
+
+            color: #707c88;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================
+           EXERCÍCIOS DO TREINO
+        ========================= */
+
+        .exercise-list {
+
+            list-style: none;
+
+            border-top: 1px solid #252f38;
+
+            padding-top: 15px;
+
+        }
+
+
+        .exercise-list li {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 10px 0;
+
+            border-bottom: 1px solid #202a33;
+
+            color: #b1bbc5;
+
+            font-size: 13px;
+
+        }
+
+
+        .exercise-list li:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .exercise-list span {
+
+            color: #45e17a;
+
+            white-space: nowrap;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================
+           AVISO
+        ========================= */
 
         .notice {
-            margin-top: 50px;
-            padding: 24px;
+
+            margin-bottom: 80px;
+
+            padding: 25px;
+
             border-radius: 14px;
+
             background: #10171d;
+
             border: 1px solid #27333d;
-            color: #8e9aa7;
+
+            color: #8995a1;
+
+            font-size: 13px;
+
             line-height: 1.7;
-            font-size: 14px;
+
         }
+
+
+        .notice strong {
+
+            color: #45e17a;
+
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            padding: 90px 7%;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+
+                    circle at center,
+
+                    #16231b,
+
+                    #080c10 65%
+
+                );
+
+        }
+
+
+        .cta h2 {
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .cta h2 span {
+
+            color: #45e17a;
+
+        }
+
+
+        .cta p {
+
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+
+            color: #8e9aa7;
+
+            line-height: 1.7;
+
+        }
+
+
+        .cta-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 14px 22px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+        }
+
+
+        .btn-primary {
+
+            background: #45e17a;
+
+            color: #071009;
+
+        }
+
+
+        .btn-primary:hover {
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .btn-secondary {
+
+            border: 1px solid #303b47;
+
+            color: #ffffff;
+
+        }
+
+
+        .btn-secondary:hover {
+
+            border-color: #45e17a;
+
+            color: #45e17a;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            padding: 35px 7%;
+
+            padding: 40px 7%;
+
             border-top: 1px solid #1b232c;
+
             text-align: center;
+
             color: #687481;
+
         }
+
 
         footer strong {
+
             color: #45e17a;
+
         }
 
-        @media (max-width: 800px) {
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 850px) {
 
             nav {
                 display: none;
             }
 
-            .workouts {
+
+            .training-grid {
+
                 grid-template-columns: 1fr;
+
             }
 
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+
+                padding-top: 65px;
+
+            }
+
+
             .hero h1 {
-                font-size: 40px;
+
+                font-size: 45px;
+
+            }
+
+
+            .training-info {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .training-top {
+
+                flex-direction: column;
+
+            }
+
+
+            .level {
+
+                align-self: flex-start;
+
             }
 
         }
@@ -203,11 +733,23 @@
 
 <body>
 
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <header>
 
-        <div class="logo">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
             BASE<span>FIT</span> STUDIO
-        </div>
+
+        </a>
+
 
         <nav>
 
@@ -229,259 +771,963 @@
 
         </nav>
 
+
     </header>
 
 
     <main>
 
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
         <section class="hero">
 
-            <div class="container">
 
-                <h1>
-                    Encontre seu <span>treino.</span>
-                </h1>
+            <div class="tag">
 
-                <p>
-                    Explore diferentes tipos de treinamento
-                    organizados por objetivo e nível de experiência.
-                </p>
+                TREINAMENTO • OBJETIVO • EVOLUÇÃO
 
             </div>
+
+
+            <h1>
+
+                Encontre o treino
+                <span>ideal.</span>
+
+            </h1>
+
+
+            <p>
+
+                Explore diferentes estratégias de treinamento
+                organizadas de acordo com objetivos e níveis
+                de experiência.
+
+            </p>
+
 
         </section>
 
 
-        <section class="section">
+        <!-- =========================
+             FILTROS
+        ========================= -->
 
-            <div class="container">
-
-                <div class="section-title">
-
-                    <h2>
-                        Escolha seu objetivo
-                    </h2>
-
-                    <p>
-                        Esta seção será expandida conforme
-                        construirmos nossa biblioteca de treinos.
-                    </p>
-
-                </div>
+        <section class="container">
 
 
-                <div class="workouts">
+            <div class="filters">
 
 
-                    <div class="workout">
+                <button
+                    class="filter active"
+                    data-filter="todos"
+                >
 
-                        <div class="workout-icon">
-                            🔥
-                        </div>
+                    Todos
 
-                        <h3>
-                            Emagrecimento
-                        </h3>
-
-                        <p>
-                            Treinos voltados para aumentar o
-                            gasto energético e melhorar o condicionamento.
-                        </p>
-
-                        <div class="workout-info">
-
-                            <span class="tag">
-                                Iniciante
-                            </span>
-
-                            <span class="tag">
-                                Cardio
-                            </span>
-
-                        </div>
-
-                    </div>
+                </button>
 
 
-                    <div class="workout">
+                <button
+                    class="filter"
+                    data-filter="hipertrofia"
+                >
 
-                        <div class="workout-icon">
+                    💪 Hipertrofia
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="emagrecimento"
+                >
+
+                    🔥 Emagrecimento
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="forca"
+                >
+
+                    🏆 Força
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-filter="condicionamento"
+                >
+
+                    ⚡ Condicionamento
+
+                </button>
+
+
+            </div>
+
+
+            <!-- =========================
+                 GRID DE TREINOS
+            ========================= -->
+
+            <div class="training-grid">
+
+
+                <!-- TREINO 1 -->
+
+                <article
+                    class="training-card"
+                    data-category="hipertrofia"
+                >
+
+
+                    <div class="training-top">
+
+                        <div class="training-icon">
                             💪
                         </div>
 
-                        <h3>
-                            Hipertrofia
-                        </h3>
-
-                        <p>
-                            Estrutura de treinamento voltada
-                            para o desenvolvimento muscular.
-                        </p>
-
-                        <div class="workout-info">
-
-                            <span class="tag">
-                                Intermediário
-                            </span>
-
-                            <span class="tag">
-                                Musculação
-                            </span>
-
-                        </div>
+                        <span class="level">
+                            INICIANTE
+                        </span>
 
                     </div>
 
 
-                    <div class="workout">
+                    <h2>
+                        Hipertrofia — Corpo inteiro
+                    </h2>
 
-                        <div class="workout-icon">
-                            🏆
-                        </div>
 
-                        <h3>
-                            Força
-                        </h3>
+                    <p class="training-description">
 
-                        <p>
-                            Treinamentos focados no desenvolvimento
-                            da capacidade de produzir força.
-                        </p>
+                        Uma opção para quem está começando
+                        a treinar e deseja trabalhar os
+                        principais grupos musculares.
 
-                        <div class="workout-info">
+                    </p>
 
-                            <span class="tag">
-                                Intermediário
+
+                    <div class="training-info">
+
+
+                        <div class="info">
+
+                            <strong>
+                                3x
+                            </strong>
+
+                            <span>
+                                por semana
                             </span>
 
-                            <span class="tag">
-                                Força
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                6–8
+                            </strong>
+
+                            <span>
+                                exercícios
                             </span>
 
                         </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                60 min
+                            </strong>
+
+                            <span>
+                                estimado
+                            </span>
+
+                        </div>
+
 
                     </div>
 
 
-                    <div class="workout">
+                    <ul class="exercise-list">
 
-                        <div class="workout-icon">
-                            ⚡
-                        </div>
+                        <li>
+                            Agachamento
+                            <span>3 × 8–12</span>
+                        </li>
 
-                        <h3>
-                            Condicionamento
-                        </h3>
+                        <li>
+                            Supino reto
+                            <span>3 × 8–12</span>
+                        </li>
 
-                        <p>
-                            Exercícios para desenvolver resistência
-                            e melhorar o condicionamento físico.
-                        </p>
+                        <li>
+                            Remada
+                            <span>3 × 8–12</span>
+                        </li>
 
-                        <div class="workout-info">
+                        <li>
+                            Desenvolvimento
+                            <span>3 × 8–12</span>
+                        </li>
 
-                            <span class="tag">
-                                Todos os níveis
-                            </span>
+                        <li>
+                            Rosca direta
+                            <span>2 × 10–12</span>
+                        </li>
 
-                            <span class="tag">
-                                Performance
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="workout">
-
-                        <div class="workout-icon">
-                            🏠
-                        </div>
-
-                        <h3>
-                            Treino em casa
-                        </h3>
-
-                        <p>
-                            Opções de treinamento utilizando
-                            pouco ou nenhum equipamento.
-                        </p>
-
-                        <div class="workout-info">
-
-                            <span class="tag">
-                                Iniciante
-                            </span>
-
-                            <span class="tag">
-                                Casa
-                            </span>
-
-                        </div>
-
-                    </div>
+                    </ul>
 
 
-                    <div class="workout">
+                </article>
 
-                        <div class="workout-icon">
+
+                <!-- TREINO 2 -->
+
+                <article
+                    class="training-card"
+                    data-category="hipertrofia"
+                >
+
+
+                    <div class="training-top">
+
+                        <div class="training-icon">
                             🏋️
                         </div>
 
-                        <h3>
-                            Academia
-                        </h3>
-
-                        <p>
-                            Treinos estruturados para utilização
-                            de equipamentos de academia.
-                        </p>
-
-                        <div class="workout-info">
-
-                            <span class="tag">
-                                Todos os níveis
-                            </span>
-
-                            <span class="tag">
-                                Academia
-                            </span>
-
-                        </div>
+                        <span class="level">
+                            INTERMEDIÁRIO
+                        </span>
 
                     </div>
 
 
-                </div>
+                    <h2>
+                        Hipertrofia — Divisão superior/inferior
+                    </h2>
 
 
-                <div class="notice">
+                    <p class="training-description">
 
-                    <strong>Importante:</strong>
+                        Estrutura dividida para quem já possui
+                        experiência e deseja organizar melhor
+                        o volume semanal.
 
-                    Os exemplos de treinamento apresentados
-                    pelo BaseFit Studio são educativos e não
-                    substituem uma avaliação individualizada
-                    realizada por um profissional de Educação Física.
+                    </p>
 
-                </div>
+
+                    <div class="training-info">
+
+
+                        <div class="info">
+
+                            <strong>
+                                4x
+                            </strong>
+
+                            <span>
+                                por semana
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                5–7
+                            </strong>
+
+                            <span>
+                                exercícios
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                60–75 min
+                            </strong>
+
+                            <span>
+                                estimado
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <ul class="exercise-list">
+
+                        <li>
+                            Agachamento
+                            <span>3 × 6–10</span>
+                        </li>
+
+                        <li>
+                            Leg press
+                            <span>3 × 8–12</span>
+                        </li>
+
+                        <li>
+                            Supino
+                            <span>3 × 6–10</span>
+                        </li>
+
+                        <li>
+                            Remada
+                            <span>3 × 8–12</span>
+                        </li>
+
+                        <li>
+                            Elevação lateral
+                            <span>3 × 10–15</span>
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
+
+                <!-- TREINO 3 -->
+
+                <article
+                    class="training-card"
+                    data-category="emagrecimento"
+                >
+
+
+                    <div class="training-top">
+
+                        <div class="training-icon">
+                            🔥
+                        </div>
+
+                        <span class="level">
+                            INICIANTE
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Emagrecimento — Treino geral
+                    </h2>
+
+
+                    <p class="training-description">
+
+                        Sessão combinando exercícios de força
+                        e períodos de atividade cardiovascular.
+
+                    </p>
+
+
+                    <div class="training-info">
+
+
+                        <div class="info">
+
+                            <strong>
+                                3x
+                            </strong>
+
+                            <span>
+                                por semana
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                45–60 min
+                            </strong>
+
+                            <span>
+                                duração
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                Moderado
+                            </strong>
+
+                            <span>
+                                esforço
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <ul class="exercise-list">
+
+                        <li>
+                            Agachamento
+                            <span>3 × 10</span>
+                        </li>
+
+                        <li>
+                            Flexão
+                            <span>3 × 8–12</span>
+                        </li>
+
+                        <li>
+                            Remada
+                            <span>3 × 10</span>
+                        </li>
+
+                        <li>
+                            Afundo
+                            <span>3 × 10</span>
+                        </li>
+
+                        <li>
+                            Caminhada
+                            <span>15–20 min</span>
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
+
+                <!-- TREINO 4 -->
+
+                <article
+                    class="training-card"
+                    data-category="forca"
+                >
+
+
+                    <div class="training-top">
+
+                        <div class="training-icon">
+                            🏆
+                        </div>
+
+                        <span class="level">
+                            INTERMEDIÁRIO
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Força — Base
+                    </h2>
+
+
+                    <p class="training-description">
+
+                        Estrutura focada em exercícios
+                        multiarticulares e progressão gradual
+                        de carga.
+
+                    </p>
+
+
+                    <div class="training-info">
+
+
+                        <div class="info">
+
+                            <strong>
+                                3x
+                            </strong>
+
+                            <span>
+                                por semana
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                4–6
+                            </strong>
+
+                            <span>
+                                exercícios
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                60–75 min
+                            </strong>
+
+                            <span>
+                                estimado
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <ul class="exercise-list">
+
+                        <li>
+                            Agachamento
+                            <span>3 × 5</span>
+                        </li>
+
+                        <li>
+                            Supino
+                            <span>3 × 5</span>
+                        </li>
+
+                        <li>
+                            Levantamento terra
+                            <span>3 × 5</span>
+                        </li>
+
+                        <li>
+                            Remada
+                            <span>3 × 6–8</span>
+                        </li>
+
+                        <li>
+                            Desenvolvimento
+                            <span>3 × 6–8</span>
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
+
+                <!-- TREINO 5 -->
+
+                <article
+                    class="training-card"
+                    data-category="condicionamento"
+                >
+
+
+                    <div class="training-top">
+
+                        <div class="training-icon">
+                            ⚡
+                        </div>
+
+                        <span class="level">
+                            INICIANTE
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Condicionamento — Base
+                    </h2>
+
+
+                    <p class="training-description">
+
+                        Uma sessão para desenvolver resistência
+                        geral e melhorar a capacidade de realizar
+                        atividades por mais tempo.
+
+                    </p>
+
+
+                    <div class="training-info">
+
+
+                        <div class="info">
+
+                            <strong>
+                                3x
+                            </strong>
+
+                            <span>
+                                por semana
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                30–45 min
+                            </strong>
+
+                            <span>
+                                duração
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                Moderado
+                            </strong>
+
+                            <span>
+                                intensidade
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <ul class="exercise-list">
+
+                        <li>
+                            Caminhada rápida
+                            <span>10 min</span>
+                        </li>
+
+                        <li>
+                            Agachamento
+                            <span>3 × 12</span>
+                        </li>
+
+                        <li>
+                            Flexão
+                            <span>3 × 8–12</span>
+                        </li>
+
+                        <li>
+                            Remada
+                            <span>3 × 12</span>
+                        </li>
+
+                        <li>
+                            Bicicleta
+                            <span>10–15 min</span>
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
+
+                <!-- TREINO 6 -->
+
+                <article
+                    class="training-card"
+                    data-category="forca"
+                >
+
+
+                    <div class="training-top">
+
+                        <div class="training-icon">
+                            🔥
+                        </div>
+
+                        <span class="level">
+                            AVANÇADO
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Força — Progressão
+                    </h2>
+
+
+                    <p class="training-description">
+
+                        Estrutura para praticantes experientes,
+                        com maior atenção à progressão e
+                        recuperação entre sessões.
+
+                    </p>
+
+
+                    <div class="training-info">
+
+
+                        <div class="info">
+
+                            <strong>
+                                4x
+                            </strong>
+
+                            <span>
+                                por semana
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                4–6
+                            </strong>
+
+                            <span>
+                                exercícios
+                            </span>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>
+                                70–90 min
+                            </strong>
+
+                            <span>
+                                estimado
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <ul class="exercise-list">
+
+                        <li>
+                            Agachamento
+                            <span>4 × 4–6</span>
+                        </li>
+
+                        <li>
+                            Supino
+                            <span>4 × 4–6</span>
+                        </li>
+
+                        <li>
+                            Terra
+                            <span>3 × 4–6</span>
+                        </li>
+
+                        <li>
+                            Remada
+                            <span>3 × 6–8</span>
+                        </li>
+
+                        <li>
+                            Desenvolvimento
+                            <span>3 × 6–8</span>
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
 
             </div>
 
+
+            <!-- =========================
+                 AVISO
+            ========================= -->
+
+            <div class="notice">
+
+                <strong>Importante:</strong>
+
+                os exemplos apresentados são modelos
+                educacionais e não substituem uma avaliação
+                individual. Volume, intensidade, exercícios,
+                frequência e progressão devem considerar
+                experiência, objetivo, limitações e contexto
+                de cada pessoa. Para orientação personalizada,
+                procure um profissional de Educação Física.
+
+            </div>
+
+
         </section>
+
+
+        <!-- =========================
+             CTA
+        ========================= -->
+
+        <section class="cta">
+
+
+            <h2>
+
+                Agora conheça os
+                <span>exercícios.</span>
+
+            </h2>
+
+
+            <p>
+
+                Depois de escolher um treino, explore a
+                biblioteca do BaseFit Studio para conhecer
+                os exercícios e os principais músculos
+                envolvidos em cada movimento.
+
+            </p>
+
+
+            <div class="cta-buttons">
+
+
+                <a
+                    href="exercicios.html"
+                    class="btn btn-primary"
+                >
+
+                    Explorar exercícios
+
+                </a>
+
+
+                <a
+                    href="calculadoras.html"
+                    class="btn btn-secondary"
+                >
+
+                    Abrir calculadoras
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
 
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
 
         <p>
-            © 2026 <strong>BaseFit Studio</strong>
+
+            © 2026
+            <strong>BaseFit Studio</strong>
+
             — Treine. Acompanhe. Evolua.
+
         </p>
 
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT DOS FILTROS
+    ========================= -->
+
+    <script>
+
+        const filters =
+            document.querySelectorAll(".filter");
+
+        const cards =
+            document.querySelectorAll(".training-card");
+
+
+        filters.forEach(function(filter) {
+
+            filter.addEventListener("click", function() {
+
+
+                /* Remove o estado ativo */
+
+                filters.forEach(function(button) {
+
+                    button.classList.remove("active");
+
+                });
+
+
+                /* Ativa o botão escolhido */
+
+                filter.classList.add("active");
+
+
+                /* Descobre a categoria */
+
+                const category =
+                    filter.getAttribute("data-filter");
+
+
+                /* Filtra os treinos */
+
+                cards.forEach(function(card) {
+
+
+                    const cardCategory =
+                        card.getAttribute("data-category");
+
+
+                    if (
+                        category === "todos"
+                        ||
+                        cardCategory === category
+                    ) {
+
+                        card.classList.remove("hidden");
+
+                    } else {
+
+                        card.classList.add("hidden");
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+
 
 </body>
 
