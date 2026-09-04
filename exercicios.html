@@ -120,6 +120,9 @@
             cursor: pointer;
 
             transition: 0.3s;
+
+            font-family: inherit;
+            font-size: 14px;
         }
 
         .filter:hover,
@@ -323,43 +326,73 @@
         <section class="container">
 
 
+            <!-- FILTROS -->
+
             <div class="filters">
 
-                <button class="filter active">
+                <button
+                    class="filter active"
+                    data-filter="todos"
+                >
                     Todos
                 </button>
 
-                <button class="filter">
+                <button
+                    class="filter"
+                    data-filter="peito"
+                >
                     Peito
                 </button>
 
-                <button class="filter">
+                <button
+                    class="filter"
+                    data-filter="costas"
+                >
                     Costas
                 </button>
 
-                <button class="filter">
+                <button
+                    class="filter"
+                    data-filter="pernas"
+                >
                     Pernas
                 </button>
 
-                <button class="filter">
+                <button
+                    class="filter"
+                    data-filter="ombros"
+                >
                     Ombros
                 </button>
 
-                <button class="filter">
+                <button
+                    class="filter"
+                    data-filter="bracos"
+                >
                     Braços
                 </button>
 
-                <button class="filter">
+                <button
+                    class="filter"
+                    data-filter="abdomen"
+                >
                     Abdômen
                 </button>
 
             </div>
 
 
+            <!-- EXERCÍCIOS -->
+
             <div class="exercise-grid">
 
 
-                <div class="exercise">
+                <!-- PEITO -->
+
+                <div
+                    class="exercise"
+                    data-category="peito"
+                >
 
                     <div class="exercise-icon">
                         🏋️
@@ -381,7 +414,12 @@
                 </div>
 
 
-                <div class="exercise">
+                <!-- COSTAS -->
+
+                <div
+                    class="exercise"
+                    data-category="costas"
+                >
 
                     <div class="exercise-icon">
                         💪
@@ -403,7 +441,12 @@
                 </div>
 
 
-                <div class="exercise">
+                <!-- PERNAS -->
+
+                <div
+                    class="exercise"
+                    data-category="pernas"
+                >
 
                     <div class="exercise-icon">
                         🦵
@@ -425,7 +468,12 @@
                 </div>
 
 
-                <div class="exercise">
+                <!-- OMBROS -->
+
+                <div
+                    class="exercise"
+                    data-category="ombros"
+                >
 
                     <div class="exercise-icon">
                         🏋️
@@ -447,7 +495,12 @@
                 </div>
 
 
-                <div class="exercise">
+                <!-- BRAÇOS -->
+
+                <div
+                    class="exercise"
+                    data-category="bracos"
+                >
 
                     <div class="exercise-icon">
                         💪
@@ -469,7 +522,12 @@
                 </div>
 
 
-                <div class="exercise">
+                <!-- ABDÔMEN -->
+
+                <div
+                    class="exercise"
+                    data-category="abdomen"
+                >
 
                     <div class="exercise-icon">
                         🔥
@@ -521,6 +579,90 @@
         </p>
 
     </footer>
+
+
+    <!-- JAVASCRIPT DOS FILTROS -->
+
+    <script>
+
+        const filtros =
+            document.querySelectorAll(".filter");
+
+        const exercicios =
+            document.querySelectorAll(".exercise");
+
+
+        filtros.forEach(function(filtro) {
+
+            filtro.addEventListener("click", function() {
+
+
+                // Descobre qual filtro foi selecionado
+
+                const categoriaSelecionada =
+                    filtro.dataset.filter;
+
+
+                // Remove o destaque dos outros botões
+
+                filtros.forEach(function(botao) {
+
+                    botao.classList.remove("active");
+
+                });
+
+
+                // Destaca o botão selecionado
+
+                filtro.classList.add("active");
+
+
+                // Percorre todos os exercícios
+
+                exercicios.forEach(function(exercicio) {
+
+                    const categoriaExercicio =
+                        exercicio.dataset.category;
+
+
+                    // Se for "Todos", mostra tudo
+
+                    if (
+                        categoriaSelecionada === "todos"
+                    ) {
+
+                        exercicio.style.display = "block";
+
+                    }
+
+
+                    // Se a categoria for igual,
+                    // mostra o exercício
+
+                    else if (
+                        categoriaSelecionada === categoriaExercicio
+                    ) {
+
+                        exercicio.style.display = "block";
+
+                    }
+
+
+                    // Caso contrário, esconde
+
+                    else {
+
+                        exercicio.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
 
 
 </body>
