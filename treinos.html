@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Treinos | BaseFit Studio</title>
+
+    <meta
+        name="description"
+        content="Treinos organizados por objetivo e nível no BaseFit Studio."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080c10;
+            color: #ffffff;
+        }
+
+        header {
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1b232c;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #45e17a;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #aeb8c4;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #45e17a;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #45e17a;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #929daa;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .section {
+            padding: 30px 0 90px;
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #87929e;
+        }
+
+        .workouts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .workout {
+            background: #141b22;
+            border: 1px solid #26313b;
+            border-radius: 16px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .workout:hover {
+            transform: translateY(-5px);
+            border-color: #45e17a;
+        }
+
+        .workout-icon {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .workout h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .workout p {
+            color: #929daa;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .workout-info {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #0d1319;
+            border: 1px solid #26313b;
+            color: #aab5c0;
+            font-size: 12px;
+        }
+
+        .notice {
+            margin-top: 50px;
+            padding: 24px;
+            border-radius: 14px;
+            background: #10171d;
+            border: 1px solid #27333d;
+            color: #8e9aa7;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 35px 7%;
+            border-top: 1px solid #1b232c;
+            text-align: center;
+            color: #687481;
+        }
+
+        footer strong {
+            color: #45e17a;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .workouts {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            BASE<span>FIT</span> STUDIO
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="treinos.html">
+                Treinos
+            </a>
+
+            <a href="exercicios.html">
+                Exercícios
+            </a>
+
+            <a href="calculadoras.html">
+                Calculadoras
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container">
+
+                <h1>
+                    Encontre seu <span>treino.</span>
+                </h1>
+
+                <p>
+                    Explore diferentes tipos de treinamento
+                    organizados por objetivo e nível de experiência.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        Escolha seu objetivo
+                    </h2>
+
+                    <p>
+                        Esta seção será expandida conforme
+                        construirmos nossa biblioteca de treinos.
+                    </p>
+
+                </div>
+
+
+                <div class="workouts">
+
+
+                    <div class="workout">
+
+                        <div class="workout-icon">
+                            🔥
+                        </div>
+
+                        <h3>
+                            Emagrecimento
+                        </h3>
+
+                        <p>
+                            Treinos voltados para aumentar o
+                            gasto energético e melhorar o condicionamento.
+                        </p>
+
+                        <div class="workout-info">
+
+                            <span class="tag">
+                                Iniciante
+                            </span>
+
+                            <span class="tag">
+                                Cardio
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="workout">
+
+                        <div class="workout-icon">
+                            💪
+                        </div>
+
+                        <h3>
+                            Hipertrofia
+                        </h3>
+
+                        <p>
+                            Estrutura de treinamento voltada
+                            para o desenvolvimento muscular.
+                        </p>
+
+                        <div class="workout-info">
+
+                            <span class="tag">
+                                Intermediário
+                            </span>
+
+                            <span class="tag">
+                                Musculação
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="workout">
+
+                        <div class="workout-icon">
+                            🏆
+                        </div>
+
+                        <h3>
+                            Força
+                        </h3>
+
+                        <p>
+                            Treinamentos focados no desenvolvimento
+                            da capacidade de produzir força.
+                        </p>
+
+                        <div class="workout-info">
+
+                            <span class="tag">
+                                Intermediário
+                            </span>
+
+                            <span class="tag">
+                                Força
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="workout">
+
+                        <div class="workout-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Condicionamento
+                        </h3>
+
+                        <p>
+                            Exercícios para desenvolver resistência
+                            e melhorar o condicionamento físico.
+                        </p>
+
+                        <div class="workout-info">
+
+                            <span class="tag">
+                                Todos os níveis
+                            </span>
+
+                            <span class="tag">
+                                Performance
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="workout">
+
+                        <div class="workout-icon">
+                            🏠
+                        </div>
+
+                        <h3>
+                            Treino em casa
+                        </h3>
+
+                        <p>
+                            Opções de treinamento utilizando
+                            pouco ou nenhum equipamento.
+                        </p>
+
+                        <div class="workout-info">
+
+                            <span class="tag">
+                                Iniciante
+                            </span>
+
+                            <span class="tag">
+                                Casa
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="workout">
+
+                        <div class="workout-icon">
+                            🏋️
+                        </div>
+
+                        <h3>
+                            Academia
+                        </h3>
+
+                        <p>
+                            Treinos estruturados para utilização
+                            de equipamentos de academia.
+                        </p>
+
+                        <div class="workout-info">
+
+                            <span class="tag">
+                                Todos os níveis
+                            </span>
+
+                            <span class="tag">
+                                Academia
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="notice">
+
+                    <strong>Importante:</strong>
+
+                    Os exemplos de treinamento apresentados
+                    pelo BaseFit Studio são educativos e não
+                    substituem uma avaliação individualizada
+                    realizada por um profissional de Educação Física.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 <strong>BaseFit Studio</strong>
+            — Treine. Acompanhe. Evolua.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
