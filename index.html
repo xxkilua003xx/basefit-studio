@@ -19,44 +19,25 @@
 
     <style>
 
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
             font-family: Arial, Helvetica, sans-serif;
-
             background: #080c10;
-
             color: #ffffff;
-
-            min-height: 100vh;
-        }
-
-
-        /* =========================
-           ACESSIBILIDADE
-        ========================= */
-
-        a,
-        button {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid #45e17a;
-
-            outline-offset: 4px;
+            overflow-x: hidden;
         }
 
 
@@ -70,18 +51,15 @@
             padding: 22px 7%;
 
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
 
             border-bottom: 1px solid #1b232c;
 
             position: sticky;
-
             top: 0;
 
-            background: rgba(8, 12, 16, 0.95);
+            background: rgba(8, 12, 16, 0.97);
 
             backdrop-filter: blur(10px);
 
@@ -118,8 +96,6 @@
             display: flex;
 
             gap: 30px;
-
-            align-items: center;
         }
 
 
@@ -131,27 +107,6 @@
             font-size: 15px;
 
             transition: 0.3s;
-
-            position: relative;
-        }
-
-
-        nav a::after {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-
-            bottom: -7px;
-
-            width: 0;
-
-            height: 2px;
-
-            background: #45e17a;
-
-            transition: 0.3s;
         }
 
 
@@ -160,120 +115,31 @@
         }
 
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
-
-        /* =========================
-           MENU MOBILE
-        ========================= */
-
-        .menu-button {
-            display: none;
-
-            width: 44px;
-
-            height: 44px;
-
-            border: 1px solid #303b47;
-
-            border-radius: 8px;
-
-            background: #10161c;
-
-            color: #ffffff;
-
-            cursor: pointer;
-
-            font-size: 22px;
-
-            align-items: center;
-
-            justify-content: center;
-
-            transition: 0.3s;
-        }
-
-
-        .menu-button:hover {
-            border-color: #45e17a;
-
-            color: #45e17a;
-        }
-
-
-        .mobile-menu {
-            display: none;
-
-            position: absolute;
-
-            top: 100%;
-
-            left: 0;
-
-            width: 100%;
-
-            padding: 15px 7% 20px;
-
-            background: #0b1015;
-
-            border-bottom: 1px solid #26313b;
-
-            box-shadow:
-                0 20px 40px
-                rgba(0, 0, 0, 0.25);
-        }
-
-
-        .mobile-menu.open {
-            display: block;
-        }
-
-
-        .mobile-menu a {
-            display: block;
-
-            padding: 13px 0;
-
-            color: #aeb8c4;
-
-            text-decoration: none;
-
-            border-bottom: 1px solid #1d2730;
-
-            transition: 0.3s;
-        }
-
-
-        .mobile-menu a:last-child {
-            border-bottom: none;
-        }
-
-
-        .mobile-menu a:hover {
-            color: #45e17a;
-
-            padding-left: 5px;
-        }
-
-
         /* =========================
            HERO
         ========================= */
 
         .hero {
-            min-height: 720px;
+            min-height: 700px;
 
-            padding: 100px 7%;
+            padding: 90px 7%;
 
             display: grid;
 
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
 
             gap: 60px;
 
             align-items: center;
+
+            max-width: 1500px;
+
+            margin: 0 auto;
+        }
+
+
+        .hero-content {
+            min-width: 0;
         }
 
 
@@ -323,6 +189,10 @@
         }
 
 
+        /* =========================
+           BOTÕES
+        ========================= */
+
         .buttons {
             display: flex;
 
@@ -359,7 +229,7 @@
 
             box-shadow:
                 0 10px 30px
-                rgba(69, 225, 122, 0.2);
+                rgba(69, 225, 122, 0.20);
         }
 
 
@@ -382,22 +252,24 @@
         ========================= */
 
         .hero-visual {
-            position: relative;
-
-            min-height: 430px;
+            min-height: 460px;
 
             display: flex;
 
             justify-content: center;
 
             align-items: center;
+
+            position: relative;
+
+            padding: 20px;
         }
 
 
         .visual-card {
-            width: 320px;
+            width: min(360px, 100%);
 
-            height: 400px;
+            min-height: 430px;
 
             border-radius: 24px;
 
@@ -420,26 +292,31 @@
 
             text-align: center;
 
-            padding: 35px 30px;
-
-            box-shadow:
-                0 30px 80px
-                rgba(0, 0, 0, 0.45);
+            padding: 45px 35px;
 
             position: relative;
 
             overflow: hidden;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0, 0, 0, 0.45);
         }
 
+
+        /*
+           Brilho decorativo interno.
+           Ele permanece dentro do card.
+        */
 
         .visual-card::before {
             content: "";
 
             position: absolute;
 
-            width: 190px;
+            width: 220px;
 
-            height: 190px;
+            height: 220px;
 
             border-radius: 50%;
 
@@ -447,9 +324,9 @@
 
             opacity: 0.06;
 
-            top: -80px;
+            top: -100px;
 
-            right: -80px;
+            right: -100px;
         }
 
 
@@ -458,26 +335,30 @@
 
             position: absolute;
 
-            width: 140px;
+            width: 180px;
 
-            height: 140px;
+            height: 180px;
 
             border-radius: 50%;
 
-            border: 1px solid #45e17a;
+            background: #45e17a;
 
-            opacity: 0.05;
+            opacity: 0.035;
 
-            bottom: -70px;
+            bottom: -90px;
 
-            left: -70px;
+            left: -90px;
         }
 
 
-        .visual-icon {
-            width: 105px;
+        /* =========================
+           ÍCONE
+        ========================= */
 
-            height: 105px;
+        .visual-icon {
+            width: 110px;
+
+            height: 110px;
 
             border-radius: 50%;
 
@@ -487,50 +368,54 @@
 
             align-items: center;
 
-            font-size: 50px;
+            font-size: 52px;
 
             background: #18251d;
 
             border: 1px solid #2e573b;
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
 
             position: relative;
 
-            z-index: 1;
+            z-index: 2;
         }
 
 
         .visual-card h2 {
-            font-size: 28px;
+            font-size: 32px;
 
-            margin-bottom: 10px;
+            margin-bottom: 14px;
 
             position: relative;
 
-            z-index: 1;
+            z-index: 2;
         }
 
 
         .visual-card p {
             color: #84909c;
 
-            font-size: 14px;
+            font-size: 15px;
 
-            max-width: 220px;
+            max-width: 255px;
 
-            line-height: 1.6;
+            line-height: 1.7;
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
 
             position: relative;
 
-            z-index: 1;
+            z-index: 2;
         }
 
 
+        /* =========================
+           STATUS
+        ========================= */
+
         .visual-status {
-            padding: 10px 17px;
+            padding: 11px 20px;
 
             border-radius: 30px;
 
@@ -540,63 +425,13 @@
 
             color: #45e17a;
 
-            font-size: 11px;
+            font-size: 12px;
 
             font-weight: bold;
 
-            letter-spacing: 0.5px;
-
             position: relative;
 
-            z-index: 1;
-        }
-
-
-        .floating-card {
-            position: absolute;
-
-            padding: 15px 18px;
-
-            border-radius: 12px;
-
-            background: #151d25;
-
-            border: 1px solid #293540;
-
-            box-shadow:
-                0 20px 40px
-                rgba(0, 0, 0, 0.3);
-
-            font-size: 13px;
-
-            color: #b9c3ce;
-
             z-index: 2;
-        }
-
-
-        .floating-card strong {
-            display: block;
-
-            color: #45e17a;
-
-            font-size: 18px;
-
-            margin-bottom: 4px;
-        }
-
-
-        .floating-one {
-            top: 30px;
-
-            right: 0;
-        }
-
-
-        .floating-two {
-            bottom: 30px;
-
-            left: 0;
         }
 
 
@@ -642,9 +477,14 @@
         ========================= */
 
         .cards {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 22px;
         }
@@ -666,8 +506,6 @@
             color: #ffffff;
 
             display: block;
-
-            min-height: 250px;
         }
 
 
@@ -721,9 +559,14 @@
         ========================= */
 
         .objectives {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
             display: grid;
 
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns:
+                repeat(4, 1fr);
 
             gap: 16px;
         }
@@ -741,12 +584,6 @@
             text-align: center;
 
             transition: 0.3s;
-
-            text-decoration: none;
-
-            color: #ffffff;
-
-            display: block;
         }
 
 
@@ -754,10 +591,6 @@
             border-color: #45e17a;
 
             transform: translateY(-4px);
-
-            box-shadow:
-                0 12px 30px
-                rgba(0, 0, 0, 0.2);
         }
 
 
@@ -786,10 +619,12 @@
         }
 
 
-        .objective-link {
+        .objective a {
             display: inline-block;
 
             color: #45e17a;
+
+            text-decoration: none;
 
             font-size: 13px;
 
@@ -797,74 +632,8 @@
         }
 
 
-        /* =========================
-           SOBRE
-        ========================= */
-
-        .about {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 70px;
-
-            align-items: center;
-        }
-
-
-        .about h2 {
-            font-size: 42px;
-
-            margin-bottom: 20px;
-        }
-
-
-        .about h2 span {
-            color: #45e17a;
-        }
-
-
-        .about p {
-            color: #929daa;
-
-            line-height: 1.8;
-
-            margin-bottom: 20px;
-        }
-
-
-        .about-box {
-            padding: 35px;
-
-            border-radius: 18px;
-
-            background: #121920;
-
-            border: 1px solid #27323d;
-        }
-
-
-        .about-box h3 {
-            margin-bottom: 20px;
-        }
-
-
-        .about-list {
-            list-style: none;
-        }
-
-
-        .about-list li {
-            padding: 12px 0;
-
-            border-bottom: 1px solid #222c35;
-
-            color: #aab4bf;
-        }
-
-
-        .about-list li:last-child {
-            border-bottom: none;
+        .objective a:hover {
+            text-decoration: underline;
         }
 
 
@@ -873,9 +642,14 @@
         ========================= */
 
         .steps {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 22px;
         }
@@ -932,6 +706,84 @@
 
 
         /* =========================
+           SOBRE
+        ========================= */
+
+        .about {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .about h2 {
+            font-size: 42px;
+
+            margin-bottom: 20px;
+
+            line-height: 1.1;
+        }
+
+
+        .about h2 span {
+            color: #45e17a;
+        }
+
+
+        .about p {
+            color: #929daa;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-box {
+            padding: 35px;
+
+            border-radius: 18px;
+
+            background: #121920;
+
+            border: 1px solid #27323d;
+        }
+
+
+        .about-box h3 {
+            margin-bottom: 20px;
+        }
+
+
+        .about-list {
+            list-style: none;
+        }
+
+
+        .about-list li {
+            padding: 12px 0;
+
+            border-bottom: 1px solid #222c35;
+
+            color: #aab4bf;
+        }
+
+
+        .about-list li:last-child {
+            border-bottom: none;
+        }
+
+
+        /* =========================
            CTA
         ========================= */
 
@@ -972,6 +824,11 @@
         }
 
 
+        .cta .buttons {
+            justify-content: center;
+        }
+
+
         /* =========================
            FOOTER
         ========================= */
@@ -995,7 +852,7 @@
 
 
         /* =========================
-           RESPONSIVO
+           TABLET
         ========================= */
 
         @media (max-width: 1000px) {
@@ -1003,9 +860,11 @@
             .hero {
                 grid-template-columns: 1fr;
 
-                padding-top: 80px;
-
                 text-align: center;
+
+                padding-top: 70px;
+
+                padding-bottom: 70px;
             }
 
 
@@ -1022,17 +881,18 @@
 
 
             .hero-visual {
-                min-height: 440px;
+                min-height: 430px;
             }
 
 
             .cards {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
 
 
             .objectives {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
 
@@ -1050,6 +910,10 @@
         }
 
 
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 700px) {
 
             header {
@@ -1062,17 +926,10 @@
             }
 
 
-            .menu-button {
-                display: flex;
-            }
-
-
             .hero {
                 padding-left: 5%;
 
                 padding-right: 5%;
-
-                padding-top: 65px;
             }
 
 
@@ -1080,46 +937,6 @@
                 padding-left: 5%;
 
                 padding-right: 5%;
-            }
-
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-
-            .about h2 {
-                font-size: 36px;
-            }
-
-
-            .section-title h2 {
-                font-size: 34px;
-            }
-
-
-            .cta {
-                padding-left: 5%;
-
-                padding-right: 5%;
-            }
-
-        }
-
-
-        @media (max-width: 500px) {
-
-            .logo {
-                font-size: 19px;
-            }
-
-
-            .hero {
-                padding-top: 55px;
-
-                min-height: auto;
-
-                padding-bottom: 70px;
             }
 
 
@@ -1133,38 +950,26 @@
             }
 
 
-            .btn {
-                width: 100%;
-
-                text-align: center;
-            }
-
-
-            .hero-visual {
-                min-height: 390px;
-            }
-
-
             .visual-card {
-                width: 270px;
+                width: 300px;
 
-                height: 350px;
+                min-height: 390px;
 
-                padding: 30px 20px;
+                padding: 35px 25px;
             }
 
 
             .visual-icon {
-                width: 85px;
+                width: 90px;
 
-                height: 85px;
+                height: 90px;
 
-                font-size: 40px;
+                font-size: 42px;
             }
 
 
-            .floating-card {
-                display: none;
+            .visual-card h2 {
+                font-size: 28px;
             }
 
 
@@ -1173,8 +978,20 @@
             }
 
 
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+
             .about h2 {
-                font-size: 32px;
+                font-size: 34px;
+            }
+
+
+            .cta {
+                padding-left: 5%;
+
+                padding-right: 5%;
             }
 
 
@@ -1182,31 +999,34 @@
                 font-size: 34px;
             }
 
-
-            footer {
-                padding-left: 5%;
-
-                padding-right: 5%;
-
-                font-size: 13px;
-            }
-
         }
 
 
-        @media (prefers-reduced-motion: reduce) {
+        /* =========================
+           MOBILE PEQUENO
+        ========================= */
 
-            html {
-                scroll-behavior: auto;
+        @media (max-width: 400px) {
+
+            .logo {
+                font-size: 19px;
             }
 
 
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
+            .hero h1 {
+                font-size: 46px;
+            }
 
-                animation: none !important;
+
+            .visual-card {
+                width: 100%;
+            }
+
+
+            .btn {
+                width: 100%;
+
+                text-align: center;
             }
 
         }
@@ -1220,7 +1040,7 @@
 
 
     <!-- =========================
-         CABEÇALHO
+         HEADER
     ========================= -->
 
     <header>
@@ -1228,15 +1048,12 @@
         <a
             href="index.html"
             class="logo"
-            aria-label="BaseFit Studio - Página inicial"
         >
-
             BASE<span>FIT</span> STUDIO
-
         </a>
 
 
-        <nav aria-label="Navegação principal">
+        <nav>
 
             <a href="#inicio">
                 Início
@@ -1256,44 +1073,6 @@
 
         </nav>
 
-
-        <button
-            class="menu-button"
-            id="menuButton"
-            type="button"
-            aria-label="Abrir menu"
-            aria-expanded="false"
-            aria-controls="mobileMenu"
-        >
-
-            ☰
-
-        </button>
-
-
-        <div
-            class="mobile-menu"
-            id="mobileMenu"
-        >
-
-            <a href="#inicio">
-                Início
-            </a>
-
-            <a href="#recursos">
-                Recursos
-            </a>
-
-            <a href="#objetivos">
-                Objetivos
-            </a>
-
-            <a href="#sobre">
-                Sobre
-            </a>
-
-        </div>
-
     </header>
 
 
@@ -1309,7 +1088,9 @@
             id="inicio"
         >
 
-            <div>
+
+            <div class="hero-content">
+
 
                 <div class="tag">
 
@@ -1362,33 +1143,22 @@
 
                 </div>
 
+
             </div>
 
 
             <!-- =========================
-                 VISUAL PRINCIPAL
+                 CARD PRINCIPAL
             ========================= -->
 
             <div class="hero-visual">
 
 
-                <div class="floating-card floating-one">
-
-                    <strong>
-                        + Evolução
-                    </strong>
-
-                    Consistência todos os dias
-
-                </div>
-
-
                 <div class="visual-card">
 
+
                     <div class="visual-icon">
-
                         🏋️
-
                     </div>
 
 
@@ -1412,21 +1182,12 @@
 
                     </div>
 
-                </div>
-
-
-                <div class="floating-card floating-two">
-
-                    <strong>
-                        FOCO
-                    </strong>
-
-                    Treino • Disciplina • Resultado
 
                 </div>
 
 
             </div>
+
 
         </section>
 
@@ -1440,6 +1201,7 @@
             id="recursos"
         >
 
+
             <div class="section-title">
 
                 <h2>
@@ -1448,8 +1210,9 @@
 
                 <p>
 
-                    Explore as principais ferramentas
-                    disponíveis dentro do BaseFit Studio.
+                    Encontre ferramentas e informações
+                    para organizar melhor sua jornada
+                    de treinamento.
 
                 </p>
 
@@ -1459,12 +1222,9 @@
             <div class="cards">
 
 
-                <!-- TREINOS -->
-
                 <a
                     href="treinos.html"
                     class="card"
-                    aria-label="Abrir página de treinos"
                 >
 
                     <div class="card-icon">
@@ -1491,12 +1251,9 @@
                 </a>
 
 
-                <!-- EXERCÍCIOS -->
-
                 <a
                     href="exercicios.html"
                     class="card"
-                    aria-label="Abrir biblioteca de exercícios"
                 >
 
                     <div class="card-icon">
@@ -1524,12 +1281,9 @@
                 </a>
 
 
-                <!-- CALCULADORAS -->
-
                 <a
                     href="calculadoras.html"
                     class="card"
-                    aria-label="Abrir calculadoras"
                 >
 
                     <div class="card-icon">
@@ -1559,6 +1313,7 @@
 
             </div>
 
+
         </section>
 
 
@@ -1570,6 +1325,7 @@
             class="section"
             id="objetivos"
         >
+
 
             <div class="section-title">
 
@@ -1590,13 +1346,7 @@
             <div class="objectives">
 
 
-                <!-- EMAGRECIMENTO -->
-
-                <a
-                    href="treinos.html"
-                    class="objective"
-                    aria-label="Ver treinos para emagrecimento"
-                >
+                <div class="objective">
 
                     <div class="objective-icon">
                         🔥
@@ -1613,22 +1363,14 @@
 
                     </p>
 
-                    <span class="objective-link">
-
+                    <a href="treinos.html">
                         Ver treinos →
+                    </a>
 
-                    </span>
-
-                </a>
+                </div>
 
 
-                <!-- HIPERTROFIA -->
-
-                <a
-                    href="treinos.html"
-                    class="objective"
-                    aria-label="Ver treinos para hipertrofia"
-                >
+                <div class="objective">
 
                     <div class="objective-icon">
                         💪
@@ -1645,22 +1387,14 @@
 
                     </p>
 
-                    <span class="objective-link">
-
+                    <a href="treinos.html">
                         Ver treinos →
+                    </a>
 
-                    </span>
-
-                </a>
+                </div>
 
 
-                <!-- FORÇA -->
-
-                <a
-                    href="treinos.html"
-                    class="objective"
-                    aria-label="Ver treinos para força"
-                >
+                <div class="objective">
 
                     <div class="objective-icon">
                         🏆
@@ -1677,22 +1411,14 @@
 
                     </p>
 
-                    <span class="objective-link">
-
+                    <a href="treinos.html">
                         Ver treinos →
+                    </a>
 
-                    </span>
-
-                </a>
+                </div>
 
 
-                <!-- CONDICIONAMENTO -->
-
-                <a
-                    href="treinos.html"
-                    class="objective"
-                    aria-label="Ver treinos para condicionamento"
-                >
+                <div class="objective">
 
                     <div class="objective-icon">
                         ⚡
@@ -1709,16 +1435,15 @@
 
                     </p>
 
-                    <span class="objective-link">
-
+                    <a href="treinos.html">
                         Ver treinos →
+                    </a>
 
-                    </span>
-
-                </a>
+                </div>
 
 
             </div>
+
 
         </section>
 
@@ -1728,6 +1453,7 @@
         ========================= -->
 
         <section class="section section-dark">
+
 
             <div class="section-title">
 
@@ -1814,6 +1540,7 @@
 
             </div>
 
+
         </section>
 
 
@@ -1825,6 +1552,7 @@
             class="section section-dark"
             id="sobre"
         >
+
 
             <div class="about">
 
@@ -1898,6 +1626,7 @@
 
             </div>
 
+
         </section>
 
 
@@ -1906,6 +1635,7 @@
         ========================= -->
 
         <section class="cta">
+
 
             <h2>
 
@@ -1947,6 +1677,7 @@
 
             </div>
 
+
         </section>
 
 
@@ -1954,7 +1685,7 @@
 
 
     <!-- =========================
-         RODAPÉ
+         FOOTER
     ========================= -->
 
     <footer>
@@ -1969,125 +1700,6 @@
         </p>
 
     </footer>
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
-
-    <script>
-
-        /* =========================
-           MENU MOBILE
-        ========================= */
-
-        const menuButton =
-            document.getElementById("menuButton");
-
-
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-
-        menuButton.addEventListener(
-            "click",
-            function () {
-
-                const aberto =
-                    mobileMenu.classList.toggle("open");
-
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    aberto
-                );
-
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    aberto
-                        ? "Fechar menu"
-                        : "Abrir menu"
-                );
-
-
-                menuButton.textContent =
-                    aberto
-                        ? "×"
-                        : "☰";
-
-            }
-        );
-
-
-        /* =========================
-           FECHAR MENU AO CLICAR
-        ========================= */
-
-        const linksMobile =
-            mobileMenu.querySelectorAll("a");
-
-
-        linksMobile.forEach(
-            function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        mobileMenu.classList.remove("open");
-
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                        menuButton.setAttribute(
-                            "aria-label",
-                            "Abrir menu"
-                        );
-
-                        menuButton.textContent =
-                            "☰";
-
-                    }
-                );
-
-            }
-        );
-
-
-        /* =========================
-           FECHAR MENU AO REDIMENSIONAR
-        ========================= */
-
-        window.addEventListener(
-            "resize",
-            function () {
-
-                if (window.innerWidth > 700) {
-
-                    mobileMenu.classList.remove("open");
-
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuButton.setAttribute(
-                        "aria-label",
-                        "Abrir menu"
-                    );
-
-                    menuButton.textContent =
-                        "☰";
-
-                }
-
-            }
-        );
-
-    </script>
 
 
 </body>
