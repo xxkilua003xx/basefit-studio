@@ -25,14 +25,38 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
             font-family: Arial, Helvetica, sans-serif;
+
             background: #080c10;
+
             color: #ffffff;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           ACESSIBILIDADE
+        ========================= */
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #45e17a;
+
+            outline-offset: 4px;
         }
 
 
@@ -42,15 +66,19 @@
 
         header {
             width: 100%;
+
             padding: 22px 7%;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             border-bottom: 1px solid #1b232c;
 
             position: sticky;
+
             top: 0;
 
             background: rgba(8, 12, 16, 0.95);
@@ -60,12 +88,11 @@
             z-index: 100;
         }
 
-        /* LOGO AGORA É CLICÁVEL */
 
         .logo {
-            text-decoration: none;
-
             color: #ffffff;
+
+            text-decoration: none;
 
             font-size: 23px;
 
@@ -73,21 +100,28 @@
 
             letter-spacing: 1px;
 
-            cursor: pointer;
+            white-space: nowrap;
         }
+
 
         .logo span {
             color: #45e17a;
         }
 
+
         .logo:hover {
             opacity: 0.9;
         }
 
+
         nav {
             display: flex;
+
             gap: 30px;
+
+            align-items: center;
         }
+
 
         nav a {
             color: #aeb8c4;
@@ -97,10 +131,130 @@
             font-size: 15px;
 
             transition: 0.3s;
+
+            position: relative;
         }
+
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: #45e17a;
+
+            transition: 0.3s;
+        }
+
 
         nav a:hover {
             color: #45e17a;
+        }
+
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           MENU MOBILE
+        ========================= */
+
+        .menu-button {
+            display: none;
+
+            width: 44px;
+
+            height: 44px;
+
+            border: 1px solid #303b47;
+
+            border-radius: 8px;
+
+            background: #10161c;
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            font-size: 22px;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.3s;
+        }
+
+
+        .menu-button:hover {
+            border-color: #45e17a;
+
+            color: #45e17a;
+        }
+
+
+        .mobile-menu {
+            display: none;
+
+            position: absolute;
+
+            top: 100%;
+
+            left: 0;
+
+            width: 100%;
+
+            padding: 15px 7% 20px;
+
+            background: #0b1015;
+
+            border-bottom: 1px solid #26313b;
+
+            box-shadow:
+                0 20px 40px
+                rgba(0, 0, 0, 0.25);
+        }
+
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+
+        .mobile-menu a {
+            display: block;
+
+            padding: 13px 0;
+
+            color: #aeb8c4;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #1d2730;
+
+            transition: 0.3s;
+        }
+
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+
+        .mobile-menu a:hover {
+            color: #45e17a;
+
+            padding-left: 5px;
         }
 
 
@@ -122,6 +276,7 @@
             align-items: center;
         }
 
+
         .tag {
             display: inline-block;
 
@@ -140,6 +295,7 @@
             margin-bottom: 25px;
         }
 
+
         .hero h1 {
             font-size: clamp(52px, 7vw, 88px);
 
@@ -148,9 +304,11 @@
             margin-bottom: 30px;
         }
 
+
         .hero h1 span {
             color: #45e17a;
         }
+
 
         .hero-text {
             max-width: 620px;
@@ -164,6 +322,7 @@
             margin-bottom: 35px;
         }
 
+
         .buttons {
             display: flex;
 
@@ -171,6 +330,7 @@
 
             flex-wrap: wrap;
         }
+
 
         .btn {
             display: inline-block;
@@ -186,11 +346,13 @@
             transition: 0.3s;
         }
 
+
         .btn-primary {
             background: #45e17a;
 
             color: #071009;
         }
+
 
         .btn-primary:hover {
             transform: translateY(-2px);
@@ -200,11 +362,13 @@
                 rgba(69, 225, 122, 0.2);
         }
 
+
         .btn-secondary {
             border: 1px solid #303b47;
 
             color: #ffffff;
         }
+
 
         .btn-secondary:hover {
             border-color: #45e17a;
@@ -218,6 +382,8 @@
         ========================= */
 
         .hero-visual {
+            position: relative;
+
             min-height: 430px;
 
             display: flex;
@@ -225,20 +391,13 @@
             justify-content: center;
 
             align-items: center;
-
-            position: relative;
         }
 
-        /*
-           O card agora fica totalmente centralizado.
-           Os elementos que estavam sobrepondo foram
-           retirados para deixar a composição limpa.
-        */
 
         .visual-card {
-            width: 330px;
+            width: 320px;
 
-            min-height: 410px;
+            height: 400px;
 
             border-radius: 24px;
 
@@ -261,7 +420,7 @@
 
             text-align: center;
 
-            padding: 40px 30px;
+            padding: 35px 30px;
 
             box-shadow:
                 0 30px 80px
@@ -272,18 +431,15 @@
             overflow: hidden;
         }
 
-        /*
-           Detalhe verde no fundo do card
-        */
 
         .visual-card::before {
             content: "";
 
             position: absolute;
 
-            width: 180px;
+            width: 190px;
 
-            height: 180px;
+            height: 190px;
 
             border-radius: 50%;
 
@@ -291,10 +447,32 @@
 
             opacity: 0.06;
 
-            top: -70px;
+            top: -80px;
 
-            right: -70px;
+            right: -80px;
         }
+
+
+        .visual-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 140px;
+
+            height: 140px;
+
+            border-radius: 50%;
+
+            border: 1px solid #45e17a;
+
+            opacity: 0.05;
+
+            bottom: -70px;
+
+            left: -70px;
+        }
+
 
         .visual-icon {
             width: 105px;
@@ -316,33 +494,43 @@
             border: 1px solid #2e573b;
 
             margin-bottom: 25px;
+
+            position: relative;
+
+            z-index: 1;
         }
+
 
         .visual-card h2 {
-            font-size: 30px;
+            font-size: 28px;
 
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+
+            position: relative;
+
+            z-index: 1;
         }
+
 
         .visual-card p {
             color: #84909c;
 
             font-size: 14px;
 
-            max-width: 240px;
+            max-width: 220px;
 
-            line-height: 1.7;
+            line-height: 1.6;
 
             margin-bottom: 25px;
+
+            position: relative;
+
+            z-index: 1;
         }
 
-        /*
-           Pequeno indicador dentro do card,
-           sem sobreposição.
-        */
 
         .visual-status {
-            padding: 10px 18px;
+            padding: 10px 17px;
 
             border-radius: 30px;
 
@@ -352,9 +540,63 @@
 
             color: #45e17a;
 
-            font-size: 12px;
+            font-size: 11px;
 
             font-weight: bold;
+
+            letter-spacing: 0.5px;
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .floating-card {
+            position: absolute;
+
+            padding: 15px 18px;
+
+            border-radius: 12px;
+
+            background: #151d25;
+
+            border: 1px solid #293540;
+
+            box-shadow:
+                0 20px 40px
+                rgba(0, 0, 0, 0.3);
+
+            font-size: 13px;
+
+            color: #b9c3ce;
+
+            z-index: 2;
+        }
+
+
+        .floating-card strong {
+            display: block;
+
+            color: #45e17a;
+
+            font-size: 18px;
+
+            margin-bottom: 4px;
+        }
+
+
+        .floating-one {
+            top: 30px;
+
+            right: 0;
+        }
+
+
+        .floating-two {
+            bottom: 30px;
+
+            left: 0;
         }
 
 
@@ -366,9 +608,11 @@
             padding: 100px 7%;
         }
 
+
         .section-dark {
             background: #0e141a;
         }
+
 
         .section-title {
             text-align: center;
@@ -378,11 +622,13 @@
             margin: 0 auto 50px;
         }
 
+
         .section-title h2 {
             font-size: 40px;
 
             margin-bottom: 15px;
         }
+
 
         .section-title p {
             color: #8995a2;
@@ -403,6 +649,7 @@
             gap: 22px;
         }
 
+
         .card {
             padding: 32px;
 
@@ -419,7 +666,10 @@
             color: #ffffff;
 
             display: block;
+
+            min-height: 250px;
         }
+
 
         .card:hover {
             transform: translateY(-7px);
@@ -431,17 +681,20 @@
                 rgba(0, 0, 0, 0.25);
         }
 
+
         .card-icon {
             font-size: 32px;
 
             margin-bottom: 20px;
         }
 
+
         .card h3 {
             font-size: 21px;
 
             margin-bottom: 12px;
         }
+
 
         .card p {
             color: #8e9aa7;
@@ -452,6 +705,7 @@
 
             margin-bottom: 20px;
         }
+
 
         .card-link {
             color: #45e17a;
@@ -474,6 +728,7 @@
             gap: 16px;
         }
 
+
         .objective {
             padding: 25px;
 
@@ -486,13 +741,25 @@
             text-align: center;
 
             transition: 0.3s;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            display: block;
         }
+
 
         .objective:hover {
             border-color: #45e17a;
 
             transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0, 0, 0, 0.2);
         }
+
 
         .objective-icon {
             font-size: 30px;
@@ -500,11 +767,13 @@
             margin-bottom: 14px;
         }
 
+
         .objective h3 {
             font-size: 17px;
 
             margin-bottom: 8px;
         }
+
 
         .objective p {
             color: #7f8b97;
@@ -516,20 +785,15 @@
             margin-bottom: 18px;
         }
 
-        .objective a {
+
+        .objective-link {
             display: inline-block;
 
             color: #45e17a;
 
-            text-decoration: none;
-
             font-size: 13px;
 
             font-weight: bold;
-        }
-
-        .objective a:hover {
-            text-decoration: underline;
         }
 
 
@@ -547,15 +811,18 @@
             align-items: center;
         }
 
+
         .about h2 {
             font-size: 42px;
 
             margin-bottom: 20px;
         }
 
+
         .about h2 span {
             color: #45e17a;
         }
+
 
         .about p {
             color: #929daa;
@@ -564,6 +831,7 @@
 
             margin-bottom: 20px;
         }
+
 
         .about-box {
             padding: 35px;
@@ -575,13 +843,16 @@
             border: 1px solid #27323d;
         }
 
+
         .about-box h3 {
             margin-bottom: 20px;
         }
 
+
         .about-list {
             list-style: none;
         }
+
 
         .about-list li {
             padding: 12px 0;
@@ -590,6 +861,7 @@
 
             color: #aab4bf;
         }
+
 
         .about-list li:last-child {
             border-bottom: none;
@@ -608,6 +880,7 @@
             gap: 22px;
         }
 
+
         .step {
             padding: 30px;
 
@@ -616,9 +889,8 @@
             border: 1px solid #232e38;
 
             border-radius: 16px;
-
-            position: relative;
         }
+
 
         .step-number {
             width: 42px;
@@ -642,11 +914,13 @@
             margin-bottom: 20px;
         }
 
+
         .step h3 {
             font-size: 20px;
 
             margin-bottom: 12px;
         }
+
 
         .step p {
             color: #8e9aa7;
@@ -674,15 +948,18 @@
                 );
         }
 
+
         .cta h2 {
             font-size: 42px;
 
             margin-bottom: 18px;
         }
 
+
         .cta h2 span {
             color: #45e17a;
         }
+
 
         .cta p {
             max-width: 600px;
@@ -711,6 +988,7 @@
             background: #080c10;
         }
 
+
         footer strong {
             color: #45e17a;
         }
@@ -720,19 +998,16 @@
            RESPONSIVO
         ========================= */
 
-        @media (max-width: 900px) {
-
-            nav {
-                display: none;
-            }
+        @media (max-width: 1000px) {
 
             .hero {
                 grid-template-columns: 1fr;
 
-                padding-top: 70px;
+                padding-top: 80px;
 
                 text-align: center;
             }
+
 
             .hero-text {
                 margin-left: auto;
@@ -740,25 +1015,33 @@
                 margin-right: auto;
             }
 
+
             .buttons {
                 justify-content: center;
             }
 
+
             .hero-visual {
-                min-height: 430px;
+                min-height: 440px;
             }
 
+
             .cards {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
+
 
             .objectives {
                 grid-template-columns: repeat(2, 1fr);
             }
 
+
             .about {
                 grid-template-columns: 1fr;
+
+                gap: 40px;
             }
+
 
             .steps {
                 grid-template-columns: 1fr;
@@ -767,13 +1050,31 @@
         }
 
 
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+
+            nav {
+                display: none;
+            }
+
+
+            .menu-button {
+                display: flex;
+            }
+
 
             .hero {
                 padding-left: 5%;
 
                 padding-right: 5%;
+
+                padding-top: 65px;
             }
+
 
             .section {
                 padding-left: 5%;
@@ -781,17 +1082,77 @@
                 padding-right: 5%;
             }
 
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+
+            .about h2 {
+                font-size: 36px;
+            }
+
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+
+            .cta {
+                padding-left: 5%;
+
+                padding-right: 5%;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .logo {
+                font-size: 19px;
+            }
+
+
+            .hero {
+                padding-top: 55px;
+
+                min-height: auto;
+
+                padding-bottom: 70px;
+            }
+
+
             .hero h1 {
                 font-size: 52px;
             }
 
-            .visual-card {
-                width: 280px;
 
-                min-height: 360px;
+            .hero-text {
+                font-size: 16px;
+            }
+
+
+            .btn {
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            .hero-visual {
+                min-height: 390px;
+            }
+
+
+            .visual-card {
+                width: 270px;
+
+                height: 350px;
 
                 padding: 30px 20px;
             }
+
 
             .visual-icon {
                 width: 85px;
@@ -801,12 +1162,51 @@
                 font-size: 40px;
             }
 
+
+            .floating-card {
+                display: none;
+            }
+
+
             .objectives {
                 grid-template-columns: 1fr;
             }
 
+
+            .about h2 {
+                font-size: 32px;
+            }
+
+
             .cta h2 {
                 font-size: 34px;
+            }
+
+
+            footer {
+                padding-left: 5%;
+
+                padding-right: 5%;
+
+                font-size: 13px;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+
+                animation: none !important;
             }
 
         }
@@ -820,22 +1220,23 @@
 
 
     <!-- =========================
-         HEADER
+         CABEÇALHO
     ========================= -->
 
     <header>
 
-        <!-- LOGO CLICÁVEL -->
-
         <a
             href="index.html"
             class="logo"
+            aria-label="BaseFit Studio - Página inicial"
         >
+
             BASE<span>FIT</span> STUDIO
+
         </a>
 
 
-        <nav>
+        <nav aria-label="Navegação principal">
 
             <a href="#inicio">
                 Início
@@ -854,6 +1255,44 @@
             </a>
 
         </nav>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+        >
+
+            ☰
+
+        </button>
+
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#recursos">
+                Recursos
+            </a>
+
+            <a href="#objetivos">
+                Objetivos
+            </a>
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+        </div>
 
     </header>
 
@@ -926,14 +1365,30 @@
             </div>
 
 
-            <!-- CARD PRINCIPAL -->
+            <!-- =========================
+                 VISUAL PRINCIPAL
+            ========================= -->
 
             <div class="hero-visual">
+
+
+                <div class="floating-card floating-one">
+
+                    <strong>
+                        + Evolução
+                    </strong>
+
+                    Consistência todos os dias
+
+                </div>
+
 
                 <div class="visual-card">
 
                     <div class="visual-icon">
+
                         🏋️
+
                     </div>
 
 
@@ -959,6 +1414,18 @@
 
                 </div>
 
+
+                <div class="floating-card floating-two">
+
+                    <strong>
+                        FOCO
+                    </strong>
+
+                    Treino • Disciplina • Resultado
+
+                </div>
+
+
             </div>
 
         </section>
@@ -981,9 +1448,8 @@
 
                 <p>
 
-                    Encontre ferramentas e informações
-                    para organizar melhor sua jornada
-                    de treinamento.
+                    Explore as principais ferramentas
+                    disponíveis dentro do BaseFit Studio.
 
                 </p>
 
@@ -993,9 +1459,12 @@
             <div class="cards">
 
 
+                <!-- TREINOS -->
+
                 <a
                     href="treinos.html"
                     class="card"
+                    aria-label="Abrir página de treinos"
                 >
 
                     <div class="card-icon">
@@ -1022,9 +1491,12 @@
                 </a>
 
 
+                <!-- EXERCÍCIOS -->
+
                 <a
                     href="exercicios.html"
                     class="card"
+                    aria-label="Abrir biblioteca de exercícios"
                 >
 
                     <div class="card-icon">
@@ -1052,9 +1524,12 @@
                 </a>
 
 
+                <!-- CALCULADORAS -->
+
                 <a
                     href="calculadoras.html"
                     class="card"
+                    aria-label="Abrir calculadoras"
                 >
 
                     <div class="card-icon">
@@ -1115,7 +1590,13 @@
             <div class="objectives">
 
 
-                <div class="objective">
+                <!-- EMAGRECIMENTO -->
+
+                <a
+                    href="treinos.html"
+                    class="objective"
+                    aria-label="Ver treinos para emagrecimento"
+                >
 
                     <div class="objective-icon">
                         🔥
@@ -1132,14 +1613,22 @@
 
                     </p>
 
-                    <a href="treinos.html">
+                    <span class="objective-link">
+
                         Ver treinos →
-                    </a>
 
-                </div>
+                    </span>
+
+                </a>
 
 
-                <div class="objective">
+                <!-- HIPERTROFIA -->
+
+                <a
+                    href="treinos.html"
+                    class="objective"
+                    aria-label="Ver treinos para hipertrofia"
+                >
 
                     <div class="objective-icon">
                         💪
@@ -1156,14 +1645,22 @@
 
                     </p>
 
-                    <a href="treinos.html">
+                    <span class="objective-link">
+
                         Ver treinos →
-                    </a>
 
-                </div>
+                    </span>
+
+                </a>
 
 
-                <div class="objective">
+                <!-- FORÇA -->
+
+                <a
+                    href="treinos.html"
+                    class="objective"
+                    aria-label="Ver treinos para força"
+                >
 
                     <div class="objective-icon">
                         🏆
@@ -1180,14 +1677,22 @@
 
                     </p>
 
-                    <a href="treinos.html">
+                    <span class="objective-link">
+
                         Ver treinos →
-                    </a>
 
-                </div>
+                    </span>
+
+                </a>
 
 
-                <div class="objective">
+                <!-- CONDICIONAMENTO -->
+
+                <a
+                    href="treinos.html"
+                    class="objective"
+                    aria-label="Ver treinos para condicionamento"
+                >
 
                     <div class="objective-icon">
                         ⚡
@@ -1204,11 +1709,13 @@
 
                     </p>
 
-                    <a href="treinos.html">
-                        Ver treinos →
-                    </a>
+                    <span class="objective-link">
 
-                </div>
+                        Ver treinos →
+
+                    </span>
+
+                </a>
 
 
             </div>
@@ -1447,7 +1954,7 @@
 
 
     <!-- =========================
-         FOOTER
+         RODAPÉ
     ========================= -->
 
     <footer>
@@ -1462,6 +1969,125 @@
         </p>
 
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           MENU MOBILE
+        ========================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                const aberto =
+                    mobileMenu.classList.toggle("open");
+
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    aberto
+                );
+
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    aberto
+                        ? "Fechar menu"
+                        : "Abrir menu"
+                );
+
+
+                menuButton.textContent =
+                    aberto
+                        ? "×"
+                        : "☰";
+
+            }
+        );
+
+
+        /* =========================
+           FECHAR MENU AO CLICAR
+        ========================= */
+
+        const linksMobile =
+            mobileMenu.querySelectorAll("a");
+
+
+        linksMobile.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        mobileMenu.classList.remove("open");
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        menuButton.setAttribute(
+                            "aria-label",
+                            "Abrir menu"
+                        );
+
+                        menuButton.textContent =
+                            "☰";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================
+           FECHAR MENU AO REDIMENSIONAR
+        ========================= */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (window.innerWidth > 700) {
+
+                    mobileMenu.classList.remove("open");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuButton.setAttribute(
+                        "aria-label",
+                        "Abrir menu"
+                    );
+
+                    menuButton.textContent =
+                        "☰";
+
+                }
+
+            }
+        );
+
+    </script>
 
 
 </body>
