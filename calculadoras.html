@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadoras | BaseFit Studio</title>
+
+    <meta
+        name="description"
+        content="Calculadoras do BaseFit Studio para auxiliar no acompanhamento do treinamento."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080c10;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid #1b232c;
+
+            background: #080c10;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #45e17a;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #aeb8c4;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #45e17a;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+
+        .page-title h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .page-title h1 span {
+            color: #45e17a;
+        }
+
+        .page-title p {
+            color: #929daa;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding-bottom: 80px;
+        }
+
+        .calculator {
+            background: #141b22;
+            border: 1px solid #26313b;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .calculator h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .calculator-description {
+            color: #8e9aa7;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cbd3dc;
+            font-size: 14px;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 13px 14px;
+
+            background: #0b1015;
+
+            border: 1px solid #303b46;
+
+            border-radius: 8px;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #45e17a;
+        }
+
+        .calculate-button {
+            width: 100%;
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #45e17a;
+
+            color: #071009;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .calculate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(69, 225, 122, 0.15);
+        }
+
+        .result {
+            display: none;
+
+            margin-top: 22px;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            background: #10171d;
+
+            border: 1px solid #2b3944;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result-title {
+            color: #45e17a;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .result-value {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .result-text {
+            color: #9ca8b4;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .warning {
+            margin-top: 50px;
+            margin-bottom: 80px;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            background: #11171d;
+
+            border: 1px solid #26313b;
+
+            color: #8e9aa7;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 35px 7%;
+
+            border-top: 1px solid #1b232c;
+
+            text-align: center;
+
+            color: #687481;
+
+            background: #080c10;
+        }
+
+        footer strong {
+            color: #45e17a;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 38px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            BASE<span>FIT</span> STUDIO
+        </div>
+
+        <nav>
+
+            <a href="index.html">Início</a>
+
+            <a href="index.html#recursos">Recursos</a>
+
+            <a href="index.html#objetivos">Objetivos</a>
+
+            <a href="calculadoras.html">Calculadoras</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-title">
+
+            <div class="container">
+
+                <h1>
+                    Calculadoras <span>BaseFit</span>
+                </h1>
+
+                <p>
+                    Ferramentas para auxiliar na compreensão
+                    e no acompanhamento da sua jornada de treinamento.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="container">
+
+            <div class="calculator-grid">
+
+
+                <!-- IMC -->
+
+                <div class="calculator">
+
+                    <h2>⚖️ Calculadora de IMC</h2>
+
+                    <p class="calculator-description">
+                        Calcule o Índice de Massa Corporal
+                        utilizando seu peso e sua altura.
+                    </p>
+
+
+                    <div class="input-group">
+
+                        <label for="peso">
+                            Peso (kg)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="peso"
+                            placeholder="Ex: 75"
+                            min="1"
+                            step="0.1"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="altura">
+                            Altura (m)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="altura"
+                            placeholder="Ex: 1.75"
+                            min="0.5"
+                            step="0.01"
+                        >
+
+                    </div>
+
+
+                    <button
+                        class="calculate-button"
+                        onclick="calcularIMC()"
+                    >
+                        Calcular IMC
+                    </button>
+
+
+                    <div id="resultadoIMC" class="result">
+
+                        <div class="result-title">
+                            Seu resultado
+                        </div>
+
+                        <div
+                            id="valorIMC"
+                            class="result-value"
+                        ></div>
+
+                        <div
+                            id="classificacaoIMC"
+                            class="result-text"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TMB -->
+
+                <div class="calculator">
+
+                    <h2>🔥 Calculadora de TMB</h2>
+
+                    <p class="calculator-description">
+                        Estime sua Taxa Metabólica Basal
+                        a partir de alguns dados básicos.
+                    </p>
+
+
+                    <div class="input-group">
+
+                        <label for="idade">
+                            Idade
+                        </label>
+
+                        <input
+                            type="number"
+                            id="idade"
+                            placeholder="Ex: 30"
+                            min="1"
+                            max="120"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="pesoTMB">
+                            Peso (kg)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="pesoTMB"
+                            placeholder="Ex: 75"
+                            min="1"
+                            step="0.1"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="alturaTMB">
+                            Altura (cm)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="alturaTMB"
+                            placeholder="Ex: 175"
+                            min="50"
+                            step="1"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="sexo">
+                            Sexo biológico utilizado na fórmula
+                        </label>
+
+                        <select id="sexo">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="masculino">
+                                Masculino
+                            </option>
+
+                            <option value="feminino">
+                                Feminino
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="calculate-button"
+                        onclick="calcularTMB()"
+                    >
+                        Calcular TMB
+                    </button>
+
+
+                    <div id="resultadoTMB" class="result">
+
+                        <div class="result-title">
+                            Estimativa da sua TMB
+                        </div>
+
+                        <div
+                            id="valorTMB"
+                            class="result-value"
+                        ></div>
+
+                        <div class="result-text">
+                            Esse valor representa uma estimativa
+                            das calorias que seu corpo utiliza
+                            em repouso.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="warning">
+
+                <strong>Importante:</strong>
+
+                Os resultados apresentados pelas calculadoras
+                são estimativas e têm finalidade informativa.
+                Eles não substituem uma avaliação individualizada
+                realizada por um profissional qualificado.
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 <strong>BaseFit Studio</strong>
+            — Treine. Acompanhe. Evolua.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        // =========================
+        // CALCULADORA DE IMC
+        // =========================
+
+        function calcularIMC() {
+
+            const peso = parseFloat(
+                document.getElementById("peso").value
+            );
+
+            const altura = parseFloat(
+                document.getElementById("altura").value
+            );
+
+            if (
+                isNaN(peso) ||
+                isNaN(altura) ||
+                peso <= 0 ||
+                altura <= 0
+            ) {
+
+                alert("Digite um peso e uma altura válidos.");
+
+                return;
+            }
+
+
+            const imc = peso / (altura * altura);
+
+
+            let classificacao = "";
+
+
+            if (imc < 18.5) {
+
+                classificacao =
+                    "Abaixo do peso.";
+
+            } else if (imc < 25) {
+
+                classificacao =
+                    "Faixa de peso considerada adequada para adultos.";
+
+            } else if (imc < 30) {
+
+                classificacao =
+                    "Sobrepeso.";
+
+            } else if (imc < 35) {
+
+                classificacao =
+                    "Obesidade grau I.";
+
+            } else if (imc < 40) {
+
+                classificacao =
+                    "Obesidade grau II.";
+
+            } else {
+
+                classificacao =
+                    "Obesidade grau III.";
+
+            }
+
+
+            document.getElementById("valorIMC").textContent =
+                imc.toFixed(1);
+
+
+            document.getElementById("classificacaoIMC").textContent =
+                classificacao;
+
+
+            document
+                .getElementById("resultadoIMC")
+                .classList
+                .add("show");
+
+        }
+
+
+        // =========================
+        // CALCULADORA DE TMB
+        // =========================
+
+        function calcularTMB() {
+
+            const idade = parseFloat(
+                document.getElementById("idade").value
+            );
+
+            const peso = parseFloat(
+                document.getElementById("pesoTMB").value
+            );
+
+            const altura = parseFloat(
+                document.getElementById("alturaTMB").value
+            );
+
+            const sexo =
+                document.getElementById("sexo").value;
+
+
+            if (
+                isNaN(idade) ||
+                isNaN(peso) ||
+                isNaN(altura) ||
+                !sexo
+            ) {
+
+                alert(
+                    "Preencha todos os campos corretamente."
+                );
+
+                return;
+            }
+
+
+            let tmb;
+
+
+            // Fórmula de Mifflin-St Jeor
+
+            if (sexo === "masculino") {
+
+                tmb =
+                    (10 * peso) +
+                    (6.25 * altura) -
+                    (5 * idade) +
+                    5;
+
+            } else {
+
+                tmb =
+                    (10 * peso) +
+                    (6.25 * altura) -
+                    (5 * idade) -
+                    161;
+
+            }
+
+
+            document.getElementById("valorTMB").textContent =
+                Math.round(tmb) + " kcal/dia";
+
+
+            document
+                .getElementById("resultadoTMB")
+                .classList
+                .add("show");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
