@@ -163,7 +163,7 @@
 
 
         /* =========================
-           FILTROS
+           ÁREA DE FILTROS
         ========================= */
 
         .filters {
@@ -187,6 +187,130 @@
             font-size: 15px;
 
             font-weight: bold;
+        }
+
+
+        /* =========================
+           PESQUISA
+        ========================= */
+
+        .search-wrapper {
+            position: relative;
+
+            margin-bottom: 25px;
+        }
+
+
+        .search-icon {
+            position: absolute;
+
+            left: 16px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #707c88;
+
+            font-size: 17px;
+
+            pointer-events: none;
+        }
+
+
+        .search-input {
+            width: 100%;
+
+            padding: 15px 45px 15px 45px;
+
+            border-radius: 10px;
+
+            border: 1px solid #303b46;
+
+            background: #0b1015;
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        .search-input::placeholder {
+            color: #66727e;
+        }
+
+
+        .search-input:focus {
+            border-color: #45e17a;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(69, 225, 122, 0.08);
+        }
+
+
+        .clear-search {
+            position: absolute;
+
+            right: 14px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 28px;
+
+            height: 28px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: transparent;
+
+            color: #7f8b97;
+
+            cursor: pointer;
+
+            font-size: 18px;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .clear-search:hover {
+            color: #45e17a;
+
+            background: #18251d;
+        }
+
+
+        .clear-search.show {
+            display: flex;
+        }
+
+
+        /* =========================
+           GRUPOS DE FILTRO
+        ========================= */
+
+        .filter-section {
+            margin-bottom: 22px;
+        }
+
+
+        .filter-section:last-of-type {
+            margin-bottom: 0;
         }
 
 
@@ -216,7 +340,11 @@
 
             font-size: 13px;
 
-            transition: 0.3s;
+            transition:
+                background 0.3s,
+                border-color 0.3s,
+                color 0.3s,
+                transform 0.2s;
         }
 
 
@@ -224,6 +352,8 @@
             border-color: #45e17a;
 
             color: #45e17a;
+
+            transform: translateY(-1px);
         }
 
 
@@ -235,6 +365,55 @@
             color: #071009;
 
             font-weight: bold;
+        }
+
+
+        /* =========================
+           BOTÃO LIMPAR
+        ========================= */
+
+        .filter-actions {
+            display: flex;
+
+            justify-content: flex-end;
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #202a33;
+        }
+
+
+        .clear-filters {
+            padding: 10px 17px;
+
+            border-radius: 8px;
+
+            border: 1px solid #303b46;
+
+            background: transparent;
+
+            color: #8e9aa7;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .clear-filters:hover {
+            border-color: #45e17a;
+
+            color: #45e17a;
+
+            background: #101c15;
         }
 
 
@@ -523,7 +702,7 @@
 
 
         /* =========================
-           ESTADO SEM RESULTADOS
+           SEM RESULTADOS
         ========================= */
 
         .no-results {
@@ -681,6 +860,16 @@
                 gap: 5px;
             }
 
+
+            .filter-actions {
+                justify-content: stretch;
+            }
+
+
+            .clear-filters {
+                width: 100%;
+            }
+
         }
 
 
@@ -693,6 +882,11 @@
 
             .page-title h1 {
                 font-size: 40px;
+            }
+
+
+            .search-input {
+                font-size: 13px;
             }
 
         }
@@ -793,100 +987,176 @@
             <div class="filters">
 
 
+                <!-- PESQUISA -->
+
                 <div class="filters-title">
-                    Filtrar por objetivo
+
+                    Pesquisar treino
+
                 </div>
 
 
-                <div
-                    class="filter-group"
-                    id="objectiveFilters"
-                >
+                <div class="search-wrapper">
 
-                    <button
-                        class="filter-button active"
-                        data-objective="todos"
+                    <span class="search-icon">
+                        🔎
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        class="search-input"
+                        placeholder="Digite o nome do treino, exercício ou objetivo..."
+                        autocomplete="off"
                     >
-                        Todos
-                    </button>
-
-
-                    <button
-                        class="filter-button"
-                        data-objective="hipertrofia"
-                    >
-                        Hipertrofia
-                    </button>
 
 
                     <button
-                        class="filter-button"
-                        data-objective="forca"
+                        type="button"
+                        id="clearSearch"
+                        class="clear-search"
+                        aria-label="Limpar pesquisa"
                     >
-                        Força
-                    </button>
-
-
-                    <button
-                        class="filter-button"
-                        data-objective="emagrecimento"
-                    >
-                        Emagrecimento
-                    </button>
-
-
-                    <button
-                        class="filter-button"
-                        data-objective="condicionamento"
-                    >
-                        Condicionamento
+                        ×
                     </button>
 
                 </div>
 
 
-                <div
-                    class="filters-title"
-                    style="margin-top: 22px;"
-                >
-                    Filtrar por nível
+                <!-- OBJETIVOS -->
+
+                <div class="filter-section">
+
+                    <div class="filters-title">
+
+                        Filtrar por objetivo
+
+                    </div>
+
+
+                    <div
+                        class="filter-group"
+                        id="objectiveFilters"
+                    >
+
+                        <button
+                            type="button"
+                            class="filter-button active"
+                            data-filter-objective="todos"
+                        >
+                            Todos
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter-objective="hipertrofia"
+                        >
+                            Hipertrofia
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter-objective="forca"
+                        >
+                            Força
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter-objective="emagrecimento"
+                        >
+                            Emagrecimento
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter-objective="condicionamento"
+                        >
+                            Condicionamento
+                        </button>
+
+                    </div>
+
                 </div>
 
 
-                <div
-                    class="filter-group"
-                    id="levelFilters"
-                >
+                <!-- NÍVEIS -->
+
+                <div class="filter-section">
+
+                    <div class="filters-title">
+
+                        Filtrar por nível
+
+                    </div>
+
+
+                    <div
+                        class="filter-group"
+                        id="levelFilters"
+                    >
+
+                        <button
+                            type="button"
+                            class="filter-button active"
+                            data-filter-level="todos"
+                        >
+                            Todos
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter-level="iniciante"
+                        >
+                            Iniciante
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter-level="intermediario"
+                        >
+                            Intermediário
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter-level="avancado"
+                        >
+                            Avançado
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIMPAR -->
+
+                <div class="filter-actions">
 
                     <button
-                        class="filter-button active"
-                        data-level="todos"
+                        type="button"
+                        class="clear-filters"
+                        id="clearFilters"
                     >
-                        Todos
-                    </button>
 
+                        ↻ Limpar filtros
 
-                    <button
-                        class="filter-button"
-                        data-level="iniciante"
-                    >
-                        Iniciante
-                    </button>
-
-
-                    <button
-                        class="filter-button"
-                        data-level="intermediario"
-                    >
-                        Intermediário
-                    </button>
-
-
-                    <button
-                        class="filter-button"
-                        data-level="avancado"
-                    >
-                        Avançado
                     </button>
 
                 </div>
@@ -925,11 +1195,10 @@
                     class="training-card"
                     data-objective="hipertrofia"
                     data-level="iniciante"
+                    data-search="full body iniciante hipertrofia agachamento supino reto remada baixa elevação lateral prancha"
                 >
 
-
                     <div class="training-top">
-
 
                         <div class="training-icon">
                             💪
@@ -966,7 +1235,6 @@
 
 
                     <div class="training-info">
-
 
                         <div class="info-box">
 
@@ -1010,7 +1278,6 @@
 
 
                     <div class="exercise-list">
-
 
                         <div class="exercise">
 
@@ -1102,11 +1369,10 @@
                     class="training-card"
                     data-objective="hipertrofia"
                     data-level="intermediario"
+                    data-search="upper lower hipertrofia agachamento livre supino reto puxada frontal desenvolvimento leg press"
                 >
 
-
                     <div class="training-top">
-
 
                         <div class="training-icon">
                             🏋️
@@ -1143,7 +1409,6 @@
 
 
                     <div class="training-info">
-
 
                         <div class="info-box">
 
@@ -1187,7 +1452,6 @@
 
 
                     <div class="exercise-list">
-
 
                         <div class="exercise">
 
@@ -1278,11 +1542,10 @@
                     class="training-card"
                     data-objective="forca"
                     data-level="intermediario"
+                    data-search="força força fundamental agachamento supino levantamento terra remada prancha"
                 >
 
-
                     <div class="training-top">
-
 
                         <div class="training-icon">
                             🏆
@@ -1319,7 +1582,6 @@
 
 
                     <div class="training-info">
-
 
                         <div class="info-box">
 
@@ -1363,7 +1625,6 @@
 
 
                     <div class="exercise-list">
-
 
                         <div class="exercise">
 
@@ -1454,11 +1715,10 @@
                     class="training-card"
                     data-objective="emagrecimento"
                     data-level="iniciante"
+                    data-search="circuito iniciante emagrecimento agachamento flexão remada afundo prancha"
                 >
 
-
                     <div class="training-top">
-
 
                         <div class="training-icon">
                             🔥
@@ -1495,7 +1755,6 @@
 
 
                     <div class="training-info">
-
 
                         <div class="info-box">
 
@@ -1539,7 +1798,6 @@
 
 
                     <div class="exercise-list">
-
 
                         <div class="exercise">
 
@@ -1630,11 +1888,10 @@
                     class="training-card"
                     data-objective="condicionamento"
                     data-level="intermediario"
+                    data-search="condicionamento geral condicionamento agachamento flexão remada mountain climber polichinelo"
                 >
 
-
                     <div class="training-top">
-
 
                         <div class="training-icon">
                             ⚡
@@ -1671,7 +1928,6 @@
 
 
                     <div class="training-info">
-
 
                         <div class="info-box">
 
@@ -1715,7 +1971,6 @@
 
 
                     <div class="exercise-list">
-
 
                         <div class="exercise">
 
@@ -1806,11 +2061,10 @@
                     class="training-card"
                     data-objective="hipertrofia"
                     data-level="avancado"
+                    data-search="push pull legs hipertrofia supino inclinado desenvolvimento barra fixa agachamento leg press"
                 >
 
-
                     <div class="training-top">
-
 
                         <div class="training-icon">
                             🔥
@@ -1847,7 +2101,6 @@
 
 
                     <div class="training-info">
-
 
                         <div class="info-box">
 
@@ -1891,7 +2144,6 @@
 
 
                     <div class="exercise-list">
-
 
                         <div class="exercise">
 
@@ -1996,11 +2248,11 @@
                 </h2>
 
 
-                <p>
+                <p id="noResultsText">
 
                     Não encontramos um treino para os filtros
-                    selecionados. Tente combinar outro objetivo
-                    ou nível.
+                    ou pesquisa utilizados. Tente alterar os
+                    critérios e pesquisar novamente.
 
                 </p>
 
@@ -2013,9 +2265,7 @@
 
             <div class="warning">
 
-
                 <strong>Importante:</strong>
-
 
                 Os treinos apresentados são exemplos
                 informativos e não substituem uma avaliação
@@ -2023,7 +2273,6 @@
                 volume, intensidade, cargas e frequência deve
                 considerar as características e necessidades
                 individuais de cada pessoa.
-
 
             </div>
 
@@ -2058,14 +2307,13 @@
 
     <script>
 
-
         /* =========================
            ESTADO DOS FILTROS
         ========================= */
 
-        let objetivoSelecionado = "todos";
+        let objetivosSelecionados = [];
 
-        let nivelSelecionado = "todos";
+        let niveisSelecionados = [];
 
 
         /* =========================
@@ -2084,40 +2332,122 @@
             document.getElementById("noResults");
 
 
+        const searchInput =
+            document.getElementById("searchInput");
+
+
+        const clearSearch =
+            document.getElementById("clearSearch");
+
+
+        const clearFilters =
+            document.getElementById("clearFilters");
+
+
         /* =========================
-           FILTRO DE OBJETIVO
+           BOTÕES DE OBJETIVO
         ========================= */
 
         const botoesObjetivo =
             document.querySelectorAll(
-                "[data-objective]"
+                "[data-filter-objective]"
             );
 
 
         botoesObjetivo.forEach(function(button) {
 
-
             button.addEventListener(
                 "click",
                 function() {
 
+                    const objetivo =
+                        this.dataset.filterObjective;
 
-                    botoesObjetivo.forEach(
-                        function(item) {
 
-                            item.classList.remove(
+                    /* BOTÃO TODOS */
+
+                    if (objetivo === "todos") {
+
+                        objetivosSelecionados = [];
+
+                        botoesObjetivo.forEach(
+                            function(item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        this.classList.add("active");
+
+                    }
+
+                    /* OUTRO OBJETIVO */
+
+                    else {
+
+                        const index =
+                            objetivosSelecionados.indexOf(
+                                objetivo
+                            );
+
+
+                        if (index === -1) {
+
+                            objetivosSelecionados.push(
+                                objetivo
+                            );
+
+                            this.classList.add(
                                 "active"
                             );
 
                         }
-                    );
+
+                        else {
+
+                            objetivosSelecionados.splice(
+                                index,
+                                1
+                            );
+
+                            this.classList.remove(
+                                "active"
+                            );
+
+                        }
 
 
-                    this.classList.add("active");
+                        /* ATUALIZA O BOTÃO TODOS */
+
+                        const todosButton =
+                            document.querySelector(
+                                '[data-filter-objective="todos"]'
+                            );
 
 
-                    objetivoSelecionado =
-                        this.dataset.objective;
+                        if (
+                            objetivosSelecionados.length === 0
+                        ) {
+
+                            todosButton.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                        else {
+
+                            todosButton.classList.remove(
+                                "active"
+                            );
+
+                        }
+
+                    }
 
 
                     aplicarFiltros();
@@ -2129,39 +2459,109 @@
 
 
         /* =========================
-           FILTRO DE NÍVEL
+           BOTÕES DE NÍVEL
         ========================= */
 
         const botoesNivel =
             document.querySelectorAll(
-                "[data-level]"
+                "[data-filter-level]"
             );
 
 
         botoesNivel.forEach(function(button) {
 
-
             button.addEventListener(
                 "click",
                 function() {
 
+                    const nivel =
+                        this.dataset.filterLevel;
 
-                    botoesNivel.forEach(
-                        function(item) {
 
-                            item.classList.remove(
+                    /* BOTÃO TODOS */
+
+                    if (nivel === "todos") {
+
+                        niveisSelecionados = [];
+
+                        botoesNivel.forEach(
+                            function(item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        this.classList.add("active");
+
+                    }
+
+                    /* OUTRO NÍVEL */
+
+                    else {
+
+                        const index =
+                            niveisSelecionados.indexOf(
+                                nivel
+                            );
+
+
+                        if (index === -1) {
+
+                            niveisSelecionados.push(
+                                nivel
+                            );
+
+                            this.classList.add(
                                 "active"
                             );
 
                         }
-                    );
+
+                        else {
+
+                            niveisSelecionados.splice(
+                                index,
+                                1
+                            );
+
+                            this.classList.remove(
+                                "active"
+                            );
+
+                        }
 
 
-                    this.classList.add("active");
+                        /* ATUALIZA O BOTÃO TODOS */
+
+                        const todosButton =
+                            document.querySelector(
+                                '[data-filter-level="todos"]'
+                            );
 
 
-                    nivelSelecionado =
-                        this.dataset.level;
+                        if (
+                            niveisSelecionados.length === 0
+                        ) {
+
+                            todosButton.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                        else {
+
+                            todosButton.classList.remove(
+                                "active"
+                            );
+
+                        }
+
+                    }
 
 
                     aplicarFiltros();
@@ -2170,6 +2570,144 @@
             );
 
         });
+
+
+        /* =========================
+           PESQUISA
+        ========================= */
+
+        searchInput.addEventListener(
+            "input",
+            function() {
+
+                if (this.value.trim() !== "") {
+
+                    clearSearch.classList.add(
+                        "show"
+                    );
+
+                }
+
+                else {
+
+                    clearSearch.classList.remove(
+                        "show"
+                    );
+
+                }
+
+
+                aplicarFiltros();
+
+            }
+        );
+
+
+        /* =========================
+           LIMPAR PESQUISA
+        ========================= */
+
+        clearSearch.addEventListener(
+            "click",
+            function() {
+
+                searchInput.value = "";
+
+                clearSearch.classList.remove(
+                    "show"
+                );
+
+                searchInput.focus();
+
+                aplicarFiltros();
+
+            }
+        );
+
+
+        /* =========================
+           LIMPAR TODOS OS FILTROS
+        ========================= */
+
+        clearFilters.addEventListener(
+            "click",
+            function() {
+
+                objetivosSelecionados = [];
+
+                niveisSelecionados = [];
+
+
+                /* LIMPA PESQUISA */
+
+                searchInput.value = "";
+
+                clearSearch.classList.remove(
+                    "show"
+                );
+
+
+                /* OBJETIVOS */
+
+                botoesObjetivo.forEach(
+                    function(button) {
+
+                        button.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                document
+                    .querySelector(
+                        '[data-filter-objective="todos"]'
+                    )
+                    .classList.add("active");
+
+
+                /* NÍVEIS */
+
+                botoesNivel.forEach(
+                    function(button) {
+
+                        button.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                document
+                    .querySelector(
+                        '[data-filter-level="todos"]'
+                    )
+                    .classList.add("active");
+
+
+                aplicarFiltros();
+
+            }
+        );
+
+
+        /* =========================
+           NORMALIZAR TEXTO
+        ========================= */
+
+        function normalizarTexto(texto) {
+
+            return texto
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ""
+                );
+
+        }
 
 
         /* =========================
@@ -2178,12 +2716,16 @@
 
         function aplicarFiltros() {
 
-
             let quantidadeVisivel = 0;
 
 
-            cards.forEach(function(card) {
+            const pesquisa =
+                normalizarTexto(
+                    searchInput.value.trim()
+                );
 
+
+            cards.forEach(function(card) {
 
                 const objetivo =
                     card.dataset.objective;
@@ -2193,22 +2735,58 @@
                     card.dataset.level;
 
 
-                const correspondeObjetivo =
-                    objetivoSelecionado === "todos" ||
-                    objetivo === objetivoSelecionado;
+                const textoPesquisa =
+                    normalizarTexto(
+                        card.dataset.search
+                    );
 
+
+                /* =====================
+                   OBJETIVO
+                ===================== */
+
+                const correspondeObjetivo =
+                    objetivosSelecionados.length === 0 ||
+                    objetivosSelecionados.includes(
+                        objetivo
+                    );
+
+
+                /* =====================
+                   NÍVEL
+                ===================== */
 
                 const correspondeNivel =
-                    nivelSelecionado === "todos" ||
-                    nivel === nivelSelecionado;
+                    niveisSelecionados.length === 0 ||
+                    niveisSelecionados.includes(
+                        nivel
+                    );
 
+
+                /* =====================
+                   PESQUISA
+                ===================== */
+
+                const correspondePesquisa =
+                    pesquisa === "" ||
+                    textoPesquisa.includes(
+                        pesquisa
+                    );
+
+
+                /* =====================
+                   RESULTADO FINAL
+                ===================== */
 
                 if (
                     correspondeObjetivo &&
-                    correspondeNivel
+                    correspondeNivel &&
+                    correspondePesquisa
                 ) {
 
-                    card.classList.remove("hidden");
+                    card.classList.remove(
+                        "hidden"
+                    );
 
                     quantidadeVisivel++;
 
@@ -2216,31 +2794,51 @@
 
                 else {
 
-                    card.classList.add("hidden");
+                    card.classList.add(
+                        "hidden"
+                    );
 
                 }
 
             });
 
 
+            /* =========================
+               CONTADOR
+            ========================= */
+
             contador.textContent =
                 quantidadeVisivel;
 
 
+            /* =========================
+               SEM RESULTADOS
+            ========================= */
+
             if (quantidadeVisivel === 0) {
 
-                noResults.classList.add("show");
+                noResults.classList.add(
+                    "show"
+                );
 
             }
 
             else {
 
-                noResults.classList.remove("show");
+                noResults.classList.remove(
+                    "show"
+                );
 
             }
 
         }
 
+
+        /* =========================
+           INICIALIZAÇÃO
+        ========================= */
+
+        aplicarFiltros();
 
     </script>
 
