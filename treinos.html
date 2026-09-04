@@ -183,6 +183,26 @@
            FILTROS
         ========================= */
 
+        .filter-area {
+            margin-bottom: 45px;
+        }
+
+
+        .filter-title {
+            text-align: center;
+
+            color: #687481;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+        }
+
+
         .filters {
             display: flex;
 
@@ -191,8 +211,6 @@
             flex-wrap: wrap;
 
             gap: 10px;
-
-            margin-bottom: 45px;
         }
 
 
@@ -234,7 +252,7 @@
 
 
         /* =========================
-           GRID
+           TREINOS
         ========================= */
 
         .training-grid {
@@ -387,7 +405,7 @@
 
 
         /* =========================
-           LISTA DE EXERCÍCIOS
+           EXERCÍCIOS
         ========================= */
 
         .exercise-list {
@@ -397,7 +415,7 @@
 
             padding-top: 15px;
 
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
 
@@ -433,38 +451,38 @@
 
 
         /* =========================
-           BOTÃO DO TREINO
+           BOTÃO DETALHES
         ========================= */
 
-        .training-button {
+        .details-button {
             width: 100%;
 
             padding: 13px;
 
-            border: 1px solid #303b47;
-
             border-radius: 9px;
 
-            background: #202b34;
+            border: 1px solid #303c47;
+
+            background: #1b252d;
 
             color: #ffffff;
 
             cursor: pointer;
 
-            font-size: 14px;
-
             font-weight: bold;
+
+            font-size: 13px;
 
             transition: 0.3s;
         }
 
 
-        .training-button:hover {
+        .details-button:hover {
             background: #45e17a;
 
-            border-color: #45e17a;
-
             color: #071009;
+
+            border-color: #45e17a;
         }
 
 
@@ -622,7 +640,7 @@
 
 
         .modal-content {
-            width: min(760px, 100%);
+            width: min(700px, 100%);
 
             max-height: 90vh;
 
@@ -659,11 +677,9 @@
 
             color: #ffffff;
 
-            font-size: 22px;
+            font-size: 21px;
 
             cursor: pointer;
-
-            transition: 0.3s;
         }
 
 
@@ -677,25 +693,25 @@
         .modal-title {
             font-size: 30px;
 
-            padding-right: 50px;
-
             margin-bottom: 8px;
+
+            padding-right: 45px;
         }
 
 
         .modal-subtitle {
             color: #45e17a;
 
-            font-size: 14px;
+            margin-bottom: 25px;
 
-            margin-bottom: 28px;
+            font-size: 14px;
         }
 
 
-        .modal-grid {
+        .detail-grid {
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
 
             gap: 12px;
 
@@ -703,7 +719,7 @@
         }
 
 
-        .modal-box {
+        .detail-box {
             background: #0d1319;
 
             border: 1px solid #27333d;
@@ -711,26 +727,26 @@
             border-radius: 10px;
 
             padding: 15px;
-
-            text-align: center;
         }
 
 
-        .modal-box strong {
+        .detail-label {
             display: block;
 
-            color: #ffffff;
+            color: #687481;
 
-            font-size: 16px;
+            font-size: 12px;
 
             margin-bottom: 6px;
         }
 
 
-        .modal-box span {
-            color: #687481;
+        .detail-value {
+            color: #ffffff;
 
-            font-size: 11px;
+            font-size: 15px;
+
+            font-weight: bold;
         }
 
 
@@ -740,56 +756,31 @@
 
 
         .modal-section h3 {
-            color: #45e17a;
-
             font-size: 18px;
 
             margin-bottom: 10px;
+
+            color: #45e17a;
         }
 
 
         .modal-section p {
             color: #aeb8c4;
 
-            font-size: 14px;
-
             line-height: 1.7;
-        }
-
-
-        .modal-exercises {
-            list-style: none;
-        }
-
-
-        .modal-exercises li {
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 15px;
-
-            padding: 12px 0;
-
-            border-bottom: 1px solid #252f38;
-
-            color: #b1bbc5;
 
             font-size: 14px;
         }
 
 
-        .modal-exercises li:last-child {
-            border-bottom: none;
-        }
+        .modal-section ul {
+            padding-left: 20px;
 
+            color: #aeb8c4;
 
-        .modal-exercises span {
-            color: #45e17a;
+            line-height: 1.8;
 
-            white-space: nowrap;
-
-            font-weight: bold;
+            font-size: 14px;
         }
 
 
@@ -858,13 +849,13 @@
             }
 
 
-            .modal-content {
-                padding: 25px;
+            .detail-grid {
+                grid-template-columns: 1fr;
             }
 
 
-            .modal-grid {
-                grid-template-columns: 1fr;
+            .modal-content {
+                padding: 25px;
             }
 
 
@@ -892,9 +883,7 @@
             href="index.html"
             class="logo"
         >
-
             BASE<span>FIT</span> STUDIO
-
         </a>
 
 
@@ -940,73 +929,76 @@
 
 
             <h1>
-
                 Encontre o treino
                 <span>ideal.</span>
-
             </h1>
 
 
             <p>
-
                 Explore diferentes estratégias de treinamento
                 organizadas de acordo com objetivos e níveis
                 de experiência.
-
             </p>
 
         </section>
 
 
-        <!-- =========================
-             TREINOS
-        ========================= -->
-
         <section class="container">
 
 
-            <!-- FILTROS -->
+            <!-- =========================
+                 FILTROS
+            ========================= -->
 
-            <div class="filters">
+            <div class="filter-area">
 
-                <button
-                    class="filter active"
-                    data-filter="todos"
-                >
-                    Todos
-                </button>
-
-
-                <button
-                    class="filter"
-                    data-filter="hipertrofia"
-                >
-                    💪 Hipertrofia
-                </button>
+                <div class="filter-title">
+                    Filtrar por objetivo
+                </div>
 
 
-                <button
-                    class="filter"
-                    data-filter="emagrecimento"
-                >
-                    🔥 Emagrecimento
-                </button>
+                <div class="filters">
+
+                    <button
+                        class="filter active"
+                        data-filter="todos"
+                    >
+                        Todos
+                    </button>
 
 
-                <button
-                    class="filter"
-                    data-filter="forca"
-                >
-                    🏆 Força
-                </button>
+                    <button
+                        class="filter"
+                        data-filter="hipertrofia"
+                    >
+                        💪 Hipertrofia
+                    </button>
 
 
-                <button
-                    class="filter"
-                    data-filter="condicionamento"
-                >
-                    ⚡ Condicionamento
-                </button>
+                    <button
+                        class="filter"
+                        data-filter="emagrecimento"
+                    >
+                        🔥 Emagrecimento
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        data-filter="forca"
+                    >
+                        🏆 Força
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        data-filter="condicionamento"
+                    >
+                        ⚡ Condicionamento
+                    </button>
+
+                </div>
 
             </div>
 
@@ -1023,6 +1015,7 @@
                 <article
                     class="training-card"
                     data-category="hipertrofia"
+                    data-level="iniciante"
                 >
 
                     <div class="training-top">
@@ -1044,46 +1037,27 @@
 
 
                     <p class="training-description">
-
                         Uma opção para quem está começando
                         a treinar e deseja trabalhar os
                         principais grupos musculares.
-
                     </p>
 
 
                     <div class="training-info">
 
                         <div class="info">
-
                             <strong>3x</strong>
-
-                            <span>
-                                por semana
-                            </span>
-
+                            <span>por semana</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>6–8</strong>
-
-                            <span>
-                                exercícios
-                            </span>
-
+                            <span>exercícios</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>60 min</strong>
-
-                            <span>
-                                estimado
-                            </span>
-
+                            <span>estimado</span>
                         </div>
 
                     </div>
@@ -1120,12 +1094,10 @@
 
 
                     <button
-                        class="training-button"
-                        onclick="abrirTreino('hipertrofia-iniciante')"
+                        class="details-button"
+                        onclick="abrirTreino('corpoInteiro')"
                     >
-
-                        Ver treino completo
-
+                        Ver detalhes do treino
                     </button>
 
                 </article>
@@ -1136,6 +1108,7 @@
                 <article
                     class="training-card"
                     data-category="hipertrofia"
+                    data-level="intermediario"
                 >
 
                     <div class="training-top">
@@ -1152,51 +1125,32 @@
 
 
                     <h2>
-                        Hipertrofia — Superior/inferior
+                        Hipertrofia — Superior / Inferior
                     </h2>
 
 
                     <p class="training-description">
-
                         Estrutura dividida para quem já possui
                         experiência e deseja organizar melhor
                         o volume semanal.
-
                     </p>
 
 
                     <div class="training-info">
 
                         <div class="info">
-
                             <strong>4x</strong>
-
-                            <span>
-                                por semana
-                            </span>
-
+                            <span>por semana</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>5–7</strong>
-
-                            <span>
-                                exercícios
-                            </span>
-
+                            <span>exercícios</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>60–75 min</strong>
-
-                            <span>
-                                estimado
-                            </span>
-
+                            <span>estimado</span>
                         </div>
 
                     </div>
@@ -1233,12 +1187,10 @@
 
 
                     <button
-                        class="training-button"
-                        onclick="abrirTreino('hipertrofia-intermediario')"
+                        class="details-button"
+                        onclick="abrirTreino('superiorInferior')"
                     >
-
-                        Ver treino completo
-
+                        Ver detalhes do treino
                     </button>
 
                 </article>
@@ -1249,6 +1201,7 @@
                 <article
                     class="training-card"
                     data-category="emagrecimento"
+                    data-level="iniciante"
                 >
 
                     <div class="training-top">
@@ -1270,45 +1223,26 @@
 
 
                     <p class="training-description">
-
                         Sessão combinando exercícios de força
                         e períodos de atividade cardiovascular.
-
                     </p>
 
 
                     <div class="training-info">
 
                         <div class="info">
-
                             <strong>3x</strong>
-
-                            <span>
-                                por semana
-                            </span>
-
+                            <span>por semana</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>45–60 min</strong>
-
-                            <span>
-                                duração
-                            </span>
-
+                            <span>duração</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>Moderado</strong>
-
-                            <span>
-                                esforço
-                            </span>
-
+                            <span>esforço</span>
                         </div>
 
                     </div>
@@ -1345,12 +1279,10 @@
 
 
                     <button
-                        class="training-button"
+                        class="details-button"
                         onclick="abrirTreino('emagrecimento')"
                     >
-
-                        Ver treino completo
-
+                        Ver detalhes do treino
                     </button>
 
                 </article>
@@ -1361,6 +1293,7 @@
                 <article
                     class="training-card"
                     data-category="forca"
+                    data-level="intermediario"
                 >
 
                     <div class="training-top">
@@ -1382,46 +1315,27 @@
 
 
                     <p class="training-description">
-
                         Estrutura focada em exercícios
                         multiarticulares e progressão gradual
                         de carga.
-
                     </p>
 
 
                     <div class="training-info">
 
                         <div class="info">
-
                             <strong>3x</strong>
-
-                            <span>
-                                por semana
-                            </span>
-
+                            <span>por semana</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>4–6</strong>
-
-                            <span>
-                                exercícios
-                            </span>
-
+                            <span>exercícios</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>60–75 min</strong>
-
-                            <span>
-                                estimado
-                            </span>
-
+                            <span>estimado</span>
                         </div>
 
                     </div>
@@ -1458,12 +1372,10 @@
 
 
                     <button
-                        class="training-button"
-                        onclick="abrirTreino('forca-base')"
+                        class="details-button"
+                        onclick="abrirTreino('forcaBase')"
                     >
-
-                        Ver treino completo
-
+                        Ver detalhes do treino
                     </button>
 
                 </article>
@@ -1474,6 +1386,7 @@
                 <article
                     class="training-card"
                     data-category="condicionamento"
+                    data-level="iniciante"
                 >
 
                     <div class="training-top">
@@ -1495,46 +1408,27 @@
 
 
                     <p class="training-description">
-
                         Uma sessão para desenvolver resistência
                         geral e melhorar a capacidade de realizar
                         atividades por mais tempo.
-
                     </p>
 
 
                     <div class="training-info">
 
                         <div class="info">
-
                             <strong>3x</strong>
-
-                            <span>
-                                por semana
-                            </span>
-
+                            <span>por semana</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>30–45 min</strong>
-
-                            <span>
-                                duração
-                            </span>
-
+                            <span>duração</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>Moderado</strong>
-
-                            <span>
-                                intensidade
-                            </span>
-
+                            <span>intensidade</span>
                         </div>
 
                     </div>
@@ -1571,12 +1465,10 @@
 
 
                     <button
-                        class="training-button"
+                        class="details-button"
                         onclick="abrirTreino('condicionamento')"
                     >
-
-                        Ver treino completo
-
+                        Ver detalhes do treino
                     </button>
 
                 </article>
@@ -1587,6 +1479,7 @@
                 <article
                     class="training-card"
                     data-category="forca"
+                    data-level="avancado"
                 >
 
                     <div class="training-top">
@@ -1608,46 +1501,27 @@
 
 
                     <p class="training-description">
-
                         Estrutura para praticantes experientes,
                         com maior atenção à progressão e
                         recuperação entre sessões.
-
                     </p>
 
 
                     <div class="training-info">
 
                         <div class="info">
-
                             <strong>4x</strong>
-
-                            <span>
-                                por semana
-                            </span>
-
+                            <span>por semana</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>4–6</strong>
-
-                            <span>
-                                exercícios
-                            </span>
-
+                            <span>exercícios</span>
                         </div>
 
-
                         <div class="info">
-
                             <strong>70–90 min</strong>
-
-                            <span>
-                                estimado
-                            </span>
-
+                            <span>estimado</span>
                         </div>
 
                     </div>
@@ -1684,16 +1558,13 @@
 
 
                     <button
-                        class="training-button"
-                        onclick="abrirTreino('forca-progressao')"
+                        class="details-button"
+                        onclick="abrirTreino('forcaProgressao')"
                     >
-
-                        Ver treino completo
-
+                        Ver detalhes do treino
                     </button>
 
                 </article>
-
 
             </div>
 
@@ -1706,7 +1577,7 @@
 
                 <strong>Importante:</strong>
 
-                os exemplos apresentados são modelos
+                Os exemplos apresentados são modelos
                 educacionais e não substituem uma avaliação
                 individual. Volume, intensidade, exercícios,
                 frequência e progressão devem considerar
@@ -1715,7 +1586,6 @@
                 procure um profissional de Educação Física.
 
             </div>
-
 
         </section>
 
@@ -1727,20 +1597,16 @@
         <section class="cta">
 
             <h2>
-
                 Agora conheça os
                 <span>exercícios.</span>
-
             </h2>
 
 
             <p>
-
                 Depois de escolher um treino, explore a
                 biblioteca do BaseFit Studio para conhecer
                 os exercícios e os principais músculos
                 envolvidos em cada movimento.
-
             </p>
 
 
@@ -1750,9 +1616,7 @@
                     href="exercicios.html"
                     class="btn btn-primary"
                 >
-
                     Explorar exercícios
-
                 </a>
 
 
@@ -1760,9 +1624,7 @@
                     href="calculadoras.html"
                     class="btn btn-secondary"
                 >
-
                     Abrir calculadoras
-
                 </a>
 
             </div>
@@ -1773,7 +1635,7 @@
 
 
     <!-- =========================
-         MODAL DE TREINO
+         MODAL
     ========================= -->
 
     <div
@@ -1796,22 +1658,19 @@
             <h2
                 id="modalTitle"
                 class="modal-title"
-            >
-            </h2>
+            ></h2>
 
 
             <div
                 id="modalSubtitle"
                 class="modal-subtitle"
-            >
-            </div>
+            ></div>
 
 
             <div
-                id="modalInfo"
-                class="modal-grid"
-            >
-            </div>
+                id="modalDetails"
+                class="detail-grid"
+            ></div>
 
 
             <div class="modal-section">
@@ -1820,8 +1679,7 @@
                     Objetivo
                 </h3>
 
-                <p id="modalObjective">
-                </p>
+                <p id="modalObjective"></p>
 
             </div>
 
@@ -1829,14 +1687,10 @@
             <div class="modal-section">
 
                 <h3>
-                    Estrutura do treino
+                    Como utilizar
                 </h3>
 
-                <ul
-                    id="modalExercises"
-                    class="modal-exercises"
-                >
-                </ul>
+                <p id="modalHow"></p>
 
             </div>
 
@@ -1844,14 +1698,23 @@
             <div class="modal-section">
 
                 <h3>
-                    Orientação
+                    Progressão
                 </h3>
 
-                <p id="modalGuidance">
-                </p>
+                <p id="modalProgression"></p>
 
             </div>
 
+
+            <div class="modal-section">
+
+                <h3>
+                    Atenção
+                </h3>
+
+                <p id="modalWarning"></p>
+
+            </div>
 
         </div>
 
@@ -1948,56 +1811,57 @@
         const dadosTreinos = {
 
 
-            "hipertrofia-iniciante": {
+            corpoInteiro: {
 
                 nome:
                     "Hipertrofia — Corpo inteiro",
 
-                subtitulo:
+                grupo:
                     "Hipertrofia • Iniciante",
 
+                objetivo:
+                    "Desenvolver uma base geral de força e hipertrofia através do trabalho dos principais grupos musculares em uma mesma sessão.",
+
                 frequencia:
-                    "3x por semana",
+                    "3 vezes por semana",
 
                 duracao:
-                    "≈ 60 minutos",
+                    "Aproximadamente 60 minutos",
 
                 nivel:
                     "Iniciante",
 
-                objetivo:
-                    "Desenvolver uma base de treinamento envolvendo os principais grupos musculares, com foco em adaptação, técnica e consistência.",
+                estrutura:
+                    "6–8 exercícios por sessão",
 
-                exercicios: [
+                descanso:
+                    "60–120 segundos",
 
-                    ["Agachamento", "3 × 8–12"],
+                como:
+                    "Realize os exercícios com atenção à técnica e utilize cargas que permitam executar as repetições planejadas com controle. Priorize a consistência antes de aumentar significativamente a carga.",
 
-                    ["Supino reto", "3 × 8–12"],
+                progressao:
+                    "Quando conseguir realizar o limite superior das repetições com boa técnica, pode-se considerar um pequeno aumento de carga, desde que isso não prejudique a execução.",
 
-                    ["Remada", "3 × 8–12"],
-
-                    ["Desenvolvimento", "3 × 8–12"],
-
-                    ["Rosca direta", "2 × 10–12"]
-
-                ],
-
-                orientacao:
-                    "Priorize a execução controlada dos movimentos e utilize cargas compatíveis com sua capacidade técnica. O exemplo serve como referência educacional e pode precisar de ajustes individuais."
+                warning:
+                    "Este é um modelo educacional. A escolha dos exercícios, cargas e volume deve considerar as características individuais do praticante."
 
             },
 
 
-            "hipertrofia-intermediario": {
+            superiorInferior: {
 
                 nome:
-                    "Hipertrofia — Superior/inferior",
+                    "Hipertrofia — Superior / Inferior",
 
-                subtitulo:
+                grupo:
                     "Hipertrofia • Intermediário",
 
+                objetivo:
+                    "Organizar o treinamento em sessões de membros superiores e inferiores, permitindo maior organização do volume semanal.",
+
                 frequencia:
-                    "4x por semana",
+                    "4 vezes por semana",
 
                 duracao:
                     "60–75 minutos",
@@ -2005,39 +1869,37 @@
                 nivel:
                     "Intermediário",
 
-                objetivo:
-                    "Organizar o treinamento em sessões de membros superiores e inferiores, permitindo distribuir o volume semanal de forma estruturada.",
+                estrutura:
+                    "5–7 exercícios por sessão",
 
-                exercicios: [
+                descanso:
+                    "60–120 segundos",
 
-                    ["Agachamento", "3 × 6–10"],
+                como:
+                    "Alterne sessões de membros superiores e inferiores, respeitando os períodos de recuperação. Mantenha o foco na execução controlada e na progressão gradual.",
 
-                    ["Leg press", "3 × 8–12"],
+                progressao:
+                    "A progressão pode ocorrer através de pequenas alterações na carga, repetições ou volume, conforme a capacidade de recuperação e evolução do praticante.",
 
-                    ["Supino", "3 × 6–10"],
-
-                    ["Remada", "3 × 8–12"],
-
-                    ["Elevação lateral", "3 × 10–15"]
-
-                ],
-
-                orientacao:
-                    "A progressão deve ocorrer de maneira gradual e respeitar a recuperação entre sessões. Ajustes de volume e carga devem considerar o nível de experiência do praticante."
+                warning:
+                    "A divisão e o volume devem ser ajustados de acordo com experiência, disponibilidade, recuperação e objetivo."
 
             },
 
 
-            "emagrecimento": {
+            emagrecimento: {
 
                 nome:
                     "Emagrecimento — Treino geral",
 
-                subtitulo:
+                grupo:
                     "Emagrecimento • Iniciante",
 
+                objetivo:
+                    "Combinar exercícios de força e atividade cardiovascular dentro de uma rotina que favoreça maior gasto energético e desenvolvimento da capacidade física.",
+
                 frequencia:
-                    "3x por semana",
+                    "3 vezes por semana",
 
                 duracao:
                     "45–60 minutos",
@@ -2045,39 +1907,37 @@
                 nivel:
                     "Iniciante",
 
-                objetivo:
-                    "Combinar exercícios de força e atividade cardiovascular dentro de uma rotina geral de treinamento.",
+                estrutura:
+                    "Força + atividade cardiovascular",
 
-                exercicios: [
+                descanso:
+                    "45–90 segundos",
 
-                    ["Agachamento", "3 × 10"],
+                como:
+                    "Realize os exercícios de força com intensidade adequada ao seu nível e inclua atividade cardiovascular em ritmo compatível com sua condição física.",
 
-                    ["Flexão", "3 × 8–12"],
+                progressao:
+                    "A evolução pode ocorrer aumentando gradualmente o tempo de atividade, repetições ou carga, sempre respeitando a recuperação.",
 
-                    ["Remada", "3 × 10"],
-
-                    ["Afundo", "3 × 10"],
-
-                    ["Caminhada", "15–20 min"]
-
-                ],
-
-                orientacao:
-                    "A intensidade deve ser ajustada à condição física individual. O treinamento é apenas uma parte de uma estratégia de mudança de composição corporal."
+                warning:
+                    "Emagrecimento depende de diversos fatores, incluindo alimentação, atividade física e rotina. O treino não deve ser utilizado como única estratégia."
 
             },
 
 
-            "forca-base": {
+            forcaBase: {
 
                 nome:
                     "Força — Base",
 
-                subtitulo:
+                grupo:
                     "Força • Intermediário",
 
+                objetivo:
+                    "Desenvolver força utilizando principalmente exercícios multiarticulares e uma estrutura com menor número de exercícios.",
+
                 frequencia:
-                    "3x por semana",
+                    "3 vezes por semana",
 
                 duracao:
                     "60–75 minutos",
@@ -2085,39 +1945,37 @@
                 nivel:
                     "Intermediário",
 
-                objetivo:
-                    "Desenvolver força geral por meio de exercícios multiarticulares e progressão gradual de carga.",
+                estrutura:
+                    "4–6 exercícios",
 
-                exercicios: [
+                descanso:
+                    "90–180 segundos",
 
-                    ["Agachamento", "3 × 5"],
+                como:
+                    "Priorize a técnica e o controle do movimento. Utilize períodos de descanso maiores quando necessário para manter a qualidade das séries.",
 
-                    ["Supino", "3 × 5"],
+                progressao:
+                    "Aumente a carga de forma gradual apenas quando a execução estiver consistente e a recuperação entre as sessões estiver adequada.",
 
-                    ["Levantamento terra", "3 × 5"],
-
-                    ["Remada", "3 × 6–8"],
-
-                    ["Desenvolvimento", "3 × 6–8"]
-
-                ],
-
-                orientacao:
-                    "A qualidade da técnica deve ser priorizada antes do aumento de carga. Intervalos de descanso adequados ajudam a manter o desempenho durante as séries."
+                warning:
+                    "Exercícios de força com cargas elevadas exigem domínio técnico e atenção à segurança."
 
             },
 
 
-            "condicionamento": {
+            condicionamento: {
 
                 nome:
                     "Condicionamento — Base",
 
-                subtitulo:
+                grupo:
                     "Condicionamento • Iniciante",
 
+                objetivo:
+                    "Desenvolver resistência geral e melhorar gradualmente a capacidade de realizar atividades físicas por períodos maiores.",
+
                 frequencia:
-                    "3x por semana",
+                    "3 vezes por semana",
 
                 duracao:
                     "30–45 minutos",
@@ -2125,39 +1983,37 @@
                 nivel:
                     "Iniciante",
 
-                objetivo:
-                    "Desenvolver resistência geral e aumentar gradualmente a capacidade de realizar atividades físicas.",
+                estrutura:
+                    "Força + atividade cardiovascular",
 
-                exercicios: [
+                descanso:
+                    "45–90 segundos",
 
-                    ["Caminhada rápida", "10 min"],
+                como:
+                    "Comece em uma intensidade moderada e concentre-se em manter uma execução consistente durante toda a sessão.",
 
-                    ["Agachamento", "3 × 12"],
+                progressao:
+                    "Aumente gradualmente o tempo de atividade ou o número de repetições conforme sua adaptação ao treinamento.",
 
-                    ["Flexão", "3 × 8–12"],
-
-                    ["Remada", "3 × 12"],
-
-                    ["Bicicleta", "10–15 min"]
-
-                ],
-
-                orientacao:
-                    "Comece em uma intensidade confortável e aumente o esforço progressivamente conforme sua adaptação. Respeite sinais de fadiga excessiva."
+                warning:
+                    "Pessoas sedentárias ou com limitações devem considerar orientação profissional antes de iniciar uma rotina de exercícios."
 
             },
 
 
-            "forca-progressao": {
+            forcaProgressao: {
 
                 nome:
                     "Força — Progressão",
 
-                subtitulo:
+                grupo:
                     "Força • Avançado",
 
+                objetivo:
+                    "Oferecer uma estrutura para praticantes experientes que já possuem uma base técnica e desejam trabalhar com maior foco em progressão.",
+
                 frequencia:
-                    "4x por semana",
+                    "4 vezes por semana",
 
                 duracao:
                     "70–90 minutos",
@@ -2165,25 +2021,20 @@
                 nivel:
                     "Avançado",
 
-                objetivo:
-                    "Estruturar o treinamento para praticantes experientes, com atenção à progressão de carga e recuperação.",
+                estrutura:
+                    "4–6 exercícios",
 
-                exercicios: [
+                descanso:
+                    "120–180 segundos",
 
-                    ["Agachamento", "4 × 4–6"],
+                como:
+                    "Priorize exercícios principais no início da sessão, mantendo atenção à técnica, recuperação e qualidade das séries.",
 
-                    ["Supino", "4 × 4–6"],
+                progressao:
+                    "A progressão deve ser planejada e gradual, levando em consideração desempenho, recuperação, volume semanal e experiência.",
 
-                    ["Terra", "3 × 4–6"],
-
-                    ["Remada", "3 × 6–8"],
-
-                    ["Desenvolvimento", "3 × 6–8"]
-
-                ],
-
-                orientacao:
-                    "Treinos avançados exigem maior atenção à técnica, recuperação e gerenciamento da carga. A progressão deve ser individualizada e acompanhada conforme a resposta ao treinamento."
+                warning:
+                    "Treinamentos avançados devem ser individualizados. O acompanhamento de um profissional pode ser especialmente importante."
 
             }
 
@@ -2191,7 +2042,7 @@
 
 
         /* =========================
-           ABRIR TREINO
+           ABRIR MODAL
         ========================= */
 
         function abrirTreino(nome) {
@@ -2210,48 +2061,75 @@
 
 
             document.getElementById("modalSubtitle").textContent =
-                treino.subtitulo;
+                treino.grupo;
 
 
-            document.getElementById("modalInfo").innerHTML = `
+            document.getElementById("modalDetails").innerHTML = `
 
-                <div class="modal-box">
+                <div class="detail-box">
 
-                    <strong>
-                        ${treino.frequencia}
-                    </strong>
-
-                    <span>
-                        Frequência
-                    </span>
-
-                </div>
-
-
-                <div class="modal-box">
-
-                    <strong>
-                        ${treino.duracao}
-                    </strong>
-
-                    <span>
-                        Duração estimada
-                    </span>
-
-                </div>
-
-
-                <div class="modal-box">
-
-                    <strong>
-                        ${treino.nivel}
-                    </strong>
-
-                    <span>
+                    <span class="detail-label">
                         Nível
                     </span>
 
+                    <span class="detail-value">
+                        ${treino.nivel}
+                    </span>
+
                 </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Frequência
+                    </span>
+
+                    <span class="detail-value">
+                        ${treino.frequencia}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Duração
+                    </span>
+
+                    <span class="detail-value">
+                        ${treino.duracao}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Estrutura
+                    </span>
+
+                    <span class="detail-value">
+                        ${treino.estrutura}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Descanso
+                    </span>
+
+                    <span class="detail-value">
+                        ${treino.descanso}
+                    </span>
+
+                </div>
+
 
             `;
 
@@ -2260,30 +2138,16 @@
                 treino.objetivo;
 
 
-            document.getElementById("modalExercises").innerHTML =
-                treino.exercicios
-                    .map(function(exercicio) {
-
-                        return `
-
-                            <li>
-
-                                ${exercicio[0]}
-
-                                <span>
-                                    ${exercicio[1]}
-                                </span>
-
-                            </li>
-
-                        `;
-
-                    })
-                    .join("");
+            document.getElementById("modalHow").textContent =
+                treino.como;
 
 
-            document.getElementById("modalGuidance").textContent =
-                treino.orientacao;
+            document.getElementById("modalProgression").textContent =
+                treino.progressao;
+
+
+            document.getElementById("modalWarning").textContent =
+                treino.warning;
 
 
             document
@@ -2299,7 +2163,7 @@
 
 
         /* =========================
-           FECHAR TREINO
+           FECHAR MODAL
         ========================= */
 
         function fecharTreino() {
@@ -2317,33 +2181,38 @@
 
 
         /* =========================
-           FECHAR CLICANDO FORA
+           CLICAR FORA
         ========================= */
 
         document
             .getElementById("trainingModal")
-            .addEventListener("click", function(event) {
+            .addEventListener(
+                "click",
+                function(event) {
 
-                if (
-                    event.target === this
-                ) {
+                    if (
+                        event.target === this
+                    ) {
 
-                    fecharTreino();
+                        fecharTreino();
+
+                    }
 
                 }
-
-            });
+            );
 
 
         /* =========================
-           FECHAR COM ESC
+           ESC
         ========================= */
 
         document.addEventListener(
             "keydown",
             function(event) {
 
-                if (event.key === "Escape") {
+                if (
+                    event.key === "Escape"
+                ) {
 
                     fecharTreino();
 
