@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Exercícios | BaseFit Studio</title>
+
+    <meta
+        name="description"
+        content="Biblioteca de exercícios do BaseFit Studio."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080c10;
+            color: #ffffff;
+        }
+
+        header {
+            padding: 22px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid #1b232c;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #45e17a;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #aeb8c4;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #45e17a;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #45e17a;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+
+            color: #929daa;
+
+            line-height: 1.7;
+
+            font-size: 17px;
+        }
+
+        /* FILTROS */
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            margin-bottom: 35px;
+        }
+
+        .filter {
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            background: #121920;
+
+            border: 1px solid #27333d;
+
+            color: #aeb8c4;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .filter:hover,
+        .filter.active {
+            background: #45e17a;
+            color: #071009;
+            border-color: #45e17a;
+        }
+
+        /* EXERCÍCIOS */
+
+        .exercise-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+            padding-bottom: 90px;
+        }
+
+        .exercise {
+            background: #141b22;
+
+            border: 1px solid #26313b;
+
+            border-radius: 16px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .exercise:hover {
+            transform: translateY(-5px);
+
+            border-color: #45e17a;
+        }
+
+        .exercise-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 12px;
+
+            background: #1a2820;
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .exercise h3 {
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        .exercise p {
+            color: #8e9aa7;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+        .muscle {
+            display: inline-block;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            background: #0d1319;
+
+            border: 1px solid #26313b;
+
+            color: #45e17a;
+
+            font-size: 12px;
+        }
+
+        /* AVISO */
+
+        .notice {
+            margin-bottom: 70px;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            background: #10171d;
+
+            border: 1px solid #27333d;
+
+            color: #8e9aa7;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 35px 7%;
+
+            border-top: 1px solid #1b232c;
+
+            text-align: center;
+
+            color: #687481;
+        }
+
+        footer strong {
+            color: #45e17a;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .exercise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <div class="logo">
+            BASE<span>FIT</span> STUDIO
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="treinos.html">
+                Treinos
+            </a>
+
+            <a href="exercicios.html">
+                Exercícios
+            </a>
+
+            <a href="calculadoras.html">
+                Calculadoras
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="hero">
+
+            <div class="container">
+
+                <h1>
+                    Biblioteca de <span>exercícios.</span>
+                </h1>
+
+                <p>
+                    Explore exercícios e descubra quais
+                    grupos musculares são trabalhados em
+                    cada movimento.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="container">
+
+
+            <div class="filters">
+
+                <button class="filter active">
+                    Todos
+                </button>
+
+                <button class="filter">
+                    Peito
+                </button>
+
+                <button class="filter">
+                    Costas
+                </button>
+
+                <button class="filter">
+                    Pernas
+                </button>
+
+                <button class="filter">
+                    Ombros
+                </button>
+
+                <button class="filter">
+                    Braços
+                </button>
+
+                <button class="filter">
+                    Abdômen
+                </button>
+
+            </div>
+
+
+            <div class="exercise-grid">
+
+
+                <div class="exercise">
+
+                    <div class="exercise-icon">
+                        🏋️
+                    </div>
+
+                    <h3>
+                        Supino reto
+                    </h3>
+
+                    <p>
+                        Exercício utilizado para trabalhar
+                        principalmente a musculatura do peito.
+                    </p>
+
+                    <span class="muscle">
+                        Peito
+                    </span>
+
+                </div>
+
+
+                <div class="exercise">
+
+                    <div class="exercise-icon">
+                        💪
+                    </div>
+
+                    <h3>
+                        Remada
+                    </h3>
+
+                    <p>
+                        Movimento de puxada que trabalha
+                        principalmente a musculatura das costas.
+                    </p>
+
+                    <span class="muscle">
+                        Costas
+                    </span>
+
+                </div>
+
+
+                <div class="exercise">
+
+                    <div class="exercise-icon">
+                        🦵
+                    </div>
+
+                    <h3>
+                        Agachamento
+                    </h3>
+
+                    <p>
+                        Exercício multiarticular que envolve
+                        principalmente pernas e glúteos.
+                    </p>
+
+                    <span class="muscle">
+                        Pernas
+                    </span>
+
+                </div>
+
+
+                <div class="exercise">
+
+                    <div class="exercise-icon">
+                        🏋️
+                    </div>
+
+                    <h3>
+                        Desenvolvimento
+                    </h3>
+
+                    <p>
+                        Exercício de empurrar utilizado para
+                        trabalhar principalmente os ombros.
+                    </p>
+
+                    <span class="muscle">
+                        Ombros
+                    </span>
+
+                </div>
+
+
+                <div class="exercise">
+
+                    <div class="exercise-icon">
+                        💪
+                    </div>
+
+                    <h3>
+                        Rosca direta
+                    </h3>
+
+                    <p>
+                        Exercício utilizado para trabalhar
+                        principalmente os músculos flexores do braço.
+                    </p>
+
+                    <span class="muscle">
+                        Bíceps
+                    </span>
+
+                </div>
+
+
+                <div class="exercise">
+
+                    <div class="exercise-icon">
+                        🔥
+                    </div>
+
+                    <h3>
+                        Abdominal
+                    </h3>
+
+                    <p>
+                        Exercício direcionado para a musculatura
+                        da região abdominal.
+                    </p>
+
+                    <span class="muscle">
+                        Abdômen
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="notice">
+
+                <strong>Importante:</strong>
+
+                A execução correta dos exercícios depende
+                de fatores individuais, como experiência,
+                mobilidade, limitações e objetivo.
+                Em caso de dúvida, procure orientação
+                de um profissional de Educação Física.
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 <strong>BaseFit Studio</strong>
+            — Treine. Acompanhe. Evolua.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
