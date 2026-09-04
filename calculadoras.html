@@ -25,14 +25,19 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
             font-family: Arial, Helvetica, sans-serif;
+
             background: #080c10;
+
             color: #ffffff;
+
             min-height: 100vh;
         }
 
@@ -43,10 +48,13 @@
 
         header {
             width: 100%;
+
             padding: 22px 7%;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             border-bottom: 1px solid #1b232c;
@@ -54,6 +62,7 @@
             background: rgba(8, 12, 16, 0.97);
 
             position: sticky;
+
             top: 0;
 
             z-index: 100;
@@ -64,9 +73,11 @@
 
         .logo {
             color: #ffffff;
+
             text-decoration: none;
 
             font-size: 23px;
+
             font-weight: 800;
 
             letter-spacing: 1px;
@@ -85,6 +96,7 @@
 
         nav {
             display: flex;
+
             gap: 30px;
         }
 
@@ -100,9 +112,15 @@
         }
 
 
-        nav a:hover,
+        nav a:hover {
+            color: #45e17a;
+        }
+
+
         nav a.active {
             color: #45e17a;
+
+            font-weight: bold;
         }
 
 
@@ -112,6 +130,7 @@
 
         .container {
             width: min(1100px, 90%);
+
             margin: 0 auto;
         }
 
@@ -122,13 +141,36 @@
 
         .page-title {
             text-align: center;
+
             padding: 80px 0 50px;
+        }
+
+
+        .page-title .tag {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border: 1px solid #293640;
+
+            border-radius: 30px;
+
+            color: #45e17a;
+
+            font-size: 11px;
+
+            letter-spacing: 0.7px;
+
+            margin-bottom: 20px;
         }
 
 
         .page-title h1 {
             font-size: clamp(38px, 6vw, 52px);
+
             margin-bottom: 15px;
+
+            line-height: 1.1;
         }
 
 
@@ -161,7 +203,7 @@
 
             gap: 25px;
 
-            padding-bottom: 30px;
+            padding-bottom: 25px;
         }
 
 
@@ -178,9 +220,10 @@
 
             padding: 30px;
 
-            transition: 0.3s;
-
-            position: relative;
+            transition:
+                transform 0.3s,
+                border-color 0.3s,
+                box-shadow 0.3s;
         }
 
 
@@ -188,6 +231,9 @@
             transform: translateY(-3px);
 
             border-color: #35434f;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -201,7 +247,7 @@
         .calculator-description {
             color: #8e9aa7;
 
-            line-height: 1.7;
+            line-height: 1.6;
 
             margin-bottom: 25px;
 
@@ -255,7 +301,7 @@
 
         .input-group input:hover,
         .input-group select:hover {
-            border-color: #3b4955;
+            border-color: #45525f;
         }
 
 
@@ -264,20 +310,29 @@
             border-color: #45e17a;
 
             box-shadow:
-                0 0 0 2px
-                rgba(69, 225, 122, 0.08);
+                0 0 0 3px rgba(69, 225, 122, 0.07);
         }
 
 
         .input-group select option {
             background: #0b1015;
+
             color: #ffffff;
         }
 
 
         /* =========================
-           BOTÃO
+           BOTÕES
         ========================= */
+
+        .button-group {
+            display: grid;
+
+            grid-template-columns: 1fr auto;
+
+            gap: 10px;
+        }
+
 
         .calculate-button {
             width: 100%;
@@ -311,8 +366,59 @@
         }
 
 
-        .calculate-button:active {
-            transform: translateY(0);
+        .clear-button {
+            padding: 14px 17px;
+
+            border-radius: 8px;
+
+            background: transparent;
+
+            border: 1px solid #303b46;
+
+            color: #8995a1;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .clear-button:hover {
+            border-color: #56636f;
+
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           ERRO
+        ========================= */
+
+        .error-message {
+            display: none;
+
+            margin-top: 12px;
+
+            padding: 11px 13px;
+
+            border-radius: 8px;
+
+            background: #211517;
+
+            border: 1px solid #4a292e;
+
+            color: #df9299;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        .error-message.show {
+            display: block;
         }
 
 
@@ -327,13 +433,13 @@
 
             padding: 20px;
 
-            border-radius: 10px;
+            border-radius: 12px;
 
             background: #10171d;
 
             border: 1px solid #2b3944;
 
-            animation: resultAppear 0.25s ease;
+            animation: resultAppear 0.3s ease;
         }
 
 
@@ -346,11 +452,13 @@
 
             from {
                 opacity: 0;
+
                 transform: translateY(5px);
             }
 
             to {
                 opacity: 1;
+
                 transform: translateY(0);
             }
 
@@ -363,15 +471,23 @@
             font-weight: bold;
 
             margin-bottom: 8px;
+
+            font-size: 13px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
         }
 
 
         .result-value {
-            font-size: 28px;
+            font-size: 30px;
 
             font-weight: bold;
 
             margin-bottom: 8px;
+
+            color: #ffffff;
         }
 
 
@@ -397,6 +513,8 @@
             display: flex;
 
             justify-content: space-between;
+
+            align-items: center;
 
             gap: 20px;
 
@@ -425,48 +543,25 @@
 
 
         /* =========================
-           DESTAQUE DE RESULTADO
+           DESTAQUE DO RESULTADO
         ========================= */
 
         .result-highlight {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 10px;
-
             margin-top: 15px;
-        }
 
-
-        .highlight-box {
-            padding: 14px;
-
-            background: #0b1015;
-
-            border: 1px solid #202b34;
+            padding: 13px;
 
             border-radius: 8px;
 
-            text-align: center;
-        }
+            background: #14231a;
 
+            border: 1px solid #294936;
 
-        .highlight-box span {
-            display: block;
+            color: #a9d9b7;
 
-            color: #707c88;
+            font-size: 13px;
 
-            font-size: 11px;
-
-            margin-bottom: 5px;
-        }
-
-
-        .highlight-box strong {
-            color: #ffffff;
-
-            font-size: 17px;
+            line-height: 1.6;
         }
 
 
@@ -475,7 +570,7 @@
         ========================= */
 
         .warning {
-            margin-top: 10px;
+            margin-top: 30px;
 
             margin-bottom: 80px;
 
@@ -496,6 +591,107 @@
 
 
         .warning strong {
+            color: #45e17a;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .next-section {
+            padding: 75px 7%;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #16231b,
+                    #080c10 65%
+                );
+
+            border-top: 1px solid #172029;
+        }
+
+
+        .next-section h2 {
+            font-size: 34px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .next-section h2 span {
+            color: #45e17a;
+        }
+
+
+        .next-section p {
+            max-width: 620px;
+
+            margin: 0 auto 28px;
+
+            color: #8e9aa7;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        .next-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 22px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-primary {
+            background: #45e17a;
+
+            color: #071009;
+        }
+
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(69, 225, 122, 0.12);
+        }
+
+
+        .btn-secondary {
+            border: 1px solid #303b47;
+
+            color: #ffffff;
+        }
+
+
+        .btn-secondary:hover {
+            border-color: #45e17a;
+
             color: #45e17a;
         }
 
@@ -557,8 +753,25 @@
             }
 
 
+            .page-title p {
+                font-size: 15px;
+            }
+
+
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+
+
+            .clear-button {
+                width: 100%;
+            }
+
+
             .result-item {
                 flex-direction: column;
+
+                align-items: flex-start;
 
                 gap: 4px;
             }
@@ -569,8 +782,13 @@
             }
 
 
-            .result-highlight {
-                grid-template-columns: 1fr;
+            .next-section {
+                padding: 60px 7%;
+            }
+
+
+            .next-section h2 {
+                font-size: 29px;
             }
 
         }
@@ -640,6 +858,13 @@
             <div class="container">
 
 
+                <div class="tag">
+
+                    FERRAMENTAS • ESTIMATIVAS • ACOMPANHAMENTO
+
+                </div>
+
+
                 <h1>
 
                     Calculadoras
@@ -674,7 +899,7 @@
 
 
                 <!-- =========================
-                     CALCULADORA DE IMC
+                     IMC
                 ========================= -->
 
                 <div class="calculator">
@@ -707,7 +932,6 @@
                             id="peso"
                             placeholder="Ex: 75"
                             min="1"
-                            max="500"
                             step="0.1"
                         >
 
@@ -728,22 +952,40 @@
                             id="altura"
                             placeholder="Ex: 1.75"
                             min="0.5"
-                            max="2.5"
                             step="0.01"
                         >
 
                     </div>
 
 
-                    <button
-                        type="button"
-                        class="calculate-button"
-                        onclick="calcularIMC()"
-                    >
+                    <div class="button-group">
 
-                        Calcular IMC
+                        <button
+                            class="calculate-button"
+                            onclick="calcularIMC()"
+                        >
 
-                    </button>
+                            Calcular IMC
+
+                        </button>
+
+
+                        <button
+                            class="clear-button"
+                            onclick="limparCalculadora('imc')"
+                        >
+
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="erroIMC"
+                        class="error-message"
+                    ></div>
 
 
                     <div
@@ -772,32 +1014,9 @@
 
                         <div class="result-highlight">
 
-
-                            <div class="highlight-box">
-
-                                <span>
-                                    Referência inferior
-                                </span>
-
-                                <strong>
-                                    18,5
-                                </strong>
-
-                            </div>
-
-
-                            <div class="highlight-box">
-
-                                <span>
-                                    Referência superior
-                                </span>
-
-                                <strong>
-                                    24,9
-                                </strong>
-
-                            </div>
-
+                            O IMC é um indicador geral e deve
+                            ser interpretado considerando o
+                            contexto individual.
 
                         </div>
 
@@ -808,7 +1027,7 @@
 
 
                 <!-- =========================
-                     CALCULADORA DE TMB
+                     TMB
                 ========================= -->
 
                 <div class="calculator">
@@ -861,7 +1080,6 @@
                             id="pesoTMB"
                             placeholder="Ex: 75"
                             min="1"
-                            max="500"
                             step="0.1"
                         >
 
@@ -882,7 +1100,6 @@
                             id="alturaTMB"
                             placeholder="Ex: 175"
                             min="50"
-                            max="250"
                             step="1"
                         >
 
@@ -918,15 +1135,34 @@
                     </div>
 
 
-                    <button
-                        type="button"
-                        class="calculate-button"
-                        onclick="calcularTMB()"
-                    >
+                    <div class="button-group">
 
-                        Calcular TMB
+                        <button
+                            class="calculate-button"
+                            onclick="calcularTMB()"
+                        >
 
-                    </button>
+                            Calcular TMB
+
+                        </button>
+
+
+                        <button
+                            class="clear-button"
+                            onclick="limparCalculadora('tmb')"
+                        >
+
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="erroTMB"
+                        class="error-message"
+                    ></div>
 
 
                     <div
@@ -951,6 +1187,15 @@
 
                             Estimativa das calorias que
                             seu corpo utiliza em repouso.
+
+                        </div>
+
+
+                        <div class="result-highlight">
+
+                            A TMB é uma estimativa de referência
+                            e não representa necessariamente o
+                            gasto energético total diário.
 
                         </div>
 
@@ -994,7 +1239,6 @@
                             id="tdeeTMB"
                             placeholder="Ex: 1700"
                             min="1"
-                            max="10000"
                             step="1"
                         >
 
@@ -1041,15 +1285,34 @@
                     </div>
 
 
-                    <button
-                        type="button"
-                        class="calculate-button"
-                        onclick="calcularTDEE()"
-                    >
+                    <div class="button-group">
 
-                        Calcular gasto diário
+                        <button
+                            class="calculate-button"
+                            onclick="calcularTDEE()"
+                        >
 
-                    </button>
+                            Calcular gasto diário
+
+                        </button>
+
+
+                        <button
+                            class="clear-button"
+                            onclick="limparCalculadora('tdee')"
+                        >
+
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="erroTDEE"
+                        class="error-message"
+                    ></div>
 
 
                     <div
@@ -1072,9 +1335,8 @@
 
                         <div class="result-text">
 
-                            Estimativa baseada na TMB
-                            informada e no nível de atividade
-                            selecionado.
+                            Estimativa baseada na TMB informada
+                            e no nível de atividade selecionado.
 
                         </div>
 
@@ -1088,9 +1350,8 @@
                                     TMB informada
                                 </span>
 
-                                <strong
-                                    id="tdeeBase"
-                                ></strong>
+                                <strong id="tdeeBase">
+                                </strong>
 
                             </div>
 
@@ -1101,9 +1362,8 @@
                                     Multiplicador
                                 </span>
 
-                                <strong
-                                    id="tdeeMultiplicador"
-                                ></strong>
+                                <strong id="tdeeMultiplicador">
+                                </strong>
 
                             </div>
 
@@ -1117,7 +1377,7 @@
 
 
                 <!-- =========================
-                     CALORIAS POR OBJETIVO
+                     OBJETIVO
                 ========================= -->
 
                 <div class="calculator">
@@ -1131,7 +1391,7 @@
                     <p class="calculator-description">
 
                         Utilize seu gasto diário estimado
-                        para visualizar uma referência aproximada
+                        para visualizar uma faixa aproximada
                         conforme seu objetivo.
 
                     </p>
@@ -1151,7 +1411,6 @@
                             id="caloriasBase"
                             placeholder="Ex: 2500"
                             min="1"
-                            max="10000"
                             step="1"
                         >
 
@@ -1190,15 +1449,34 @@
                     </div>
 
 
-                    <button
-                        type="button"
-                        class="calculate-button"
-                        onclick="calcularObjetivo()"
-                    >
+                    <div class="button-group">
 
-                        Calcular estimativa
+                        <button
+                            class="calculate-button"
+                            onclick="calcularObjetivo()"
+                        >
 
-                    </button>
+                            Calcular estimativa
+
+                        </button>
+
+
+                        <button
+                            class="clear-button"
+                            onclick="limparCalculadora('objetivo')"
+                        >
+
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="erroObjetivo"
+                        class="error-message"
+                    ></div>
 
 
                     <div
@@ -1227,36 +1505,9 @@
 
                         <div class="result-highlight">
 
-
-                            <div class="highlight-box">
-
-                                <span>
-                                    Gasto informado
-                                </span>
-
-                                <strong
-                                    id="objetivoBase"
-                                >
-                                    —
-                                </strong>
-
-                            </div>
-
-
-                            <div class="highlight-box">
-
-                                <span>
-                                    Ajuste aplicado
-                                </span>
-
-                                <strong
-                                    id="objetivoAjuste"
-                                >
-                                    —
-                                </strong>
-
-                            </div>
-
+                            O resultado serve apenas como
+                            referência informativa e não como
+                            prescrição nutricional.
 
                         </div>
 
@@ -1307,15 +1558,34 @@
                     </div>
 
 
-                    <button
-                        type="button"
-                        class="calculate-button"
-                        onclick="calcularFC()"
-                    >
+                    <div class="button-group">
 
-                        Calcular frequência máxima
+                        <button
+                            class="calculate-button"
+                            onclick="calcularFC()"
+                        >
 
-                    </button>
+                            Calcular frequência máxima
+
+                        </button>
+
+
+                        <button
+                            class="clear-button"
+                            onclick="limparCalculadora('fc')"
+                        >
+
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="erroFC"
+                        class="error-message"
+                    ></div>
 
 
                     <div
@@ -1342,187 +1612,10 @@
                         ></div>
 
 
-                        <div class="result-list">
+                        <div class="result-highlight">
 
-
-                            <div class="result-item">
-
-                                <span>
-                                    Idade utilizada
-                                </span>
-
-                                <strong
-                                    id="idadeUtilizadaFC"
-                                ></strong>
-
-                            </div>
-
-
-                            <div class="result-item">
-
-                                <span>
-                                    Fórmula
-                                </span>
-
-                                <strong>
-                                    220 − idade
-                                </strong>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <!-- =========================
-                     ZONA DE FREQUÊNCIA
-                ========================= -->
-
-                <div class="calculator">
-
-
-                    <h2>
-                        📈 Zona de frequência cardíaca
-                    </h2>
-
-
-                    <p class="calculator-description">
-
-                        Visualize uma referência aproximada
-                        de intensidade a partir da frequência
-                        cardíaca máxima estimada.
-
-                    </p>
-
-
-                    <div class="input-group">
-
-                        <label for="fcMaxZona">
-
-                            Frequência cardíaca máxima (bpm)
-
-                        </label>
-
-
-                        <input
-                            type="number"
-                            id="fcMaxZona"
-                            placeholder="Ex: 190"
-                            min="1"
-                            max="250"
-                            step="1"
-                        >
-
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="calculate-button"
-                        onclick="calcularZonaFC()"
-                    >
-
-                        Calcular zonas
-
-                    </button>
-
-
-                    <div
-                        id="resultadoZonaFC"
-                        class="result"
-                    >
-
-                        <div class="result-title">
-
-                            Zonas estimadas
-
-                        </div>
-
-
-                        <div class="result-list">
-
-
-                            <div class="result-item">
-
-                                <span>
-                                    Zona 1 — muito leve
-                                </span>
-
-                                <strong
-                                    id="zona1"
-                                ></strong>
-
-                            </div>
-
-
-                            <div class="result-item">
-
-                                <span>
-                                    Zona 2 — leve
-                                </span>
-
-                                <strong
-                                    id="zona2"
-                                ></strong>
-
-                            </div>
-
-
-                            <div class="result-item">
-
-                                <span>
-                                    Zona 3 — moderada
-                                </span>
-
-                                <strong
-                                    id="zona3"
-                                ></strong>
-
-                            </div>
-
-
-                            <div class="result-item">
-
-                                <span>
-                                    Zona 4 — alta
-                                </span>
-
-                                <strong
-                                    id="zona4"
-                                ></strong>
-
-                            </div>
-
-
-                            <div class="result-item">
-
-                                <span>
-                                    Zona 5 — muito alta
-                                </span>
-
-                                <strong
-                                    id="zona5"
-                                ></strong>
-
-                            </div>
-
-
-                        </div>
-
-
-                        <div
-                            class="result-text"
-                            style="margin-top: 15px;"
-                        >
-
-                            As zonas são referências matemáticas
-                            baseadas na frequência máxima informada
-                            e não representam uma prescrição individual.
+                            A frequência cardíaca real pode variar
+                            entre indivíduos e situações.
 
                         </div>
 
@@ -1544,6 +1637,7 @@
 
                 <strong>Importante:</strong>
 
+
                 Os resultados apresentados pelas calculadoras
                 são estimativas para fins informativos e podem
                 variar de acordo com características individuais.
@@ -1551,6 +1645,60 @@
                 prescrição de exercícios ou orientação nutricional
                 individualizada realizada por um profissional
                 qualificado.
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             PRÓXIMA ÁREA
+        ========================= -->
+
+        <section class="next-section">
+
+
+            <h2>
+
+                Continue sua
+                <span>jornada.</span>
+
+            </h2>
+
+
+            <p>
+
+                Use as calculadoras como ferramentas de
+                referência e explore os treinos e exercícios
+                do BaseFit Studio para continuar conhecendo
+                diferentes formas de estruturar seu treinamento.
+
+            </p>
+
+
+            <div class="next-buttons">
+
+
+                <a
+                    href="treinos.html"
+                    class="btn btn-primary"
+                >
+
+                    Ver treinos
+
+                </a>
+
+
+                <a
+                    href="exercicios.html"
+                    class="btn btn-secondary"
+                >
+
+                    Explorar exercícios
+
+                </a>
 
 
             </div>
@@ -1593,59 +1741,61 @@
            FUNÇÕES AUXILIARES
         ========================= */
 
-        function obterNumero(id) {
+        function mostrarResultado(id) {
 
             const elemento =
                 document.getElementById(id);
 
-            if (!elemento) {
-                return NaN;
-            }
-
-            return parseFloat(
-                elemento.value.replace(",", ".")
-            );
-
-        }
-
-
-        function mostrarResultado(id) {
-
-            const resultado =
-                document.getElementById(id);
-
-            if (!resultado) {
-                return;
-            }
-
-            resultado.classList.add("show");
+            elemento.classList.add("show");
 
         }
 
 
         function esconderResultado(id) {
 
-            const resultado =
+            const elemento =
                 document.getElementById(id);
 
-            if (!resultado) {
-                return;
-            }
-
-            resultado.classList.remove("show");
+            elemento.classList.remove("show");
 
         }
 
 
-        function formatarNumero(numero, casas = 0) {
+        function mostrarErro(id, mensagem) {
 
-            return numero.toLocaleString(
-                "pt-BR",
-                {
-                    minimumFractionDigits: casas,
-                    maximumFractionDigits: casas
-                }
-            );
+            const elemento =
+                document.getElementById(id);
+
+            elemento.textContent =
+                mensagem;
+
+            elemento.classList.add("show");
+
+        }
+
+
+        function esconderErro(id) {
+
+            const elemento =
+                document.getElementById(id);
+
+            elemento.textContent = "";
+
+            elemento.classList.remove("show");
+
+        }
+
+
+        function limparCampo(id) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (elemento) {
+
+                elemento.value = "";
+
+            }
 
         }
 
@@ -1657,12 +1807,19 @@
         function calcularIMC() {
 
 
+            esconderErro("erroIMC");
+
+
             const peso =
-                obterNumero("peso");
+                parseFloat(
+                    document.getElementById("peso").value
+                );
 
 
             const altura =
-                obterNumero("altura");
+                parseFloat(
+                    document.getElementById("altura").value
+                );
 
 
             if (
@@ -1672,23 +1829,11 @@
                 altura <= 0
             ) {
 
-                alert(
+                esconderResultado("resultadoIMC");
+
+                mostrarErro(
+                    "erroIMC",
                     "Digite um peso e uma altura válidos."
-                );
-
-                return;
-
-            }
-
-
-            if (
-                peso > 500 ||
-                altura < 0.5 ||
-                altura > 2.5
-            ) {
-
-                alert(
-                    "Verifique os valores informados."
                 );
 
                 return;
@@ -1749,8 +1894,7 @@
             document
                 .getElementById("valorIMC")
                 .textContent =
-                    "IMC: " +
-                    formatarNumero(imc, 1);
+                    imc.toFixed(1);
 
 
             document
@@ -1771,22 +1915,29 @@
         function calcularTMB() {
 
 
+            esconderErro("erroTMB");
+
+
             const idade =
-                obterNumero("idade");
+                parseFloat(
+                    document.getElementById("idade").value
+                );
 
 
             const peso =
-                obterNumero("pesoTMB");
+                parseFloat(
+                    document.getElementById("pesoTMB").value
+                );
 
 
             const altura =
-                obterNumero("alturaTMB");
+                parseFloat(
+                    document.getElementById("alturaTMB").value
+                );
 
 
             const sexo =
-                document
-                    .getElementById("sexo")
-                    .value;
+                document.getElementById("sexo").value;
 
 
             if (
@@ -1794,29 +1945,17 @@
                 isNaN(peso) ||
                 isNaN(altura) ||
                 idade <= 0 ||
+                idade > 120 ||
                 peso <= 0 ||
                 altura <= 0 ||
                 !sexo
             ) {
 
-                alert(
+                esconderResultado("resultadoTMB");
+
+                mostrarErro(
+                    "erroTMB",
                     "Preencha todos os campos corretamente."
-                );
-
-                return;
-
-            }
-
-
-            if (
-                idade > 120 ||
-                peso > 500 ||
-                altura < 50 ||
-                altura > 250
-            ) {
-
-                alert(
-                    "Verifique os valores informados."
                 );
 
                 return;
@@ -1859,7 +1998,7 @@
             document
                 .getElementById("valorTMB")
                 .textContent =
-                    formatarNumero(tmbArredondada) +
+                    tmbArredondada +
                     " kcal/dia";
 
 
@@ -1875,12 +2014,19 @@
         function calcularTDEE() {
 
 
+            esconderErro("erroTDEE");
+
+
             const tmb =
-                obterNumero("tdeeTMB");
+                parseFloat(
+                    document.getElementById("tdeeTMB").value
+                );
 
 
             const atividade =
-                obterNumero("atividade");
+                parseFloat(
+                    document.getElementById("atividade").value
+                );
 
 
             if (
@@ -1889,19 +2035,11 @@
                 tmb <= 0
             ) {
 
-                alert(
+                esconderResultado("resultadoTDEE");
+
+                mostrarErro(
+                    "erroTDEE",
                     "Informe uma TMB válida e selecione seu nível de atividade."
-                );
-
-                return;
-
-            }
-
-
-            if (tmb > 10000) {
-
-                alert(
-                    "Verifique o valor da TMB informado."
                 );
 
                 return;
@@ -1916,18 +2054,14 @@
             document
                 .getElementById("valorTDEE")
                 .textContent =
-                    formatarNumero(
-                        Math.round(gasto)
-                    ) +
+                    Math.round(gasto) +
                     " kcal/dia";
 
 
             document
                 .getElementById("tdeeBase")
                 .textContent =
-                    formatarNumero(
-                        Math.round(tmb)
-                    ) +
+                    Math.round(tmb) +
                     " kcal";
 
 
@@ -1943,20 +2077,23 @@
 
 
         /* =========================
-           CALORIAS POR OBJETIVO
+           OBJETIVO
         ========================= */
 
         function calcularObjetivo() {
 
 
+            esconderErro("erroObjetivo");
+
+
             const calorias =
-                obterNumero("caloriasBase");
+                parseFloat(
+                    document.getElementById("caloriasBase").value
+                );
 
 
             const objetivo =
-                document
-                    .getElementById("objetivo")
-                    .value;
+                document.getElementById("objetivo").value;
 
 
             if (
@@ -1965,19 +2102,11 @@
                 !objetivo
             ) {
 
-                alert(
+                esconderResultado("resultadoObjetivo");
+
+                mostrarErro(
+                    "erroObjetivo",
                     "Informe as calorias e selecione um objetivo."
-                );
-
-                return;
-
-            }
-
-
-            if (calorias > 10000) {
-
-                alert(
-                    "Verifique o gasto diário informado."
                 );
 
                 return;
@@ -1989,16 +2118,11 @@
 
             let texto;
 
-            let ajuste;
-
 
             if (objetivo === "manter") {
 
                 resultado =
                     calorias;
-
-                ajuste =
-                    "0 kcal";
 
                 texto =
                     "Para manutenção, a estimativa utiliza o gasto diário informado como referência.";
@@ -2011,9 +2135,6 @@
                 resultado =
                     calorias - 300;
 
-                ajuste =
-                    "-300 kcal";
-
                 texto =
                     "Foi aplicada uma redução aproximada de 300 kcal em relação ao gasto informado.";
 
@@ -2024,9 +2145,6 @@
 
                 resultado =
                     calorias + 300;
-
-                ajuste =
-                    "+300 kcal";
 
                 texto =
                     "Foi aplicado um acréscimo aproximado de 300 kcal em relação ao gasto informado.";
@@ -2045,9 +2163,7 @@
             document
                 .getElementById("valorObjetivo")
                 .textContent =
-                    formatarNumero(
-                        Math.round(resultado)
-                    ) +
+                    Math.round(resultado) +
                     " kcal/dia";
 
 
@@ -2058,24 +2174,7 @@
                     " Essa é apenas uma estimativa informativa e não uma prescrição nutricional.";
 
 
-            document
-                .getElementById("objetivoBase")
-                .textContent =
-                    formatarNumero(
-                        Math.round(calorias)
-                    ) +
-                    " kcal";
-
-
-            document
-                .getElementById("objetivoAjuste")
-                .textContent =
-                    ajuste;
-
-
-            mostrarResultado(
-                "resultadoObjetivo"
-            );
+            mostrarResultado("resultadoObjetivo");
 
         }
 
@@ -2087,8 +2186,13 @@
         function calcularFC() {
 
 
+            esconderErro("erroFC");
+
+
             const idade =
-                obterNumero("idadeFC");
+                parseFloat(
+                    document.getElementById("idadeFC").value
+                );
 
 
             if (
@@ -2097,8 +2201,11 @@
                 idade > 120
             ) {
 
-                alert(
-                    "Digite uma idade válida."
+                esconderResultado("resultadoFC");
+
+                mostrarErro(
+                    "erroFC",
+                    "Digite uma idade válida entre 1 e 120 anos."
                 );
 
                 return;
@@ -2128,148 +2235,100 @@
                     "Estimativa baseada na fórmula 220 − idade. A frequência cardíaca real pode variar entre indivíduos.";
 
 
-            document
-                .getElementById("idadeUtilizadaFC")
-                .textContent =
-                    idade +
-                    " anos";
-
-
-            mostrarResultado(
-                "resultadoFC"
-            );
+            mostrarResultado("resultadoFC");
 
         }
 
 
         /* =========================
-           ZONAS DE FREQUÊNCIA
+           LIMPAR CALCULADORAS
         ========================= */
 
-        function calcularZonaFC() {
+        function limparCalculadora(tipo) {
 
 
-            const fcMaxima =
-                obterNumero("fcMaxZona");
+            if (tipo === "imc") {
 
+                limparCampo("peso");
 
-            if (
-                isNaN(fcMaxima) ||
-                fcMaxima <= 0 ||
-                fcMaxima > 250
-            ) {
+                limparCampo("altura");
 
-                alert(
-                    "Digite uma frequência cardíaca máxima válida."
-                );
+                esconderErro("erroIMC");
 
-                return;
+                esconderResultado("resultadoIMC");
 
             }
 
 
-            /*
-             * Faixas aproximadas baseadas
-             * em percentuais da FC máxima.
-             */
+            if (tipo === "tmb") {
 
-            const zona1Min =
-                Math.round(fcMaxima * 0.50);
+                limparCampo("idade");
 
-            const zona1Max =
-                Math.round(fcMaxima * 0.60);
+                limparCampo("pesoTMB");
 
+                limparCampo("alturaTMB");
 
-            const zona2Min =
-                Math.round(fcMaxima * 0.60);
+                document.getElementById("sexo").value = "";
 
-            const zona2Max =
-                Math.round(fcMaxima * 0.70);
+                esconderErro("erroTMB");
+
+                esconderResultado("resultadoTMB");
+
+            }
 
 
-            const zona3Min =
-                Math.round(fcMaxima * 0.70);
+            if (tipo === "tdee") {
 
-            const zona3Max =
-                Math.round(fcMaxima * 0.80);
+                limparCampo("tdeeTMB");
 
+                document.getElementById("atividade").value = "";
 
-            const zona4Min =
-                Math.round(fcMaxima * 0.80);
+                esconderErro("erroTDEE");
 
-            const zona4Max =
-                Math.round(fcMaxima * 0.90);
+                esconderResultado("resultadoTDEE");
 
-
-            const zona5Min =
-                Math.round(fcMaxima * 0.90);
-
-            const zona5Max =
-                Math.round(fcMaxima);
+            }
 
 
-            document
-                .getElementById("zona1")
-                .textContent =
-                    zona1Min +
-                    "–" +
-                    zona1Max +
-                    " bpm";
+            if (tipo === "objetivo") {
+
+                limparCampo("caloriasBase");
+
+                document.getElementById("objetivo").value = "";
+
+                esconderErro("erroObjetivo");
+
+                esconderResultado("resultadoObjetivo");
+
+            }
 
 
-            document
-                .getElementById("zona2")
-                .textContent =
-                    zona2Min +
-                    "–" +
-                    zona2Max +
-                    " bpm";
+            if (tipo === "fc") {
 
+                limparCampo("idadeFC");
 
-            document
-                .getElementById("zona3")
-                .textContent =
-                    zona3Min +
-                    "–" +
-                    zona3Max +
-                    " bpm";
+                esconderErro("erroFC");
 
+                esconderResultado("resultadoFC");
 
-            document
-                .getElementById("zona4")
-                .textContent =
-                    zona4Min +
-                    "–" +
-                    zona4Max +
-                    " bpm";
-
-
-            document
-                .getElementById("zona5")
-                .textContent =
-                    zona5Min +
-                    "–" +
-                    zona5Max +
-                    " bpm";
-
-
-            mostrarResultado(
-                "resultadoZonaFC"
-            );
+            }
 
         }
 
 
         /* =========================
-           ENTER PARA CALCULAR
+           ENTER NOS CAMPOS
         ========================= */
 
         document.addEventListener(
             "keydown",
             function(event) {
 
+
                 if (event.key !== "Enter") {
+
                     return;
+
                 }
 
 
@@ -2277,37 +2336,69 @@
                     document.activeElement;
 
 
+                if (!elemento) {
+
+                    return;
+
+                }
+
+
+                const id =
+                    elemento.id;
+
+
                 if (
-                    elemento &&
-                    elemento.tagName === "INPUT"
+                    id === "peso" ||
+                    id === "altura"
                 ) {
 
-                    const card =
-                        elemento.closest(
-                            ".calculator"
-                        );
+                    calcularIMC();
+
+                }
 
 
-                    if (!card) {
-                        return;
-                    }
+                else if (
+                    id === "idade" ||
+                    id === "pesoTMB" ||
+                    id === "alturaTMB" ||
+                    id === "sexo"
+                ) {
+
+                    calcularTMB();
+
+                }
 
 
-                    const botao =
-                        card.querySelector(
-                            ".calculate-button"
-                        );
+                else if (
+                    id === "tdeeTMB" ||
+                    id === "atividade"
+                ) {
+
+                    calcularTDEE();
+
+                }
 
 
-                    if (botao) {
-                        botao.click();
-                    }
+                else if (
+                    id === "caloriasBase" ||
+                    id === "objetivo"
+                ) {
+
+                    calcularObjetivo();
+
+                }
+
+
+                else if (
+                    id === "idadeFC"
+                ) {
+
+                    calcularFC();
 
                 }
 
             }
         );
-
 
     </script>
 
