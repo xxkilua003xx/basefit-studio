@@ -96,7 +96,10 @@
             font-size: 17px;
         }
 
-        /* FILTROS */
+
+        /* =========================
+           FILTROS
+        ========================= */
 
         .filters {
             display: flex;
@@ -122,17 +125,23 @@
             transition: 0.3s;
 
             font-family: inherit;
+
             font-size: 14px;
         }
 
         .filter:hover,
         .filter.active {
             background: #45e17a;
+
             color: #071009;
+
             border-color: #45e17a;
         }
 
-        /* EXERCÍCIOS */
+
+        /* =========================
+           EXERCÍCIOS
+        ========================= */
 
         .exercise-grid {
             display: grid;
@@ -210,9 +219,47 @@
             color: #45e17a;
 
             font-size: 12px;
+
+            margin-bottom: 20px;
         }
 
-        /* AVISO */
+
+        /* =========================
+           BOTÃO DETALHES
+        ========================= */
+
+        .details-button {
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #202b34;
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .details-button:hover {
+            background: #45e17a;
+
+            color: #071009;
+        }
+
+
+        /* =========================
+           AVISO
+        ========================= */
 
         .notice {
             margin-bottom: 70px;
@@ -232,6 +279,171 @@
             font-size: 14px;
         }
 
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.80);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 1000;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            width: min(700px, 100%);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            background: #141b22;
+
+            border: 1px solid #303c47;
+
+            border-radius: 18px;
+
+            padding: 35px;
+
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+
+            top: 18px;
+            right: 20px;
+
+            width: 38px;
+            height: 38px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #202b34;
+
+            color: #ffffff;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            background: #45e17a;
+
+            color: #071009;
+        }
+
+        .modal-title {
+            font-size: 30px;
+
+            margin-bottom: 8px;
+
+            padding-right: 45px;
+        }
+
+        .modal-subtitle {
+            color: #45e17a;
+
+            margin-bottom: 25px;
+
+            font-size: 14px;
+        }
+
+        .detail-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-bottom: 30px;
+        }
+
+        .detail-box {
+            background: #0d1319;
+
+            border: 1px solid #27333d;
+
+            border-radius: 10px;
+
+            padding: 15px;
+        }
+
+        .detail-label {
+            display: block;
+
+            color: #687481;
+
+            font-size: 12px;
+
+            margin-bottom: 6px;
+        }
+
+        .detail-value {
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: bold;
+        }
+
+        .modal-section {
+            margin-bottom: 25px;
+        }
+
+        .modal-section h3 {
+            font-size: 18px;
+
+            margin-bottom: 10px;
+
+            color: #45e17a;
+        }
+
+        .modal-section p {
+            color: #aeb8c4;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .modal-section ul {
+            padding-left: 20px;
+
+            color: #aeb8c4;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
         footer {
             padding: 35px 7%;
 
@@ -246,7 +458,10 @@
             color: #45e17a;
         }
 
-        /* RESPONSIVO */
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
 
         @media (max-width: 800px) {
 
@@ -262,6 +477,14 @@
                 font-size: 40px;
             }
 
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
         }
 
     </style>
@@ -271,6 +494,10 @@
 
 <body>
 
+
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
 
     <header>
 
@@ -304,6 +531,10 @@
     <main>
 
 
+        <!-- =========================
+             TÍTULO
+        ========================= -->
+
         <section class="hero">
 
             <div class="container">
@@ -326,7 +557,9 @@
         <section class="container">
 
 
-            <!-- FILTROS -->
+            <!-- =========================
+                 FILTROS
+            ========================= -->
 
             <div class="filters">
 
@@ -382,12 +615,14 @@
             </div>
 
 
-            <!-- EXERCÍCIOS -->
+            <!-- =========================
+                 EXERCÍCIOS
+            ========================= -->
 
             <div class="exercise-grid">
 
 
-                <!-- PEITO -->
+                <!-- SUPINO -->
 
                 <div
                     class="exercise"
@@ -411,10 +646,17 @@
                         Peito
                     </span>
 
+                    <button
+                        class="details-button"
+                        onclick="abrirExercicio('supino')"
+                    >
+                        Ver detalhes
+                    </button>
+
                 </div>
 
 
-                <!-- COSTAS -->
+                <!-- REMADA -->
 
                 <div
                     class="exercise"
@@ -438,10 +680,17 @@
                         Costas
                     </span>
 
+                    <button
+                        class="details-button"
+                        onclick="abrirExercicio('remada')"
+                    >
+                        Ver detalhes
+                    </button>
+
                 </div>
 
 
-                <!-- PERNAS -->
+                <!-- AGACHAMENTO -->
 
                 <div
                     class="exercise"
@@ -465,10 +714,17 @@
                         Pernas
                     </span>
 
+                    <button
+                        class="details-button"
+                        onclick="abrirExercicio('agachamento')"
+                    >
+                        Ver detalhes
+                    </button>
+
                 </div>
 
 
-                <!-- OMBROS -->
+                <!-- DESENVOLVIMENTO -->
 
                 <div
                     class="exercise"
@@ -492,10 +748,17 @@
                         Ombros
                     </span>
 
+                    <button
+                        class="details-button"
+                        onclick="abrirExercicio('desenvolvimento')"
+                    >
+                        Ver detalhes
+                    </button>
+
                 </div>
 
 
-                <!-- BRAÇOS -->
+                <!-- ROSCA -->
 
                 <div
                     class="exercise"
@@ -519,10 +782,17 @@
                         Bíceps
                     </span>
 
+                    <button
+                        class="details-button"
+                        onclick="abrirExercicio('rosca')"
+                    >
+                        Ver detalhes
+                    </button>
+
                 </div>
 
 
-                <!-- ABDÔMEN -->
+                <!-- ABDOMINAL -->
 
                 <div
                     class="exercise"
@@ -546,11 +816,22 @@
                         Abdômen
                     </span>
 
+                    <button
+                        class="details-button"
+                        onclick="abrirExercicio('abdominal')"
+                    >
+                        Ver detalhes
+                    </button>
+
                 </div>
 
 
             </div>
 
+
+            <!-- =========================
+                 AVISO
+            ========================= -->
 
             <div class="notice">
 
@@ -571,6 +852,93 @@
     </main>
 
 
+    <!-- =========================
+         JANELA DE DETALHES
+    ========================= -->
+
+    <div
+        id="exerciseModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                class="modal-close"
+                onclick="fecharExercicio()"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+
+            <h2
+                id="modalTitle"
+                class="modal-title"
+            >
+            </h2>
+
+
+            <div
+                id="modalSubtitle"
+                class="modal-subtitle"
+            >
+            </div>
+
+
+            <div
+                id="modalDetails"
+                class="detail-grid"
+            >
+            </div>
+
+
+            <div class="modal-section">
+
+                <h3>
+                    Como executar
+                </h3>
+
+                <p id="modalExecution">
+                </p>
+
+            </div>
+
+
+            <div class="modal-section">
+
+                <h3>
+                    Erros comuns
+                </h3>
+
+                <ul id="modalErrors">
+                </ul>
+
+            </div>
+
+
+            <div class="modal-section">
+
+                <h3>
+                    Variações
+                </h3>
+
+                <p id="modalVariations">
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
     <footer>
 
         <p>
@@ -581,9 +949,16 @@
     </footer>
 
 
-    <!-- JAVASCRIPT DOS FILTROS -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
+
+
+        /* =========================
+           FILTROS
+        ========================= */
 
         const filtros =
             document.querySelectorAll(".filter");
@@ -596,14 +971,9 @@
 
             filtro.addEventListener("click", function() {
 
-
-                // Descobre qual filtro foi selecionado
-
                 const categoriaSelecionada =
                     filtro.dataset.filter;
 
-
-                // Remove o destaque dos outros botões
 
                 filtros.forEach(function(botao) {
 
@@ -612,12 +982,8 @@
                 });
 
 
-                // Destaca o botão selecionado
-
                 filtro.classList.add("active");
 
-
-                // Percorre todos os exercícios
 
                 exercicios.forEach(function(exercicio) {
 
@@ -625,32 +991,14 @@
                         exercicio.dataset.category;
 
 
-                    // Se for "Todos", mostra tudo
-
                     if (
-                        categoriaSelecionada === "todos"
-                    ) {
-
-                        exercicio.style.display = "block";
-
-                    }
-
-
-                    // Se a categoria for igual,
-                    // mostra o exercício
-
-                    else if (
+                        categoriaSelecionada === "todos" ||
                         categoriaSelecionada === categoriaExercicio
                     ) {
 
                         exercicio.style.display = "block";
 
-                    }
-
-
-                    // Caso contrário, esconde
-
-                    else {
+                    } else {
 
                         exercicio.style.display = "none";
 
@@ -661,6 +1009,419 @@
             });
 
         });
+
+
+        /* =========================
+           DADOS DOS EXERCÍCIOS
+        ========================= */
+
+        const dadosExercicios = {
+
+            supino: {
+
+                nome: "Supino reto",
+
+                grupo: "Peito",
+
+                equipamento: "Barra e banco",
+
+                nivel: "Intermediário",
+
+                series: "3–4",
+
+                repeticoes: "8–12",
+
+                descanso: "60–120 segundos",
+
+                secundarios: "Tríceps e deltoide anterior",
+
+                execucao:
+                    "Deite-se no banco com os pés apoiados no chão. Segure a barra com as mãos posicionadas de forma confortável e estável. Retire a barra do suporte, mantenha o controle do movimento e desça em direção ao peito. Empurre a barra para retornar à posição inicial, sem perder a estabilidade.",
+
+                erros: [
+                    "Perder o controle da barra durante a descida.",
+                    "Tirar os pés do chão sem necessidade.",
+                    "Usar uma carga que comprometa a técnica.",
+                    "Realizar o movimento com pressa."
+                ],
+
+                variacoes:
+                    "Supino inclinado, supino com halteres e supino em máquina."
+
+            },
+
+
+            remada: {
+
+                nome: "Remada",
+
+                grupo: "Costas",
+
+                equipamento: "Barra, halteres ou máquina",
+
+                nivel: "Intermediário",
+
+                series: "3–4",
+
+                repeticoes: "8–12",
+
+                descanso: "60–120 segundos",
+
+                secundarios: "Bíceps e deltoide posterior",
+
+                execucao:
+                    "Mantenha a coluna estável e o tronco em uma posição adequada para a variação escolhida. Puxe a carga em direção ao tronco, conduzindo o movimento com os cotovelos. Retorne lentamente à posição inicial.",
+
+                erros: [
+                    "Arredondar excessivamente a coluna.",
+                    "Usar impulso para movimentar a carga.",
+                    "Elevar excessivamente os ombros.",
+                    "Perder o controle durante a volta."
+                ],
+
+                variacoes:
+                    "Remada unilateral, remada curvada e remada baixa na máquina."
+
+            },
+
+
+            agachamento: {
+
+                nome: "Agachamento",
+
+                grupo: "Pernas",
+
+                equipamento: "Peso corporal, barra ou halteres",
+
+                nivel: "Iniciante a avançado",
+
+                series: "3–4",
+
+                repeticoes: "6–12",
+
+                descanso: "90–180 segundos",
+
+                secundarios: "Glúteos e musculatura do tronco",
+
+                execucao:
+                    "Posicione os pés de forma confortável e estável. Inicie o movimento flexionando quadril e joelhos enquanto mantém o tronco controlado. Desça até uma amplitude confortável e retorne à posição inicial mantendo estabilidade durante todo o movimento.",
+
+                erros: [
+                    "Perder a estabilidade dos pés.",
+                    "Usar uma amplitude que não seja adequada para sua mobilidade.",
+                    "Aumentar a carga antes de dominar a técnica.",
+                    "Executar o movimento sem controle."
+                ],
+
+                variacoes:
+                    "Agachamento goblet, agachamento frontal, agachamento livre e agachamento no smith."
+
+            },
+
+
+            desenvolvimento: {
+
+                nome: "Desenvolvimento",
+
+                grupo: "Ombros",
+
+                equipamento: "Halteres, barra ou máquina",
+
+                nivel: "Intermediário",
+
+                series: "3–4",
+
+                repeticoes: "8–12",
+
+                descanso: "60–120 segundos",
+
+                secundarios: "Tríceps e peitoral superior",
+
+                execucao:
+                    "Comece com a carga posicionada de maneira estável. Empurre a carga verticalmente enquanto mantém o tronco controlado. Retorne de maneira lenta e controlada à posição inicial.",
+
+                erros: [
+                    "Compensar excessivamente com a lombar.",
+                    "Usar carga que prejudique o controle.",
+                    "Realizar o movimento de forma muito rápida.",
+                    "Perder a estabilidade do tronco."
+                ],
+
+                variacoes:
+                    "Desenvolvimento com halteres, barra e máquinas específicas."
+
+            },
+
+
+            rosca: {
+
+                nome: "Rosca direta",
+
+                grupo: "Bíceps",
+
+                equipamento: "Barra ou halteres",
+
+                nivel: "Iniciante",
+
+                series: "3–4",
+
+                repeticoes: "8–15",
+
+                descanso: "60–90 segundos",
+
+                secundarios: "Antebraços",
+
+                execucao:
+                    "Fique em uma posição estável segurando a carga. Mantenha os cotovelos próximos ao corpo e flexione os braços para elevar a carga. Retorne lentamente à posição inicial.",
+
+                erros: [
+                    "Balançar o tronco para levantar a carga.",
+                    "Movimentar excessivamente os cotovelos.",
+                    "Usar carga acima da capacidade técnica.",
+                    "Soltar a carga rapidamente na descida."
+                ],
+
+                variacoes:
+                    "Rosca alternada, rosca martelo e rosca Scott."
+
+            },
+
+
+            abdominal: {
+
+                nome: "Abdominal",
+
+                grupo: "Abdômen",
+
+                equipamento: "Peso corporal",
+
+                nivel: "Iniciante",
+
+                series: "2–4",
+
+                repeticoes: "10–20",
+
+                descanso: "45–90 segundos",
+
+                secundarios: "Flexores do quadril",
+
+                execucao:
+                    "Deite-se em uma posição confortável e estável. Realize a flexão do tronco de maneira controlada, utilizando a musculatura abdominal. Retorne lentamente à posição inicial sem realizar movimentos bruscos.",
+
+                erros: [
+                    "Puxar a cabeça ou o pescoço com as mãos.",
+                    "Usar impulso para subir.",
+                    "Executar repetições muito rápidas.",
+                    "Forçar uma amplitude desconfortável."
+                ],
+
+                variacoes:
+                    "Abdominal curto, abdominal na máquina, abdominal com carga e prancha."
+
+            }
+
+        };
+
+
+        /* =========================
+           ABRIR EXERCÍCIO
+        ========================= */
+
+        function abrirExercicio(nome) {
+
+            const exercicio =
+                dadosExercicios[nome];
+
+
+            if (!exercicio) {
+                return;
+            }
+
+
+            document.getElementById("modalTitle").textContent =
+                exercicio.nome;
+
+
+            document.getElementById("modalSubtitle").textContent =
+                exercicio.grupo;
+
+
+            document.getElementById("modalDetails").innerHTML = `
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Grupo muscular
+                    </span>
+
+                    <span class="detail-value">
+                        ${exercicio.grupo}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Músculos secundários
+                    </span>
+
+                    <span class="detail-value">
+                        ${exercicio.secundarios}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Equipamento
+                    </span>
+
+                    <span class="detail-value">
+                        ${exercicio.equipamento}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Nível
+                    </span>
+
+                    <span class="detail-value">
+                        ${exercicio.nivel}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Séries
+                    </span>
+
+                    <span class="detail-value">
+                        ${exercicio.series}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Repetições
+                    </span>
+
+                    <span class="detail-value">
+                        ${exercicio.repeticoes}
+                    </span>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-label">
+                        Descanso
+                    </span>
+
+                    <span class="detail-value">
+                        ${exercicio.descanso}
+                    </span>
+
+                </div>
+
+            `;
+
+
+            document.getElementById("modalExecution").textContent =
+                exercicio.execucao;
+
+
+            document.getElementById("modalErrors").innerHTML =
+                exercicio.erros
+                    .map(function(erro) {
+
+                        return `<li>${erro}</li>`;
+
+                    })
+                    .join("");
+
+
+            document.getElementById("modalVariations").textContent =
+                exercicio.variacoes;
+
+
+            document
+                .getElementById("exerciseModal")
+                .classList
+                .add("show");
+
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+
+        /* =========================
+           FECHAR EXERCÍCIO
+        ========================= */
+
+        function fecharExercicio() {
+
+            document
+                .getElementById("exerciseModal")
+                .classList
+                .remove("show");
+
+
+            document.body.style.overflow = "auto";
+
+        }
+
+
+        /* =========================
+           FECHAR AO CLICAR FORA
+        ========================= */
+
+        document
+            .getElementById("exerciseModal")
+            .addEventListener("click", function(event) {
+
+                if (
+                    event.target === this
+                ) {
+
+                    fecharExercicio();
+
+                }
+
+            });
+
+
+        /* =========================
+           FECHAR COM ESC
+        ========================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    fecharExercicio();
+
+                }
+
+            }
+        );
 
     </script>
 
