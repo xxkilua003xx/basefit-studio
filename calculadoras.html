@@ -2,14 +2,19 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Calculadoras | BaseFit Studio</title>
 
     <meta
         name="description"
-        content="Calculadoras do BaseFit Studio para auxiliar no acompanhamento do treinamento."
+        content="Calculadoras fitness do BaseFit Studio para auxiliar no acompanhamento do treinamento."
     >
 
     <style>
@@ -20,6 +25,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #080c10;
@@ -27,108 +36,200 @@
             min-height: 100vh;
         }
 
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
         header {
             width: 100%;
+
             padding: 22px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             border-bottom: 1px solid #1b232c;
 
-            background: #080c10;
+            background: rgba(8, 12, 16, 0.97);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+
+            backdrop-filter: blur(10px);
         }
 
+
         .logo {
+            color: #ffffff;
+
+            text-decoration: none;
+
             font-size: 23px;
+
             font-weight: 800;
+
             letter-spacing: 1px;
         }
+
 
         .logo span {
             color: #45e17a;
         }
 
+
         nav {
             display: flex;
+
             gap: 30px;
         }
 
+
         nav a {
             color: #aeb8c4;
+
             text-decoration: none;
+
             font-size: 15px;
+
+            transition: 0.3s;
         }
+
 
         nav a:hover {
             color: #45e17a;
         }
 
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
         .container {
             width: min(1100px, 90%);
+
             margin: 0 auto;
         }
 
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
         .page-title {
             text-align: center;
+
             padding: 80px 0 50px;
         }
 
+
         .page-title h1 {
-            font-size: 48px;
+            font-size: clamp(38px, 6vw, 52px);
+
             margin-bottom: 15px;
         }
+
 
         .page-title h1 span {
             color: #45e17a;
         }
 
+
         .page-title p {
+            max-width: 700px;
+
+            margin: auto;
+
             color: #929daa;
+
             font-size: 17px;
-            line-height: 1.6;
+
+            line-height: 1.7;
         }
+
+
+        /* =========================
+           GRID
+        ========================= */
 
         .calculator-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 25px;
-            padding-bottom: 80px;
+
+            padding-bottom: 25px;
         }
+
+
+        /* =========================
+           CARD
+        ========================= */
 
         .calculator {
             background: #141b22;
+
             border: 1px solid #26313b;
+
             border-radius: 18px;
+
             padding: 30px;
+
+            transition: 0.3s;
         }
+
+
+        .calculator:hover {
+            border-color: #35434f;
+        }
+
 
         .calculator h2 {
             font-size: 24px;
+
             margin-bottom: 10px;
         }
 
+
         .calculator-description {
             color: #8e9aa7;
+
             line-height: 1.6;
+
             margin-bottom: 25px;
+
             font-size: 14px;
         }
+
+
+        /* =========================
+           CAMPOS
+        ========================= */
 
         .input-group {
             margin-bottom: 18px;
         }
 
+
         .input-group label {
             display: block;
+
             margin-bottom: 8px;
+
             color: #cbd3dc;
+
             font-size: 14px;
         }
+
 
         .input-group input,
         .input-group select {
             width: 100%;
+
             padding: 13px 14px;
 
             background: #0b1015;
@@ -142,15 +243,31 @@
             font-size: 15px;
 
             outline: none;
+
+            font-family: inherit;
         }
+
 
         .input-group input:focus,
         .input-group select:focus {
             border-color: #45e17a;
         }
 
+
+        .input-group select option {
+            background: #0b1015;
+
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           BOTÃO
+        ========================= */
+
         .calculate-button {
             width: 100%;
+
             padding: 14px;
 
             border: none;
@@ -170,10 +287,19 @@
             transition: 0.3s;
         }
 
+
         .calculate-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(69, 225, 122, 0.15);
+
+            box-shadow:
+                0 10px 25px
+                rgba(69, 225, 122, 0.15);
         }
+
+
+        /* =========================
+           RESULTADO
+        ========================= */
 
         .result {
             display: none;
@@ -189,30 +315,86 @@
             border: 1px solid #2b3944;
         }
 
+
         .result.show {
             display: block;
         }
 
+
         .result-title {
             color: #45e17a;
+
             font-weight: bold;
+
             margin-bottom: 8px;
         }
+
 
         .result-value {
             font-size: 28px;
+
             font-weight: bold;
+
             margin-bottom: 8px;
         }
 
+
         .result-text {
             color: #9ca8b4;
-            line-height: 1.5;
+
+            line-height: 1.6;
+
             font-size: 14px;
         }
 
+
+        .result-list {
+            margin-top: 15px;
+
+            display: grid;
+
+            gap: 8px;
+        }
+
+
+        .result-item {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 10px 12px;
+
+            background: #0b1015;
+
+            border-radius: 7px;
+
+            border: 1px solid #202b34;
+
+            font-size: 14px;
+        }
+
+
+        .result-item span:first-child {
+            color: #8e9aa7;
+        }
+
+
+        .result-item strong {
+            color: #ffffff;
+
+            text-align: right;
+        }
+
+
+        /* =========================
+           AVISO
+        ========================= */
+
         .warning {
-            margin-top: 50px;
+            margin-top: 30px;
+
             margin-bottom: 80px;
 
             padding: 25px;
@@ -230,6 +412,16 @@
             font-size: 14px;
         }
 
+
+        .warning strong {
+            color: #45e17a;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
         footer {
             padding: 35px 7%;
 
@@ -242,23 +434,58 @@
             background: #080c10;
         }
 
+
         footer strong {
             color: #45e17a;
         }
 
-        @media (max-width: 800px) {
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 850px) {
 
             nav {
                 display: none;
             }
 
+
             .calculator-grid {
                 grid-template-columns: 1fr;
             }
 
+        }
+
+
+        @media (max-width: 500px) {
+
+            .calculator {
+                padding: 22px;
+            }
+
+
+            .page-title {
+                padding: 60px 0 40px;
+            }
+
+
             .page-title h1 {
                 font-size: 38px;
             }
+
+
+            .result-item {
+                flex-direction: column;
+
+                gap: 4px;
+            }
+
+
+            .result-item strong {
+                text-align: left;
+            }
+
         }
 
     </style>
@@ -268,69 +495,118 @@
 
 <body>
 
+
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
+
     <header>
 
-        <div class="logo">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
             BASE<span>FIT</span> STUDIO
-        </div>
+
+        </a>
+
 
         <nav>
 
-            <a href="index.html">Início</a>
+            <a href="index.html">
+                Início
+            </a>
 
-            <a href="index.html#recursos">Recursos</a>
+            <a href="treinos.html">
+                Treinos
+            </a>
 
-            <a href="index.html#objetivos">Objetivos</a>
+            <a href="exercicios.html">
+                Exercícios
+            </a>
 
-            <a href="calculadoras.html">Calculadoras</a>
+            <a href="calculadoras.html">
+                Calculadoras
+            </a>
 
         </nav>
+
 
     </header>
 
 
     <main>
 
+
+        <!-- =========================
+             TÍTULO
+        ========================= -->
+
         <section class="page-title">
+
 
             <div class="container">
 
+
                 <h1>
-                    Calculadoras <span>BaseFit</span>
+
+                    Calculadoras
+                    <span>BaseFit</span>
+
                 </h1>
 
+
                 <p>
+
                     Ferramentas para auxiliar na compreensão
-                    e no acompanhamento da sua jornada de treinamento.
+                    e no acompanhamento da sua jornada de
+                    treinamento.
+
                 </p>
 
+
             </div>
+
 
         </section>
 
 
         <section class="container">
 
+
             <div class="calculator-grid">
 
 
-                <!-- IMC -->
+                <!-- =========================
+                     IMC
+                ========================= -->
 
                 <div class="calculator">
 
-                    <h2>⚖️ Calculadora de IMC</h2>
+
+                    <h2>
+                        ⚖️ Calculadora de IMC
+                    </h2>
+
 
                     <p class="calculator-description">
+
                         Calcule o Índice de Massa Corporal
                         utilizando seu peso e sua altura.
+
                     </p>
 
 
                     <div class="input-group">
 
                         <label for="peso">
+
                             Peso (kg)
+
                         </label>
+
 
                         <input
                             type="number"
@@ -346,8 +622,11 @@
                     <div class="input-group">
 
                         <label for="altura">
+
                             Altura (m)
+
                         </label>
+
 
                         <input
                             type="number"
@@ -364,20 +643,27 @@
                         class="calculate-button"
                         onclick="calcularIMC()"
                     >
+
                         Calcular IMC
+
                     </button>
 
 
-                    <div id="resultadoIMC" class="result">
+                    <div
+                        id="resultadoIMC"
+                        class="result"
+                    >
 
                         <div class="result-title">
                             Seu resultado
                         </div>
 
+
                         <div
                             id="valorIMC"
                             class="result-value"
                         ></div>
+
 
                         <div
                             id="classificacaoIMC"
@@ -386,26 +672,39 @@
 
                     </div>
 
+
                 </div>
 
 
-                <!-- TMB -->
+                <!-- =========================
+                     TMB
+                ========================= -->
 
                 <div class="calculator">
 
-                    <h2>🔥 Calculadora de TMB</h2>
+
+                    <h2>
+                        🔥 Calculadora de TMB
+                    </h2>
+
 
                     <p class="calculator-description">
+
                         Estime sua Taxa Metabólica Basal
-                        a partir de alguns dados básicos.
+                        utilizando a fórmula de
+                        Mifflin-St Jeor.
+
                     </p>
 
 
                     <div class="input-group">
 
                         <label for="idade">
+
                             Idade
+
                         </label>
+
 
                         <input
                             type="number"
@@ -421,8 +720,11 @@
                     <div class="input-group">
 
                         <label for="pesoTMB">
+
                             Peso (kg)
+
                         </label>
+
 
                         <input
                             type="number"
@@ -438,8 +740,11 @@
                     <div class="input-group">
 
                         <label for="alturaTMB">
+
                             Altura (cm)
+
                         </label>
+
 
                         <input
                             type="number"
@@ -455,8 +760,12 @@
                     <div class="input-group">
 
                         <label for="sexo">
-                            Sexo biológico utilizado na fórmula
+
+                            Sexo biológico utilizado
+                            na fórmula
+
                         </label>
+
 
                         <select id="sexo">
 
@@ -481,75 +790,476 @@
                         class="calculate-button"
                         onclick="calcularTMB()"
                     >
+
                         Calcular TMB
+
                     </button>
 
 
-                    <div id="resultadoTMB" class="result">
+                    <div
+                        id="resultadoTMB"
+                        class="result"
+                    >
 
                         <div class="result-title">
                             Estimativa da sua TMB
                         </div>
+
 
                         <div
                             id="valorTMB"
                             class="result-value"
                         ></div>
 
+
                         <div class="result-text">
-                            Esse valor representa uma estimativa
-                            das calorias que seu corpo utiliza
-                            em repouso.
+
+                            Estimativa das calorias que
+                            seu corpo utiliza em repouso.
+
                         </div>
 
                     </div>
 
+
                 </div>
+
+
+                <!-- =========================
+                     GASTO CALÓRICO
+                ========================= -->
+
+                <div class="calculator">
+
+
+                    <h2>
+                        ⚡ Gasto calórico diário
+                    </h2>
+
+
+                    <p class="calculator-description">
+
+                        Estime seu gasto energético diário
+                        considerando seu nível de atividade.
+
+                    </p>
+
+
+                    <div class="input-group">
+
+                        <label for="tdeeTMB">
+
+                            TMB (kcal/dia)
+
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="tdeeTMB"
+                            placeholder="Ex: 1700"
+                            min="1"
+                            step="1"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="atividade">
+
+                            Nível de atividade
+
+                        </label>
+
+
+                        <select id="atividade">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="1.2">
+                                Sedentário
+                            </option>
+
+                            <option value="1.375">
+                                Levemente ativo
+                            </option>
+
+                            <option value="1.55">
+                                Moderadamente ativo
+                            </option>
+
+                            <option value="1.725">
+                                Muito ativo
+                            </option>
+
+                            <option value="1.9">
+                                Extremamente ativo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="calculate-button"
+                        onclick="calcularTDEE()"
+                    >
+
+                        Calcular gasto diário
+
+                    </button>
+
+
+                    <div
+                        id="resultadoTDEE"
+                        class="result"
+                    >
+
+                        <div class="result-title">
+
+                            Estimativa do gasto diário
+
+                        </div>
+
+
+                        <div
+                            id="valorTDEE"
+                            class="result-value"
+                        ></div>
+
+
+                        <div class="result-text">
+
+                            Estimativa baseada na TMB
+                            informada e no nível de atividade
+                            selecionado.
+
+                        </div>
+
+
+                        <div class="result-list">
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    TMB informada
+                                </span>
+
+                                <strong id="tdeeBase">
+                                </strong>
+
+                            </div>
+
+
+                            <div class="result-item">
+
+                                <span>
+                                    Multiplicador
+                                </span>
+
+                                <strong id="tdeeMultiplicador">
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =========================
+                     OBJETIVO
+                ========================= -->
+
+                <div class="calculator">
+
+
+                    <h2>
+                        🎯 Calorias por objetivo
+                    </h2>
+
+
+                    <p class="calculator-description">
+
+                        Utilize seu gasto diário estimado
+                        para visualizar uma faixa aproximada
+                        conforme seu objetivo.
+
+                    </p>
+
+
+                    <div class="input-group">
+
+                        <label for="caloriasBase">
+
+                            Gasto diário estimado (kcal)
+
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="caloriasBase"
+                            placeholder="Ex: 2500"
+                            min="1"
+                            step="1"
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="objetivo">
+
+                            Objetivo
+
+                        </label>
+
+
+                        <select id="objetivo">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="manter">
+                                Manter peso
+                            </option>
+
+                            <option value="perder">
+                                Perda de peso
+                            </option>
+
+                            <option value="ganhar">
+                                Ganho de peso
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="calculate-button"
+                        onclick="calcularObjetivo()"
+                    >
+
+                        Calcular estimativa
+
+                    </button>
+
+
+                    <div
+                        id="resultadoObjetivo"
+                        class="result"
+                    >
+
+                        <div class="result-title">
+
+                            Estimativa
+
+                        </div>
+
+
+                        <div
+                            id="valorObjetivo"
+                            class="result-value"
+                        ></div>
+
+
+                        <div
+                            id="textoObjetivo"
+                            class="result-text"
+                        ></div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =========================
+                     FREQUÊNCIA CARDÍACA
+                ========================= -->
+
+                <div class="calculator">
+
+
+                    <h2>
+                        ❤️ Frequência cardíaca
+                    </h2>
+
+
+                    <p class="calculator-description">
+
+                        Estime sua frequência cardíaca máxima
+                        utilizando uma fórmula simples baseada
+                        na idade.
+
+                    </p>
+
+
+                    <div class="input-group">
+
+                        <label for="idadeFC">
+
+                            Idade
+
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="idadeFC"
+                            placeholder="Ex: 30"
+                            min="1"
+                            max="120"
+                        >
+
+                    </div>
+
+
+                    <button
+                        class="calculate-button"
+                        onclick="calcularFC()"
+                    >
+
+                        Calcular frequência máxima
+
+                    </button>
+
+
+                    <div
+                        id="resultadoFC"
+                        class="result"
+                    >
+
+                        <div class="result-title">
+
+                            Frequência cardíaca máxima estimada
+
+                        </div>
+
+
+                        <div
+                            id="valorFC"
+                            class="result-value"
+                        ></div>
+
+
+                        <div
+                            id="textoFC"
+                            class="result-text"
+                        ></div>
+
+                    </div>
+
+
+                </div>
+
 
             </div>
 
+
+            <!-- =========================
+                 AVISO
+            ========================= -->
 
             <div class="warning">
 
+
                 <strong>Importante:</strong>
 
+
                 Os resultados apresentados pelas calculadoras
-                são estimativas e têm finalidade informativa.
-                Eles não substituem uma avaliação individualizada
-                realizada por um profissional qualificado.
+                são estimativas para fins informativos e podem
+                variar de acordo com características individuais.
+                Eles não substituem avaliação, diagnóstico,
+                prescrição de exercícios ou orientação nutricional
+                individualizada realizada por um profissional
+                qualificado.
+
 
             </div>
 
+
         </section>
+
 
     </main>
 
 
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
     <footer>
 
+
         <p>
-            © 2026 <strong>BaseFit Studio</strong>
+
+            © 2026
+            <strong>BaseFit Studio</strong>
+
             — Treine. Acompanhe. Evolua.
+
         </p>
+
 
     </footer>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
     <script>
 
-        // =========================
-        // CALCULADORA DE IMC
-        // =========================
+
+        /* =========================
+           FUNÇÃO AUXILIAR
+        ========================= */
+
+        function mostrarResultado(id) {
+
+            document
+                .getElementById(id)
+                .classList
+                .add("show");
+
+        }
+
+
+        /* =========================
+           IMC
+        ========================= */
 
         function calcularIMC() {
 
-            const peso = parseFloat(
-                document.getElementById("peso").value
-            );
 
-            const altura = parseFloat(
-                document.getElementById("altura").value
-            );
+            const peso =
+                parseFloat(
+                    document.getElementById("peso").value
+                );
+
+
+            const altura =
+                parseFloat(
+                    document.getElementById("altura").value
+                );
+
 
             if (
                 isNaN(peso) ||
@@ -558,16 +1268,20 @@
                 altura <= 0
             ) {
 
-                alert("Digite um peso e uma altura válidos.");
+                alert(
+                    "Digite um peso e uma altura válidos."
+                );
 
                 return;
+
             }
 
 
-            const imc = peso / (altura * altura);
+            const imc =
+                peso / (altura * altura);
 
 
-            let classificacao = "";
+            let classificacao;
 
 
             if (imc < 18.5) {
@@ -575,27 +1289,37 @@
                 classificacao =
                     "Abaixo do peso.";
 
-            } else if (imc < 25) {
+            }
+
+            else if (imc < 25) {
 
                 classificacao =
                     "Faixa de peso considerada adequada para adultos.";
 
-            } else if (imc < 30) {
+            }
+
+            else if (imc < 30) {
 
                 classificacao =
                     "Sobrepeso.";
 
-            } else if (imc < 35) {
+            }
+
+            else if (imc < 35) {
 
                 classificacao =
                     "Obesidade grau I.";
 
-            } else if (imc < 40) {
+            }
+
+            else if (imc < 40) {
 
                 classificacao =
                     "Obesidade grau II.";
 
-            } else {
+            }
+
+            else {
 
                 classificacao =
                     "Obesidade grau III.";
@@ -603,39 +1327,47 @@
             }
 
 
-            document.getElementById("valorIMC").textContent =
-                imc.toFixed(1);
-
-
-            document.getElementById("classificacaoIMC").textContent =
-                classificacao;
+            document
+                .getElementById("valorIMC")
+                .textContent =
+                    imc.toFixed(1);
 
 
             document
-                .getElementById("resultadoIMC")
-                .classList
-                .add("show");
+                .getElementById("classificacaoIMC")
+                .textContent =
+                    classificacao;
+
+
+            mostrarResultado("resultadoIMC");
 
         }
 
 
-        // =========================
-        // CALCULADORA DE TMB
-        // =========================
+        /* =========================
+           TMB
+        ========================= */
 
         function calcularTMB() {
 
-            const idade = parseFloat(
-                document.getElementById("idade").value
-            );
 
-            const peso = parseFloat(
-                document.getElementById("pesoTMB").value
-            );
+            const idade =
+                parseFloat(
+                    document.getElementById("idade").value
+                );
 
-            const altura = parseFloat(
-                document.getElementById("alturaTMB").value
-            );
+
+            const peso =
+                parseFloat(
+                    document.getElementById("pesoTMB").value
+                );
+
+
+            const altura =
+                parseFloat(
+                    document.getElementById("alturaTMB").value
+                );
+
 
             const sexo =
                 document.getElementById("sexo").value;
@@ -645,6 +1377,9 @@
                 isNaN(idade) ||
                 isNaN(peso) ||
                 isNaN(altura) ||
+                idade <= 0 ||
+                peso <= 0 ||
+                altura <= 0 ||
                 !sexo
             ) {
 
@@ -653,13 +1388,16 @@
                 );
 
                 return;
+
             }
 
 
             let tmb;
 
 
-            // Fórmula de Mifflin-St Jeor
+            /*
+             * Fórmula de Mifflin-St Jeor
+             */
 
             if (sexo === "masculino") {
 
@@ -669,7 +1407,9 @@
                     (5 * idade) +
                     5;
 
-            } else {
+            }
+
+            else {
 
                 tmb =
                     (10 * peso) +
@@ -680,18 +1420,238 @@
             }
 
 
-            document.getElementById("valorTMB").textContent =
-                Math.round(tmb) + " kcal/dia";
+            const tmbArredondada =
+                Math.round(tmb);
 
 
             document
-                .getElementById("resultadoTMB")
-                .classList
-                .add("show");
+                .getElementById("valorTMB")
+                .textContent =
+                    tmbArredondada +
+                    " kcal/dia";
+
+
+            mostrarResultado("resultadoTMB");
+
+        }
+
+
+        /* =========================
+           TDEE
+        ========================= */
+
+        function calcularTDEE() {
+
+
+            const tmb =
+                parseFloat(
+                    document.getElementById("tdeeTMB").value
+                );
+
+
+            const atividade =
+                parseFloat(
+                    document.getElementById("atividade").value
+                );
+
+
+            if (
+                isNaN(tmb) ||
+                isNaN(atividade) ||
+                tmb <= 0
+            ) {
+
+                alert(
+                    "Informe uma TMB válida e selecione seu nível de atividade."
+                );
+
+                return;
+
+            }
+
+
+            const gasto =
+                tmb * atividade;
+
+
+            document
+                .getElementById("valorTDEE")
+                .textContent =
+                    Math.round(gasto) +
+                    " kcal/dia";
+
+
+            document
+                .getElementById("tdeeBase")
+                .textContent =
+                    Math.round(tmb) +
+                    " kcal";
+
+
+            document
+                .getElementById("tdeeMultiplicador")
+                .textContent =
+                    atividade;
+
+
+            mostrarResultado("resultadoTDEE");
+
+        }
+
+
+        /* =========================
+           OBJETIVO
+        ========================= */
+
+        function calcularObjetivo() {
+
+
+            const calorias =
+                parseFloat(
+                    document.getElementById("caloriasBase").value
+                );
+
+
+            const objetivo =
+                document.getElementById("objetivo").value;
+
+
+            if (
+                isNaN(calorias) ||
+                calorias <= 0 ||
+                !objetivo
+            ) {
+
+                alert(
+                    "Informe as calorias e selecione um objetivo."
+                );
+
+                return;
+
+            }
+
+
+            let resultado;
+
+            let texto;
+
+
+            if (objetivo === "manter") {
+
+                resultado =
+                    calorias;
+
+                texto =
+                    "Para manutenção, a estimativa utiliza o gasto diário informado como referência.";
+
+            }
+
+
+            else if (objetivo === "perder") {
+
+                resultado =
+                    calorias - 300;
+
+                texto =
+                    "Foi aplicada uma redução aproximada de 300 kcal em relação ao gasto informado.";
+
+            }
+
+
+            else {
+
+                resultado =
+                    calorias + 300;
+
+                texto =
+                    "Foi aplicado um acréscimo aproximado de 300 kcal em relação ao gasto informado.";
+
+            }
+
+
+            /*
+             * Evita apresentar valor negativo.
+             */
+
+            resultado =
+                Math.max(resultado, 0);
+
+
+            document
+                .getElementById("valorObjetivo")
+                .textContent =
+                    Math.round(resultado) +
+                    " kcal/dia";
+
+
+            document
+                .getElementById("textoObjetivo")
+                .textContent =
+                    texto +
+                    " Essa é apenas uma estimativa informativa e não uma prescrição nutricional.";
+
+
+            mostrarResultado("resultadoObjetivo");
+
+        }
+
+
+        /* =========================
+           FREQUÊNCIA CARDÍACA
+        ========================= */
+
+        function calcularFC() {
+
+
+            const idade =
+                parseFloat(
+                    document.getElementById("idadeFC").value
+                );
+
+
+            if (
+                isNaN(idade) ||
+                idade <= 0 ||
+                idade > 120
+            ) {
+
+                alert(
+                    "Digite uma idade válida."
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Estimativa simples:
+             * 220 - idade
+             */
+
+            const fcMaxima =
+                220 - idade;
+
+
+            document
+                .getElementById("valorFC")
+                .textContent =
+                    fcMaxima +
+                    " bpm";
+
+
+            document
+                .getElementById("textoFC")
+                .textContent =
+                    "Estimativa baseada na fórmula 220 − idade. A frequência cardíaca real pode variar entre indivíduos.";
+
+
+            mostrarResultado("resultadoFC");
 
         }
 
     </script>
+
 
 </body>
 
