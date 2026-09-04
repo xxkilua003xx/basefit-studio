@@ -25,11 +25,20 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #080c10;
             color: #ffffff;
         }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
 
         header {
             padding: 22px 7%;
@@ -39,54 +48,94 @@
             align-items: center;
 
             border-bottom: 1px solid #1b232c;
+
+            position: sticky;
+            top: 0;
+
+            background: rgba(8, 12, 16, 0.96);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 100;
         }
 
+
         .logo {
+            color: #ffffff;
+
+            text-decoration: none;
+
             font-size: 23px;
+
             font-weight: 800;
+
             letter-spacing: 1px;
         }
+
 
         .logo span {
             color: #45e17a;
         }
+
 
         nav {
             display: flex;
             gap: 30px;
         }
 
+
         nav a {
             color: #aeb8c4;
+
             text-decoration: none;
+
             font-size: 15px;
+
+            transition: 0.3s;
         }
+
 
         nav a:hover {
             color: #45e17a;
         }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
 
         .container {
             width: min(1100px, 90%);
             margin: auto;
         }
 
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             text-align: center;
+
             padding: 80px 0 50px;
         }
 
+
         .hero h1 {
-            font-size: 52px;
+            font-size: clamp(40px, 6vw, 56px);
+
             margin-bottom: 18px;
         }
+
 
         .hero h1 span {
             color: #45e17a;
         }
 
+
         .hero p {
             max-width: 650px;
+
             margin: auto;
 
             color: #929daa;
@@ -103,11 +152,14 @@
 
         .filters {
             display: flex;
+
             gap: 10px;
+
             flex-wrap: wrap;
 
             margin-bottom: 35px;
         }
+
 
         .filter {
             padding: 10px 18px;
@@ -128,6 +180,7 @@
 
             font-size: 14px;
         }
+
 
         .filter:hover,
         .filter.active {
@@ -153,6 +206,7 @@
             padding-bottom: 90px;
         }
 
+
         .exercise {
             background: #141b22;
 
@@ -165,11 +219,18 @@
             transition: 0.3s;
         }
 
+
         .exercise:hover {
             transform: translateY(-5px);
 
             border-color: #45e17a;
         }
+
+
+        .exercise.hidden {
+            display: none;
+        }
+
 
         .exercise-icon {
             width: 65px;
@@ -189,11 +250,13 @@
             margin-bottom: 20px;
         }
 
+
         .exercise h3 {
             font-size: 20px;
 
             margin-bottom: 10px;
         }
+
 
         .exercise p {
             color: #8e9aa7;
@@ -204,6 +267,7 @@
 
             margin-bottom: 18px;
         }
+
 
         .muscle {
             display: inline-block;
@@ -250,6 +314,7 @@
             transition: 0.3s;
         }
 
+
         .details-button:hover {
             background: #45e17a;
 
@@ -280,6 +345,11 @@
         }
 
 
+        .notice strong {
+            color: #45e17a;
+        }
+
+
         /* =========================
            MODAL
         ========================= */
@@ -287,13 +357,12 @@
         .modal {
             position: fixed;
 
-            top: 0;
-            left: 0;
+            inset: 0;
 
             width: 100%;
             height: 100%;
 
-            background: rgba(0, 0, 0, 0.80);
+            background: rgba(0, 0, 0, 0.82);
 
             display: none;
 
@@ -305,9 +374,11 @@
             z-index: 1000;
         }
 
+
         .modal.show {
             display: flex;
         }
+
 
         .modal-content {
             width: min(700px, 100%);
@@ -325,7 +396,10 @@
             padding: 35px;
 
             position: relative;
+
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
         }
+
 
         .modal-close {
             position: absolute;
@@ -347,13 +421,17 @@
             font-size: 20px;
 
             cursor: pointer;
+
+            transition: 0.3s;
         }
+
 
         .modal-close:hover {
             background: #45e17a;
 
             color: #071009;
         }
+
 
         .modal-title {
             font-size: 30px;
@@ -363,6 +441,7 @@
             padding-right: 45px;
         }
 
+
         .modal-subtitle {
             color: #45e17a;
 
@@ -370,6 +449,11 @@
 
             font-size: 14px;
         }
+
+
+        /* =========================
+           INFORMAÇÕES
+        ========================= */
 
         .detail-grid {
             display: grid;
@@ -381,6 +465,7 @@
             margin-bottom: 30px;
         }
 
+
         .detail-box {
             background: #0d1319;
 
@@ -390,6 +475,7 @@
 
             padding: 15px;
         }
+
 
         .detail-label {
             display: block;
@@ -401,6 +487,7 @@
             margin-bottom: 6px;
         }
 
+
         .detail-value {
             color: #ffffff;
 
@@ -409,9 +496,15 @@
             font-weight: bold;
         }
 
+
+        /* =========================
+           SEÇÕES DO MODAL
+        ========================= */
+
         .modal-section {
             margin-bottom: 25px;
         }
+
 
         .modal-section h3 {
             font-size: 18px;
@@ -421,6 +514,7 @@
             color: #45e17a;
         }
 
+
         .modal-section p {
             color: #aeb8c4;
 
@@ -428,6 +522,7 @@
 
             font-size: 14px;
         }
+
 
         .modal-section ul {
             padding-left: 20px;
@@ -454,6 +549,7 @@
             color: #687481;
         }
 
+
         footer strong {
             color: #45e17a;
         }
@@ -463,23 +559,41 @@
            RESPONSIVO
         ========================= */
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
+
+            .exercise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
 
             nav {
                 display: none;
             }
 
+
             .exercise-grid {
                 grid-template-columns: 1fr;
             }
+
+
+            .hero {
+                padding-top: 60px;
+            }
+
 
             .hero h1 {
                 font-size: 40px;
             }
 
+
             .detail-grid {
                 grid-template-columns: 1fr;
             }
+
 
             .modal-content {
                 padding: 25px;
@@ -501,9 +615,16 @@
 
     <header>
 
-        <div class="logo">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
             BASE<span>FIT</span> STUDIO
-        </div>
+
+        </a>
+
 
         <nav>
 
@@ -525,31 +646,42 @@
 
         </nav>
 
+
     </header>
 
+
+    <!-- =========================
+         CONTEÚDO
+    ========================= -->
 
     <main>
 
 
-        <!-- =========================
-             TÍTULO
-        ========================= -->
-
         <section class="hero">
+
 
             <div class="container">
 
+
                 <h1>
-                    Biblioteca de <span>exercícios.</span>
+
+                    Biblioteca de
+                    <span>exercícios.</span>
+
                 </h1>
 
+
                 <p>
-                    Explore exercícios e descubra quais
-                    grupos musculares são trabalhados em
-                    cada movimento.
+
+                    Explore exercícios, conheça os principais
+                    músculos envolvidos e consulte informações
+                    básicas sobre execução e treinamento.
+
                 </p>
 
+
             </div>
+
 
         </section>
 
@@ -563,68 +695,92 @@
 
             <div class="filters">
 
+
                 <button
                     class="filter active"
                     data-filter="todos"
                 >
+
                     Todos
+
                 </button>
+
 
                 <button
                     class="filter"
                     data-filter="peito"
                 >
+
                     Peito
+
                 </button>
+
 
                 <button
                     class="filter"
                     data-filter="costas"
                 >
+
                     Costas
+
                 </button>
+
 
                 <button
                     class="filter"
                     data-filter="pernas"
                 >
+
                     Pernas
+
                 </button>
+
 
                 <button
                     class="filter"
                     data-filter="ombros"
                 >
+
                     Ombros
+
                 </button>
+
 
                 <button
                     class="filter"
                     data-filter="bracos"
                 >
+
                     Braços
+
                 </button>
+
 
                 <button
                     class="filter"
                     data-filter="abdomen"
                 >
+
                     Abdômen
+
                 </button>
+
 
             </div>
 
 
             <!-- =========================
-                 EXERCÍCIOS
+                 GRID
             ========================= -->
 
             <div class="exercise-grid">
 
 
-                <!-- SUPINO -->
+                <!-- =========================
+                     SUPINO
+                ========================= -->
 
-                <div
+                <article
                     class="exercise"
                     data-category="peito"
                 >
@@ -633,32 +789,40 @@
                         🏋️
                     </div>
 
+
                     <h3>
                         Supino reto
                     </h3>
+
 
                     <p>
                         Exercício utilizado para trabalhar
                         principalmente a musculatura do peito.
                     </p>
 
+
                     <span class="muscle">
                         Peito
                     </span>
+
 
                     <button
                         class="details-button"
                         onclick="abrirExercicio('supino')"
                     >
+
                         Ver detalhes
+
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- REMADA -->
+                <!-- =========================
+                     REMADA
+                ========================= -->
 
-                <div
+                <article
                     class="exercise"
                     data-category="costas"
                 >
@@ -667,32 +831,40 @@
                         💪
                     </div>
 
+
                     <h3>
                         Remada
                     </h3>
+
 
                     <p>
                         Movimento de puxada que trabalha
                         principalmente a musculatura das costas.
                     </p>
 
+
                     <span class="muscle">
                         Costas
                     </span>
+
 
                     <button
                         class="details-button"
                         onclick="abrirExercicio('remada')"
                     >
+
                         Ver detalhes
+
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- AGACHAMENTO -->
+                <!-- =========================
+                     AGACHAMENTO
+                ========================= -->
 
-                <div
+                <article
                     class="exercise"
                     data-category="pernas"
                 >
@@ -701,32 +873,40 @@
                         🦵
                     </div>
 
+
                     <h3>
                         Agachamento
                     </h3>
+
 
                     <p>
                         Exercício multiarticular que envolve
                         principalmente pernas e glúteos.
                     </p>
 
+
                     <span class="muscle">
                         Pernas
                     </span>
+
 
                     <button
                         class="details-button"
                         onclick="abrirExercicio('agachamento')"
                     >
+
                         Ver detalhes
+
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- DESENVOLVIMENTO -->
+                <!-- =========================
+                     DESENVOLVIMENTO
+                ========================= -->
 
-                <div
+                <article
                     class="exercise"
                     data-category="ombros"
                 >
@@ -735,32 +915,40 @@
                         🏋️
                     </div>
 
+
                     <h3>
                         Desenvolvimento
                     </h3>
+
 
                     <p>
                         Exercício de empurrar utilizado para
                         trabalhar principalmente os ombros.
                     </p>
 
+
                     <span class="muscle">
                         Ombros
                     </span>
+
 
                     <button
                         class="details-button"
                         onclick="abrirExercicio('desenvolvimento')"
                     >
+
                         Ver detalhes
+
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- ROSCA -->
+                <!-- =========================
+                     ROSCA DIRETA
+                ========================= -->
 
-                <div
+                <article
                     class="exercise"
                     data-category="bracos"
                 >
@@ -769,32 +957,40 @@
                         💪
                     </div>
 
+
                     <h3>
                         Rosca direta
                     </h3>
+
 
                     <p>
                         Exercício utilizado para trabalhar
                         principalmente os músculos flexores do braço.
                     </p>
 
+
                     <span class="muscle">
                         Bíceps
                     </span>
+
 
                     <button
                         class="details-button"
                         onclick="abrirExercicio('rosca')"
                     >
+
                         Ver detalhes
+
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- ABDOMINAL -->
+                <!-- =========================
+                     ABDOMINAL
+                ========================= -->
 
-                <div
+                <article
                     class="exercise"
                     data-category="abdomen"
                 >
@@ -803,27 +999,33 @@
                         🔥
                     </div>
 
+
                     <h3>
                         Abdominal
                     </h3>
+
 
                     <p>
                         Exercício direcionado para a musculatura
                         da região abdominal.
                     </p>
 
+
                     <span class="muscle">
                         Abdômen
                     </span>
+
 
                     <button
                         class="details-button"
                         onclick="abrirExercicio('abdominal')"
                     >
+
                         Ver detalhes
+
                     </button>
 
-                </div>
+                </article>
 
 
             </div>
@@ -835,13 +1037,17 @@
 
             <div class="notice">
 
+
                 <strong>Importante:</strong>
 
                 A execução correta dos exercícios depende
                 de fatores individuais, como experiência,
                 mobilidade, limitações e objetivo.
-                Em caso de dúvida, procure orientação
-                de um profissional de Educação Física.
+                As informações apresentadas possuem caráter
+                educacional e não substituem a orientação
+                individualizada de um profissional de
+                Educação Física.
+
 
             </div>
 
@@ -853,13 +1059,17 @@
 
 
     <!-- =========================
-         JANELA DE DETALHES
+         MODAL
     ========================= -->
 
     <div
         id="exerciseModal"
         class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
     >
+
 
         <div class="modal-content">
 
@@ -867,9 +1077,11 @@
             <button
                 class="modal-close"
                 onclick="fecharExercicio()"
-                aria-label="Fechar"
+                aria-label="Fechar detalhes"
             >
+
                 ×
+
             </button>
 
 
@@ -896,41 +1108,51 @@
 
             <div class="modal-section">
 
+
                 <h3>
                     Como executar
                 </h3>
 
+
                 <p id="modalExecution">
                 </p>
+
 
             </div>
 
 
             <div class="modal-section">
+
 
                 <h3>
                     Erros comuns
                 </h3>
 
+
                 <ul id="modalErrors">
                 </ul>
+
 
             </div>
 
 
             <div class="modal-section">
 
+
                 <h3>
                     Variações
                 </h3>
 
+
                 <p id="modalVariations">
                 </p>
+
 
             </div>
 
 
         </div>
+
 
     </div>
 
@@ -941,10 +1163,16 @@
 
     <footer>
 
+
         <p>
-            © 2026 <strong>BaseFit Studio</strong>
+
+            © 2026
+            <strong>BaseFit Studio</strong>
+
             — Treine. Acompanhe. Evolua.
+
         </p>
+
 
     </footer>
 
@@ -963,59 +1191,67 @@
         const filtros =
             document.querySelectorAll(".filter");
 
+
         const exercicios =
             document.querySelectorAll(".exercise");
 
 
         filtros.forEach(function(filtro) {
 
-            filtro.addEventListener("click", function() {
 
-                const categoriaSelecionada =
-                    filtro.dataset.filter;
-
-
-                filtros.forEach(function(botao) {
-
-                    botao.classList.remove("active");
-
-                });
+            filtro.addEventListener(
+                "click",
+                function() {
 
 
-                filtro.classList.add("active");
+                    const categoria =
+                        filtro.getAttribute("data-filter");
 
 
-                exercicios.forEach(function(exercicio) {
+                    filtros.forEach(function(botao) {
 
-                    const categoriaExercicio =
-                        exercicio.dataset.category;
+                        botao.classList.remove("active");
+
+                    });
 
 
-                    if (
-                        categoriaSelecionada === "todos" ||
-                        categoriaSelecionada === categoriaExercicio
-                    ) {
+                    filtro.classList.add("active");
 
-                        exercicio.style.display = "block";
 
-                    } else {
+                    exercicios.forEach(function(exercicio) {
 
-                        exercicio.style.display = "none";
 
-                    }
+                        const categoriaExercicio =
+                            exercicio.getAttribute("data-category");
 
-                });
 
-            });
+                        if (
+                            categoria === "todos" ||
+                            categoria === categoriaExercicio
+                        ) {
+
+                            exercicio.classList.remove("hidden");
+
+                        } else {
+
+                            exercicio.classList.add("hidden");
+
+                        }
+
+                    });
+
+                }
+            );
 
         });
 
 
         /* =========================
-           DADOS DOS EXERCÍCIOS
+           DADOS
         ========================= */
 
         const dadosExercicios = {
+
 
             supino: {
 
@@ -1033,16 +1269,17 @@
 
                 descanso: "60–120 segundos",
 
-                secundarios: "Tríceps e deltoide anterior",
+                secundarios:
+                    "Tríceps e deltoide anterior",
 
                 execucao:
-                    "Deite-se no banco com os pés apoiados no chão. Segure a barra com as mãos posicionadas de forma confortável e estável. Retire a barra do suporte, mantenha o controle do movimento e desça em direção ao peito. Empurre a barra para retornar à posição inicial, sem perder a estabilidade.",
+                    "Deite-se no banco com os pés apoiados no chão. Segure a barra de maneira estável e retire-a do suporte. Desça a carga de forma controlada em direção ao peito e depois empurre para retornar à posição inicial, mantendo o controle durante todo o movimento.",
 
                 erros: [
-                    "Perder o controle da barra durante a descida.",
-                    "Tirar os pés do chão sem necessidade.",
-                    "Usar uma carga que comprometa a técnica.",
-                    "Realizar o movimento com pressa."
+                    "Perder o controle da barra.",
+                    "Usar carga acima da capacidade técnica.",
+                    "Movimentar a carga com excesso de velocidade.",
+                    "Perder a estabilidade dos pés e do tronco."
                 ],
 
                 variacoes:
@@ -1057,7 +1294,8 @@
 
                 grupo: "Costas",
 
-                equipamento: "Barra, halteres ou máquina",
+                equipamento:
+                    "Barra, halteres ou máquina",
 
                 nivel: "Intermediário",
 
@@ -1067,20 +1305,21 @@
 
                 descanso: "60–120 segundos",
 
-                secundarios: "Bíceps e deltoide posterior",
+                secundarios:
+                    "Bíceps e deltoide posterior",
 
                 execucao:
-                    "Mantenha a coluna estável e o tronco em uma posição adequada para a variação escolhida. Puxe a carga em direção ao tronco, conduzindo o movimento com os cotovelos. Retorne lentamente à posição inicial.",
+                    "Posicione o corpo de acordo com a variação escolhida e mantenha a coluna estável. Puxe a carga em direção ao tronco conduzindo o movimento com os cotovelos. Retorne lentamente à posição inicial.",
 
                 erros: [
                     "Arredondar excessivamente a coluna.",
                     "Usar impulso para movimentar a carga.",
                     "Elevar excessivamente os ombros.",
-                    "Perder o controle durante a volta."
+                    "Perder o controle durante a descida."
                 ],
 
                 variacoes:
-                    "Remada unilateral, remada curvada e remada baixa na máquina."
+                    "Remada unilateral, remada curvada e remada baixa."
 
             },
 
@@ -1091,7 +1330,8 @@
 
                 grupo: "Pernas",
 
-                equipamento: "Peso corporal, barra ou halteres",
+                equipamento:
+                    "Peso corporal, barra ou halteres",
 
                 nivel: "Iniciante a avançado",
 
@@ -1101,20 +1341,21 @@
 
                 descanso: "90–180 segundos",
 
-                secundarios: "Glúteos e musculatura do tronco",
+                secundarios:
+                    "Glúteos e musculatura do tronco",
 
                 execucao:
-                    "Posicione os pés de forma confortável e estável. Inicie o movimento flexionando quadril e joelhos enquanto mantém o tronco controlado. Desça até uma amplitude confortável e retorne à posição inicial mantendo estabilidade durante todo o movimento.",
+                    "Posicione os pés de maneira confortável e estável. Inicie o movimento flexionando quadril e joelhos enquanto mantém o tronco controlado. Desça até uma amplitude confortável e retorne à posição inicial.",
 
                 erros: [
                     "Perder a estabilidade dos pés.",
-                    "Usar uma amplitude que não seja adequada para sua mobilidade.",
-                    "Aumentar a carga antes de dominar a técnica.",
-                    "Executar o movimento sem controle."
+                    "Usar carga antes de dominar a técnica.",
+                    "Perder o controle durante a descida.",
+                    "Executar o movimento com pressa."
                 ],
 
                 variacoes:
-                    "Agachamento goblet, agachamento frontal, agachamento livre e agachamento no smith."
+                    "Agachamento goblet, agachamento frontal, agachamento livre e smith."
 
             },
 
@@ -1125,7 +1366,8 @@
 
                 grupo: "Ombros",
 
-                equipamento: "Halteres, barra ou máquina",
+                equipamento:
+                    "Halteres, barra ou máquina",
 
                 nivel: "Intermediário",
 
@@ -1135,20 +1377,21 @@
 
                 descanso: "60–120 segundos",
 
-                secundarios: "Tríceps e peitoral superior",
+                secundarios:
+                    "Tríceps e peitoral superior",
 
                 execucao:
-                    "Comece com a carga posicionada de maneira estável. Empurre a carga verticalmente enquanto mantém o tronco controlado. Retorne de maneira lenta e controlada à posição inicial.",
+                    "Comece com a carga posicionada de maneira estável. Empurre a carga verticalmente mantendo o tronco controlado. Retorne de maneira lenta e controlada à posição inicial.",
 
                 erros: [
                     "Compensar excessivamente com a lombar.",
-                    "Usar carga que prejudique o controle.",
-                    "Realizar o movimento de forma muito rápida.",
+                    "Usar carga que prejudique a técnica.",
+                    "Realizar o movimento muito rapidamente.",
                     "Perder a estabilidade do tronco."
                 ],
 
                 variacoes:
-                    "Desenvolvimento com halteres, barra e máquinas específicas."
+                    "Desenvolvimento com halteres, barra ou máquina."
 
             },
 
@@ -1159,7 +1402,8 @@
 
                 grupo: "Bíceps",
 
-                equipamento: "Barra ou halteres",
+                equipamento:
+                    "Barra ou halteres",
 
                 nivel: "Iniciante",
 
@@ -1169,16 +1413,17 @@
 
                 descanso: "60–90 segundos",
 
-                secundarios: "Antebraços",
+                secundarios:
+                    "Antebraços",
 
                 execucao:
                     "Fique em uma posição estável segurando a carga. Mantenha os cotovelos próximos ao corpo e flexione os braços para elevar a carga. Retorne lentamente à posição inicial.",
 
                 erros: [
-                    "Balançar o tronco para levantar a carga.",
+                    "Balançar o tronco.",
                     "Movimentar excessivamente os cotovelos.",
                     "Usar carga acima da capacidade técnica.",
-                    "Soltar a carga rapidamente na descida."
+                    "Soltar a carga rapidamente."
                 ],
 
                 variacoes:
@@ -1193,7 +1438,8 @@
 
                 grupo: "Abdômen",
 
-                equipamento: "Peso corporal",
+                equipamento:
+                    "Peso corporal",
 
                 nivel: "Iniciante",
 
@@ -1203,10 +1449,11 @@
 
                 descanso: "45–90 segundos",
 
-                secundarios: "Flexores do quadril",
+                secundarios:
+                    "Flexores do quadril",
 
                 execucao:
-                    "Deite-se em uma posição confortável e estável. Realize a flexão do tronco de maneira controlada, utilizando a musculatura abdominal. Retorne lentamente à posição inicial sem realizar movimentos bruscos.",
+                    "Deite-se em uma posição confortável e estável. Realize a flexão do tronco de maneira controlada, utilizando a musculatura abdominal. Retorne lentamente à posição inicial.",
 
                 erros: [
                     "Puxar a cabeça ou o pescoço com as mãos.",
@@ -1224,10 +1471,11 @@
 
 
         /* =========================
-           ABRIR EXERCÍCIO
+           ABRIR MODAL
         ========================= */
 
         function abrirExercicio(nome) {
+
 
             const exercicio =
                 dadosExercicios[nome];
@@ -1238,129 +1486,133 @@
             }
 
 
-            document.getElementById("modalTitle").textContent =
-                exercicio.nome;
+            document.getElementById("modalTitle")
+                .textContent = exercicio.nome;
 
 
-            document.getElementById("modalSubtitle").textContent =
-                exercicio.grupo;
+            document.getElementById("modalSubtitle")
+                .textContent =
+                    "Grupo muscular: " + exercicio.grupo;
 
 
-            document.getElementById("modalDetails").innerHTML = `
+            document.getElementById("modalDetails")
+                .innerHTML = `
 
-                <div class="detail-box">
+                    <div class="detail-box">
 
-                    <span class="detail-label">
-                        Grupo muscular
-                    </span>
+                        <span class="detail-label">
+                            Grupo muscular
+                        </span>
 
-                    <span class="detail-value">
-                        ${exercicio.grupo}
-                    </span>
+                        <span class="detail-value">
+                            ${exercicio.grupo}
+                        </span>
 
-                </div>
-
-
-                <div class="detail-box">
-
-                    <span class="detail-label">
-                        Músculos secundários
-                    </span>
-
-                    <span class="detail-value">
-                        ${exercicio.secundarios}
-                    </span>
-
-                </div>
+                    </div>
 
 
-                <div class="detail-box">
+                    <div class="detail-box">
 
-                    <span class="detail-label">
-                        Equipamento
-                    </span>
+                        <span class="detail-label">
+                            Músculos secundários
+                        </span>
 
-                    <span class="detail-value">
-                        ${exercicio.equipamento}
-                    </span>
+                        <span class="detail-value">
+                            ${exercicio.secundarios}
+                        </span>
 
-                </div>
-
-
-                <div class="detail-box">
-
-                    <span class="detail-label">
-                        Nível
-                    </span>
-
-                    <span class="detail-value">
-                        ${exercicio.nivel}
-                    </span>
-
-                </div>
+                    </div>
 
 
-                <div class="detail-box">
+                    <div class="detail-box">
 
-                    <span class="detail-label">
-                        Séries
-                    </span>
+                        <span class="detail-label">
+                            Equipamento
+                        </span>
 
-                    <span class="detail-value">
-                        ${exercicio.series}
-                    </span>
+                        <span class="detail-value">
+                            ${exercicio.equipamento}
+                        </span>
 
-                </div>
-
-
-                <div class="detail-box">
-
-                    <span class="detail-label">
-                        Repetições
-                    </span>
-
-                    <span class="detail-value">
-                        ${exercicio.repeticoes}
-                    </span>
-
-                </div>
+                    </div>
 
 
-                <div class="detail-box">
+                    <div class="detail-box">
 
-                    <span class="detail-label">
-                        Descanso
-                    </span>
+                        <span class="detail-label">
+                            Nível
+                        </span>
 
-                    <span class="detail-value">
-                        ${exercicio.descanso}
-                    </span>
+                        <span class="detail-value">
+                            ${exercicio.nivel}
+                        </span>
 
-                </div>
-
-            `;
+                    </div>
 
 
-            document.getElementById("modalExecution").textContent =
-                exercicio.execucao;
+                    <div class="detail-box">
+
+                        <span class="detail-label">
+                            Séries
+                        </span>
+
+                        <span class="detail-value">
+                            ${exercicio.series}
+                        </span>
+
+                    </div>
 
 
-            document.getElementById("modalErrors").innerHTML =
-                exercicio.erros
-                    .map(function(erro) {
+                    <div class="detail-box">
 
-                        return `<li>${erro}</li>`;
+                        <span class="detail-label">
+                            Repetições
+                        </span>
 
-                    })
-                    .join("");
+                        <span class="detail-value">
+                            ${exercicio.repeticoes}
+                        </span>
+
+                    </div>
 
 
-            document.getElementById("modalVariations").textContent =
-                exercicio.variacoes;
+                    <div class="detail-box">
+
+                        <span class="detail-label">
+                            Descanso
+                        </span>
+
+                        <span class="detail-value">
+                            ${exercicio.descanso}
+                        </span>
+
+                    </div>
+
+                `;
 
 
-            document
-                .getElementById("exerciseModal")
+            document.getElementById("modalExecution")
+                .textContent =
+                    exercicio.execucao;
+
+
+            document.getElementById("modalErrors")
+                .innerHTML =
+                    exercicio.erros
+                        .map(function(erro) {
+
+                            return `<li>${erro}</li>`;
+
+                        })
+                        .join("");
+
+
+            document.getElementById("modalVariations")
+                .textContent =
+                    exercicio.variacoes;
+
+
+            document.getElementById("exerciseModal")
                 .classList
                 .add("show");
 
@@ -1371,48 +1623,51 @@
 
 
         /* =========================
-           FECHAR EXERCÍCIO
+           FECHAR MODAL
         ========================= */
 
         function fecharExercicio() {
 
-            document
-                .getElementById("exerciseModal")
+
+            document.getElementById("exerciseModal")
                 .classList
                 .remove("show");
 
 
-            document.body.style.overflow = "auto";
+            document.body.style.overflow = "";
 
         }
 
 
         /* =========================
-           FECHAR AO CLICAR FORA
+           CLICAR FORA
         ========================= */
 
         document
             .getElementById("exerciseModal")
-            .addEventListener("click", function(event) {
+            .addEventListener(
+                "click",
+                function(event) {
 
-                if (
-                    event.target === this
-                ) {
 
-                    fecharExercicio();
+                    if (event.target === this) {
+
+                        fecharExercicio();
+
+                    }
 
                 }
-
-            });
+            );
 
 
         /* =========================
-           FECHAR COM ESC
+           TECLA ESC
         ========================= */
 
         document.addEventListener(
             "keydown",
             function(event) {
+
 
                 if (event.key === "Escape") {
 
