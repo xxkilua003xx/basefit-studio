@@ -35,10 +35,6 @@
             color: #ffffff;
         }
 
-        body.modal-open {
-            overflow: hidden;
-        }
-
 
         /* =========================
            HEADER
@@ -46,15 +42,19 @@
 
         header {
             width: 100%;
+
             padding: 22px 7%;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             border-bottom: 1px solid #1b232c;
 
             position: sticky;
+
             top: 0;
 
             background: rgba(8, 12, 16, 0.95);
@@ -64,37 +64,47 @@
             z-index: 100;
         }
 
+
         .logo {
             text-decoration: none;
+
             color: #ffffff;
 
             font-size: 23px;
+
             font-weight: 800;
 
             letter-spacing: 1px;
         }
 
+
         .logo span {
             color: #45e17a;
         }
+
 
         .logo:hover {
             opacity: 0.9;
         }
 
+
         nav {
             display: flex;
+
             gap: 30px;
         }
 
+
         nav a {
             color: #aeb8c4;
+
             text-decoration: none;
 
             font-size: 15px;
 
             transition: 0.3s;
         }
+
 
         nav a:hover {
             color: #45e17a;
@@ -107,8 +117,10 @@
 
         .hero {
             padding: 90px 7% 55px;
+
             text-align: center;
         }
+
 
         .tag {
             display: inline-block;
@@ -116,15 +128,18 @@
             padding: 9px 16px;
 
             border: 1px solid #293640;
+
             border-radius: 30px;
 
             color: #45e17a;
 
             font-size: 12px;
+
             letter-spacing: 0.5px;
 
             margin-bottom: 22px;
         }
+
 
         .hero h1 {
             font-size: clamp(45px, 6vw, 70px);
@@ -134,9 +149,11 @@
             margin-bottom: 20px;
         }
 
+
         .hero h1 span {
             color: #45e17a;
         }
+
 
         .hero p {
             max-width: 680px;
@@ -157,6 +174,7 @@
 
         .container {
             width: min(1150px, 90%);
+
             margin: auto;
         }
 
@@ -177,6 +195,7 @@
             margin-bottom: 45px;
         }
 
+
         .filter {
             padding: 11px 20px;
 
@@ -195,10 +214,13 @@
             transition: 0.3s;
         }
 
+
         .filter:hover {
             border-color: #45e17a;
+
             color: #45e17a;
         }
+
 
         .filter.active {
             background: #45e17a;
@@ -212,7 +234,7 @@
 
 
         /* =========================
-           TREINOS
+           GRID
         ========================= */
 
         .training-grid {
@@ -224,6 +246,7 @@
 
             padding-bottom: 80px;
         }
+
 
         .training-card {
             background: #141b22;
@@ -237,15 +260,18 @@
             transition: 0.3s;
         }
 
+
         .training-card:hover {
             transform: translateY(-5px);
 
             border-color: #45e17a;
         }
 
+
         .training-card.hidden {
             display: none;
         }
+
 
         .training-top {
             display: flex;
@@ -259,13 +285,16 @@
             margin-bottom: 20px;
         }
 
+
         .training-icon {
             width: 58px;
+
             height: 58px;
 
             display: flex;
 
             justify-content: center;
+
             align-items: center;
 
             border-radius: 14px;
@@ -276,6 +305,7 @@
 
             font-size: 27px;
         }
+
 
         .level {
             padding: 7px 11px;
@@ -291,11 +321,13 @@
             font-size: 11px;
         }
 
+
         .training-card h2 {
             font-size: 23px;
 
             margin-bottom: 10px;
         }
+
 
         .training-description {
             color: #8e9aa7;
@@ -322,6 +354,7 @@
             margin-bottom: 25px;
         }
 
+
         .info {
             padding: 13px 10px;
 
@@ -334,6 +367,7 @@
             text-align: center;
         }
 
+
         .info strong {
             display: block;
 
@@ -344,6 +378,7 @@
             margin-bottom: 5px;
         }
 
+
         .info span {
             color: #707c88;
 
@@ -352,7 +387,7 @@
 
 
         /* =========================
-           EXERCÍCIOS
+           LISTA DE EXERCÍCIOS
         ========================= */
 
         .exercise-list {
@@ -364,6 +399,7 @@
 
             margin-bottom: 22px;
         }
+
 
         .exercise-list li {
             display: flex;
@@ -381,9 +417,11 @@
             font-size: 13px;
         }
 
+
         .exercise-list li:last-child {
             border-bottom: none;
         }
+
 
         .exercise-list span {
             color: #45e17a;
@@ -403,7 +441,7 @@
 
             padding: 13px;
 
-            border: none;
+            border: 1px solid #303b47;
 
             border-radius: 9px;
 
@@ -411,17 +449,20 @@
 
             color: #ffffff;
 
+            cursor: pointer;
+
             font-size: 14px;
 
             font-weight: bold;
 
-            cursor: pointer;
-
             transition: 0.3s;
         }
 
+
         .training-button:hover {
             background: #45e17a;
+
+            border-color: #45e17a;
 
             color: #071009;
         }
@@ -449,6 +490,7 @@
             line-height: 1.7;
         }
 
+
         .notice strong {
             color: #45e17a;
         }
@@ -471,15 +513,18 @@
                 );
         }
 
+
         .cta h2 {
             font-size: 40px;
 
             margin-bottom: 15px;
         }
 
+
         .cta h2 span {
             color: #45e17a;
         }
+
 
         .cta p {
             max-width: 600px;
@@ -491,6 +536,7 @@
             line-height: 1.7;
         }
 
+
         .cta-buttons {
             display: flex;
 
@@ -500,6 +546,7 @@
 
             flex-wrap: wrap;
         }
+
 
         .btn {
             display: inline-block;
@@ -515,21 +562,25 @@
             transition: 0.3s;
         }
 
+
         .btn-primary {
             background: #45e17a;
 
             color: #071009;
         }
 
+
         .btn-primary:hover {
             transform: translateY(-2px);
         }
+
 
         .btn-secondary {
             border: 1px solid #303b47;
 
             color: #ffffff;
         }
+
 
         .btn-secondary:hover {
             border-color: #45e17a;
@@ -548,6 +599,7 @@
             inset: 0;
 
             width: 100%;
+
             height: 100%;
 
             background: rgba(0, 0, 0, 0.82);
@@ -563,9 +615,11 @@
             z-index: 1000;
         }
 
+
         .modal.show {
             display: flex;
         }
+
 
         .modal-content {
             width: min(760px, 100%);
@@ -583,17 +637,18 @@
             padding: 35px;
 
             position: relative;
-
-            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
         }
+
 
         .modal-close {
             position: absolute;
 
             top: 18px;
+
             right: 20px;
 
             width: 38px;
+
             height: 38px;
 
             border: none;
@@ -611,19 +666,22 @@
             transition: 0.3s;
         }
 
+
         .modal-close:hover {
             background: #45e17a;
 
             color: #071009;
         }
 
+
         .modal-title {
             font-size: 30px;
 
-            padding-right: 45px;
+            padding-right: 50px;
 
             margin-bottom: 8px;
         }
+
 
         .modal-subtitle {
             color: #45e17a;
@@ -633,32 +691,19 @@
             margin-bottom: 28px;
         }
 
-        .modal-intro {
-            color: #aeb8c4;
 
-            font-size: 14px;
-
-            line-height: 1.7;
-
-            margin-bottom: 25px;
-        }
-
-
-        /* =========================
-           MODAL - RESUMO
-        ========================= */
-
-        .modal-summary {
+        .modal-grid {
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
 
-            gap: 10px;
+            gap: 12px;
 
             margin-bottom: 30px;
         }
 
-        .summary-box {
+
+        .modal-box {
             background: #0d1319;
 
             border: 1px solid #27333d;
@@ -670,84 +715,38 @@
             text-align: center;
         }
 
-        .summary-box strong {
+
+        .modal-box strong {
             display: block;
 
             color: #ffffff;
 
             font-size: 16px;
 
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
-        .summary-box span {
-            color: #707c88;
+
+        .modal-box span {
+            color: #687481;
 
             font-size: 11px;
         }
 
 
-        /* =========================
-           MODAL - LISTA
-        ========================= */
-
         .modal-section {
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
+
 
         .modal-section h3 {
             color: #45e17a;
 
             font-size: 18px;
 
-            margin-bottom: 13px;
+            margin-bottom: 10px;
         }
 
-        .modal-exercise {
-            display: grid;
-
-            grid-template-columns: 1fr auto;
-
-            gap: 15px;
-
-            padding: 14px;
-
-            margin-bottom: 8px;
-
-            background: #10161c;
-
-            border: 1px solid #232e38;
-
-            border-radius: 10px;
-        }
-
-        .modal-exercise-name {
-            color: #ffffff;
-
-            font-size: 14px;
-
-            font-weight: bold;
-
-            margin-bottom: 5px;
-        }
-
-        .modal-exercise-description {
-            color: #778490;
-
-            font-size: 12px;
-
-            line-height: 1.5;
-        }
-
-        .modal-exercise-data {
-            text-align: right;
-
-            color: #45e17a;
-
-            font-size: 12px;
-
-            white-space: nowrap;
-        }
 
         .modal-section p {
             color: #aeb8c4;
@@ -757,24 +756,40 @@
             line-height: 1.7;
         }
 
-        .modal-warning {
-            padding: 17px;
 
-            background: #10171d;
-
-            border: 1px solid #27333d;
-
-            border-radius: 10px;
-
-            color: #8995a1;
-
-            font-size: 13px;
-
-            line-height: 1.6;
+        .modal-exercises {
+            list-style: none;
         }
 
-        .modal-warning strong {
+
+        .modal-exercises li {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #252f38;
+
+            color: #b1bbc5;
+
+            font-size: 14px;
+        }
+
+
+        .modal-exercises li:last-child {
+            border-bottom: none;
+        }
+
+
+        .modal-exercises span {
             color: #45e17a;
+
+            white-space: nowrap;
+
+            font-weight: bold;
         }
 
 
@@ -792,6 +807,7 @@
             color: #687481;
         }
 
+
         footer strong {
             color: #45e17a;
         }
@@ -807,6 +823,7 @@
                 display: none;
             }
 
+
             .training-grid {
                 grid-template-columns: 1fr;
             }
@@ -820,36 +837,39 @@
                 padding-top: 65px;
             }
 
+
             .hero h1 {
                 font-size: 45px;
             }
+
 
             .training-info {
                 grid-template-columns: 1fr;
             }
 
+
             .training-top {
                 flex-direction: column;
             }
+
 
             .level {
                 align-self: flex-start;
             }
 
+
             .modal-content {
                 padding: 25px;
             }
 
-            .modal-summary {
+
+            .modal-grid {
                 grid-template-columns: 1fr;
             }
 
-            .modal-exercise {
-                grid-template-columns: 1fr;
-            }
 
-            .modal-exercise-data {
-                text-align: left;
+            .modal-title {
+                font-size: 25px;
             }
 
         }
@@ -872,7 +892,9 @@
             href="index.html"
             class="logo"
         >
+
             BASE<span>FIT</span> STUDIO
+
         </a>
 
 
@@ -906,7 +928,9 @@
     <main>
 
 
-        <!-- HERO -->
+        <!-- =========================
+             HERO
+        ========================= -->
 
         <section class="hero">
 
@@ -934,9 +958,14 @@
         </section>
 
 
-        <!-- FILTROS -->
+        <!-- =========================
+             TREINOS
+        ========================= -->
 
         <section class="container">
+
+
+            <!-- FILTROS -->
 
             <div class="filters">
 
@@ -982,14 +1011,14 @@
             </div>
 
 
-            <!-- GRID -->
+            <!-- =========================
+                 GRID
+            ========================= -->
 
             <div class="training-grid">
 
 
-                <!-- =========================
-                     TREINO 1
-                ========================= -->
+                <!-- TREINO 1 -->
 
                 <article
                     class="training-card"
@@ -1092,17 +1121,17 @@
 
                     <button
                         class="training-button"
-                        onclick="abrirTreino('corpoInteiro')"
+                        onclick="abrirTreino('hipertrofia-iniciante')"
                     >
+
                         Ver treino completo
+
                     </button>
 
                 </article>
 
 
-                <!-- =========================
-                     TREINO 2
-                ========================= -->
+                <!-- TREINO 2 -->
 
                 <article
                     class="training-card"
@@ -1205,17 +1234,17 @@
 
                     <button
                         class="training-button"
-                        onclick="abrirTreino('superiorInferior')"
+                        onclick="abrirTreino('hipertrofia-intermediario')"
                     >
+
                         Ver treino completo
+
                     </button>
 
                 </article>
 
 
-                <!-- =========================
-                     TREINO 3
-                ========================= -->
+                <!-- TREINO 3 -->
 
                 <article
                     class="training-card"
@@ -1319,15 +1348,15 @@
                         class="training-button"
                         onclick="abrirTreino('emagrecimento')"
                     >
+
                         Ver treino completo
+
                     </button>
 
                 </article>
 
 
-                <!-- =========================
-                     TREINO 4
-                ========================= -->
+                <!-- TREINO 4 -->
 
                 <article
                     class="training-card"
@@ -1430,17 +1459,17 @@
 
                     <button
                         class="training-button"
-                        onclick="abrirTreino('forcaBase')"
+                        onclick="abrirTreino('forca-base')"
                     >
+
                         Ver treino completo
+
                     </button>
 
                 </article>
 
 
-                <!-- =========================
-                     TREINO 5
-                ========================= -->
+                <!-- TREINO 5 -->
 
                 <article
                     class="training-card"
@@ -1545,15 +1574,15 @@
                         class="training-button"
                         onclick="abrirTreino('condicionamento')"
                     >
+
                         Ver treino completo
+
                     </button>
 
                 </article>
 
 
-                <!-- =========================
-                     TREINO 6
-                ========================= -->
+                <!-- TREINO 6 -->
 
                 <article
                     class="training-card"
@@ -1656,9 +1685,11 @@
 
                     <button
                         class="training-button"
-                        onclick="abrirTreino('forcaProgressao')"
+                        onclick="abrirTreino('forca-progressao')"
                     >
+
                         Ver treino completo
+
                     </button>
 
                 </article>
@@ -1667,7 +1698,9 @@
             </div>
 
 
-            <!-- AVISO -->
+            <!-- =========================
+                 AVISO
+            ========================= -->
 
             <div class="notice">
 
@@ -1682,6 +1715,7 @@
                 procure um profissional de Educação Física.
 
             </div>
+
 
         </section>
 
@@ -1716,7 +1750,9 @@
                     href="exercicios.html"
                     class="btn btn-primary"
                 >
+
                     Explorar exercícios
+
                 </a>
 
 
@@ -1724,7 +1760,9 @@
                     href="calculadoras.html"
                     class="btn btn-secondary"
                 >
+
                     Abrir calculadoras
+
                 </a>
 
             </div>
@@ -1735,7 +1773,7 @@
 
 
     <!-- =========================
-         MODAL DOS TREINOS
+         MODAL DE TREINO
     ========================= -->
 
     <div
@@ -1769,16 +1807,9 @@
             </div>
 
 
-            <p
-                id="modalIntro"
-                class="modal-intro"
-            >
-            </p>
-
-
             <div
-                id="modalSummary"
-                class="modal-summary"
+                id="modalInfo"
+                class="modal-grid"
             >
             </div>
 
@@ -1786,38 +1817,41 @@
             <div class="modal-section">
 
                 <h3>
-                    Exercícios do treino
+                    Objetivo
                 </h3>
 
-                <div id="modalExercises">
-                </div>
-
-            </div>
-
-
-            <div class="modal-section">
-
-                <h3>
-                    Como utilizar
-                </h3>
-
-                <p id="modalInstructions">
+                <p id="modalObjective">
                 </p>
 
             </div>
 
 
-            <div class="modal-warning">
+            <div class="modal-section">
 
-                <strong>Importante:</strong>
+                <h3>
+                    Estrutura do treino
+                </h3>
 
-                este conteúdo possui finalidade
-                educacional. Cargas, exercícios, volume,
-                intensidade e frequência devem ser
-                individualizados de acordo com a pessoa,
-                seu objetivo e suas condições.
+                <ul
+                    id="modalExercises"
+                    class="modal-exercises"
+                >
+                </ul>
 
             </div>
+
+
+            <div class="modal-section">
+
+                <h3>
+                    Orientação
+                </h3>
+
+                <p id="modalGuidance">
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -1856,6 +1890,7 @@
         const filters =
             document.querySelectorAll(".filter");
 
+
         const cards =
             document.querySelectorAll(".training-card");
 
@@ -1863,6 +1898,7 @@
         filters.forEach(function(filter) {
 
             filter.addEventListener("click", function() {
+
 
                 filters.forEach(function(button) {
 
@@ -1911,344 +1947,243 @@
 
         const dadosTreinos = {
 
-            corpoInteiro: {
 
-                titulo: "Hipertrofia — Corpo inteiro",
+            "hipertrofia-iniciante": {
 
-                subtitulo: "Iniciante • 3 vezes por semana",
+                nome:
+                    "Hipertrofia — Corpo inteiro",
 
-                introducao:
-                    "Uma estrutura simples para quem está começando e deseja trabalhar os principais grupos musculares ao longo da semana.",
+                subtitulo:
+                    "Hipertrofia • Iniciante",
 
-                frequencia: "3x",
+                frequencia:
+                    "3x por semana",
 
-                duracao: "60 min",
+                duracao:
+                    "≈ 60 minutos",
 
-                nivel: "Iniciante",
+                nivel:
+                    "Iniciante",
 
-                descanso: "60–120s",
+                objetivo:
+                    "Desenvolver uma base de treinamento envolvendo os principais grupos musculares, com foco em adaptação, técnica e consistência.",
 
                 exercicios: [
 
-                    {
-                        nome: "Agachamento",
-                        descricao: "Movimento para membros inferiores e glúteos.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Agachamento", "3 × 8–12"],
 
-                    {
-                        nome: "Supino reto",
-                        descricao: "Exercício para peitoral, tríceps e parte anterior dos ombros.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Supino reto", "3 × 8–12"],
 
-                    {
-                        nome: "Remada",
-                        descricao: "Movimento de puxada para a musculatura das costas.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Remada", "3 × 8–12"],
 
-                    {
-                        nome: "Desenvolvimento",
-                        descricao: "Exercício de empurrar direcionado principalmente aos ombros.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Desenvolvimento", "3 × 8–12"],
 
-                    {
-                        nome: "Rosca direta",
-                        descricao: "Exercício direcionado principalmente aos bíceps.",
-                        dados: "2 × 10–12"
-                    }
+                    ["Rosca direta", "2 × 10–12"]
 
                 ],
 
-                instrucoes:
-                    "Realize as séries com técnica controlada e escolha cargas que permitam manter boa execução. Organize as sessões com pelo menos um dia de recuperação entre elas quando possível."
+                orientacao:
+                    "Priorize a execução controlada dos movimentos e utilize cargas compatíveis com sua capacidade técnica. O exemplo serve como referência educacional e pode precisar de ajustes individuais."
 
             },
 
 
-            superiorInferior: {
+            "hipertrofia-intermediario": {
 
-                titulo: "Hipertrofia — Superior/inferior",
+                nome:
+                    "Hipertrofia — Superior/inferior",
 
-                subtitulo: "Intermediário • 4 vezes por semana",
+                subtitulo:
+                    "Hipertrofia • Intermediário",
 
-                introducao:
-                    "Estrutura dividida entre membros superiores e inferiores para distribuir melhor o volume de treinamento.",
+                frequencia:
+                    "4x por semana",
 
-                frequencia: "4x",
+                duracao:
+                    "60–75 minutos",
 
-                duracao: "60–75 min",
+                nivel:
+                    "Intermediário",
 
-                nivel: "Intermediário",
-
-                descanso: "60–120s",
+                objetivo:
+                    "Organizar o treinamento em sessões de membros superiores e inferiores, permitindo distribuir o volume semanal de forma estruturada.",
 
                 exercicios: [
 
-                    {
-                        nome: "Agachamento",
-                        descricao: "Exercício multiarticular para membros inferiores.",
-                        dados: "3 × 6–10"
-                    },
+                    ["Agachamento", "3 × 6–10"],
 
-                    {
-                        nome: "Leg press",
-                        descricao: "Exercício para quadríceps, glúteos e membros inferiores.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Leg press", "3 × 8–12"],
 
-                    {
-                        nome: "Supino",
-                        descricao: "Movimento de empurrar para o peitoral.",
-                        dados: "3 × 6–10"
-                    },
+                    ["Supino", "3 × 6–10"],
 
-                    {
-                        nome: "Remada",
-                        descricao: "Movimento de puxada para as costas.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Remada", "3 × 8–12"],
 
-                    {
-                        nome: "Elevação lateral",
-                        descricao: "Exercício para a porção lateral dos ombros.",
-                        dados: "3 × 10–15"
-                    }
+                    ["Elevação lateral", "3 × 10–15"]
 
                 ],
 
-                instrucoes:
-                    "A divisão superior/inferior permite alternar os grupos musculares trabalhados. Priorize a qualidade da execução e progrida gradualmente conforme sua experiência."
+                orientacao:
+                    "A progressão deve ocorrer de maneira gradual e respeitar a recuperação entre sessões. Ajustes de volume e carga devem considerar o nível de experiência do praticante."
 
             },
 
 
-            emagrecimento: {
+            "emagrecimento": {
 
-                titulo: "Emagrecimento — Treino geral",
+                nome:
+                    "Emagrecimento — Treino geral",
 
-                subtitulo: "Iniciante • Força + atividade cardiovascular",
+                subtitulo:
+                    "Emagrecimento • Iniciante",
 
-                introducao:
-                    "Sessão geral combinando exercícios de resistência muscular com atividade cardiovascular.",
+                frequencia:
+                    "3x por semana",
 
-                frequencia: "3x",
+                duracao:
+                    "45–60 minutos",
 
-                duracao: "45–60 min",
+                nivel:
+                    "Iniciante",
 
-                nivel: "Iniciante",
-
-                descanso: "45–90s",
+                objetivo:
+                    "Combinar exercícios de força e atividade cardiovascular dentro de uma rotina geral de treinamento.",
 
                 exercicios: [
 
-                    {
-                        nome: "Agachamento",
-                        descricao: "Exercício geral para membros inferiores.",
-                        dados: "3 × 10"
-                    },
+                    ["Agachamento", "3 × 10"],
 
-                    {
-                        nome: "Flexão",
-                        descricao: "Movimento de empurrar utilizando principalmente peitoral e tríceps.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Flexão", "3 × 8–12"],
 
-                    {
-                        nome: "Remada",
-                        descricao: "Movimento de puxada para as costas.",
-                        dados: "3 × 10"
-                    },
+                    ["Remada", "3 × 10"],
 
-                    {
-                        nome: "Afundo",
-                        descricao: "Exercício unilateral para membros inferiores.",
-                        dados: "3 × 10"
-                    },
+                    ["Afundo", "3 × 10"],
 
-                    {
-                        nome: "Caminhada",
-                        descricao: "Atividade cardiovascular de intensidade confortável a moderada.",
-                        dados: "15–20 min"
-                    }
+                    ["Caminhada", "15–20 min"]
 
                 ],
 
-                instrucoes:
-                    "Mantenha intensidade que permita realizar os exercícios com controle. A atividade física pode contribuir para o gasto energético, mas resultados de composição corporal também dependem de alimentação, sono e outros fatores."
+                orientacao:
+                    "A intensidade deve ser ajustada à condição física individual. O treinamento é apenas uma parte de uma estratégia de mudança de composição corporal."
 
             },
 
 
-            forcaBase: {
+            "forca-base": {
 
-                titulo: "Força — Base",
+                nome:
+                    "Força — Base",
 
-                subtitulo: "Intermediário • 3 vezes por semana",
+                subtitulo:
+                    "Força • Intermediário",
 
-                introducao:
-                    "Estrutura baseada em exercícios multiarticulares, com foco no desenvolvimento gradual da força.",
+                frequencia:
+                    "3x por semana",
 
-                frequencia: "3x",
+                duracao:
+                    "60–75 minutos",
 
-                duracao: "60–75 min",
+                nivel:
+                    "Intermediário",
 
-                nivel: "Intermediário",
-
-                descanso: "90–180s",
+                objetivo:
+                    "Desenvolver força geral por meio de exercícios multiarticulares e progressão gradual de carga.",
 
                 exercicios: [
 
-                    {
-                        nome: "Agachamento",
-                        descricao: "Movimento multiarticular para membros inferiores.",
-                        dados: "3 × 5"
-                    },
+                    ["Agachamento", "3 × 5"],
 
-                    {
-                        nome: "Supino",
-                        descricao: "Movimento de empurrar para peitoral e tríceps.",
-                        dados: "3 × 5"
-                    },
+                    ["Supino", "3 × 5"],
 
-                    {
-                        nome: "Levantamento terra",
-                        descricao: "Movimento multiarticular que envolve grande quantidade de musculatura.",
-                        dados: "3 × 5"
-                    },
+                    ["Levantamento terra", "3 × 5"],
 
-                    {
-                        nome: "Remada",
-                        descricao: "Exercício de puxada para as costas.",
-                        dados: "3 × 6–8"
-                    },
+                    ["Remada", "3 × 6–8"],
 
-                    {
-                        nome: "Desenvolvimento",
-                        descricao: "Movimento de empurrar direcionado aos ombros.",
-                        dados: "3 × 6–8"
-                    }
+                    ["Desenvolvimento", "3 × 6–8"]
 
                 ],
 
-                instrucoes:
-                    "Utilize cargas compatíveis com sua experiência e priorize a técnica. Em exercícios de força, períodos maiores de descanso podem ser necessários para manter a qualidade das séries."
+                orientacao:
+                    "A qualidade da técnica deve ser priorizada antes do aumento de carga. Intervalos de descanso adequados ajudam a manter o desempenho durante as séries."
 
             },
 
 
-            condicionamento: {
+            "condicionamento": {
 
-                titulo: "Condicionamento — Base",
+                nome:
+                    "Condicionamento — Base",
 
-                subtitulo: "Iniciante • Resistência geral",
+                subtitulo:
+                    "Condicionamento • Iniciante",
 
-                introducao:
-                    "Uma sessão voltada para desenvolver resistência geral e aumentar a capacidade de realizar atividades por mais tempo.",
+                frequencia:
+                    "3x por semana",
 
-                frequencia: "3x",
+                duracao:
+                    "30–45 minutos",
 
-                duracao: "30–45 min",
+                nivel:
+                    "Iniciante",
 
-                nivel: "Iniciante",
-
-                descanso: "45–90s",
+                objetivo:
+                    "Desenvolver resistência geral e aumentar gradualmente a capacidade de realizar atividades físicas.",
 
                 exercicios: [
 
-                    {
-                        nome: "Caminhada rápida",
-                        descricao: "Atividade cardiovascular com intensidade controlada.",
-                        dados: "10 min"
-                    },
+                    ["Caminhada rápida", "10 min"],
 
-                    {
-                        nome: "Agachamento",
-                        descricao: "Exercício para membros inferiores.",
-                        dados: "3 × 12"
-                    },
+                    ["Agachamento", "3 × 12"],
 
-                    {
-                        nome: "Flexão",
-                        descricao: "Exercício de empurrar para peitoral e tríceps.",
-                        dados: "3 × 8–12"
-                    },
+                    ["Flexão", "3 × 8–12"],
 
-                    {
-                        nome: "Remada",
-                        descricao: "Movimento de puxada para as costas.",
-                        dados: "3 × 12"
-                    },
+                    ["Remada", "3 × 12"],
 
-                    {
-                        nome: "Bicicleta",
-                        descricao: "Atividade cardiovascular para complementar a sessão.",
-                        dados: "10–15 min"
-                    }
+                    ["Bicicleta", "10–15 min"]
 
                 ],
 
-                instrucoes:
-                    "Mantenha uma intensidade que permita controlar a respiração e a técnica. Aumente a duração ou dificuldade gradualmente conforme sua adaptação."
+                orientacao:
+                    "Comece em uma intensidade confortável e aumente o esforço progressivamente conforme sua adaptação. Respeite sinais de fadiga excessiva."
 
             },
 
 
-            forcaProgressao: {
+            "forca-progressao": {
 
-                titulo: "Força — Progressão",
+                nome:
+                    "Força — Progressão",
 
-                subtitulo: "Avançado • 4 vezes por semana",
+                subtitulo:
+                    "Força • Avançado",
 
-                introducao:
-                    "Estrutura destinada a praticantes experientes, com maior atenção à progressão e recuperação entre sessões.",
+                frequencia:
+                    "4x por semana",
 
-                frequencia: "4x",
+                duracao:
+                    "70–90 minutos",
 
-                duracao: "70–90 min",
+                nivel:
+                    "Avançado",
 
-                nivel: "Avançado",
-
-                descanso: "120–240s",
+                objetivo:
+                    "Estruturar o treinamento para praticantes experientes, com atenção à progressão de carga e recuperação.",
 
                 exercicios: [
 
-                    {
-                        nome: "Agachamento",
-                        descricao: "Exercício multiarticular para membros inferiores.",
-                        dados: "4 × 4–6"
-                    },
+                    ["Agachamento", "4 × 4–6"],
 
-                    {
-                        nome: "Supino",
-                        descricao: "Movimento de empurrar para peitoral e tríceps.",
-                        dados: "4 × 4–6"
-                    },
+                    ["Supino", "4 × 4–6"],
 
-                    {
-                        nome: "Levantamento terra",
-                        descricao: "Exercício multiarticular com alta demanda muscular.",
-                        dados: "3 × 4–6"
-                    },
+                    ["Terra", "3 × 4–6"],
 
-                    {
-                        nome: "Remada",
-                        descricao: "Movimento de puxada para costas.",
-                        dados: "3 × 6–8"
-                    },
+                    ["Remada", "3 × 6–8"],
 
-                    {
-                        nome: "Desenvolvimento",
-                        descricao: "Movimento de empurrar para ombros.",
-                        dados: "3 × 6–8"
-                    }
+                    ["Desenvolvimento", "3 × 6–8"]
 
                 ],
 
-                instrucoes:
-                    "A progressão de cargas deve ser gradual e acompanhada de recuperação adequada. Para treinos avançados, recomenda-se acompanhamento profissional para ajustar volume, intensidade e progressão."
+                orientacao:
+                    "Treinos avançados exigem maior atenção à técnica, recuperação e gerenciamento da carga. A progressão deve ser individualizada e acompanhada conforme a resposta ao treinamento."
 
             }
 
@@ -2256,7 +2191,7 @@
 
 
         /* =========================
-           ABRIR MODAL
+           ABRIR TREINO
         ========================= */
 
         function abrirTreino(nome) {
@@ -2271,58 +2206,58 @@
 
 
             document.getElementById("modalTitle").textContent =
-                treino.titulo;
+                treino.nome;
 
 
             document.getElementById("modalSubtitle").textContent =
                 treino.subtitulo;
 
 
-            document.getElementById("modalIntro").textContent =
-                treino.introducao;
+            document.getElementById("modalInfo").innerHTML = `
 
-
-            document.getElementById("modalSummary").innerHTML = `
-
-                <div class="summary-box">
+                <div class="modal-box">
 
                     <strong>
                         ${treino.frequencia}
                     </strong>
 
                     <span>
-                        por semana
+                        Frequência
                     </span>
 
                 </div>
 
 
-                <div class="summary-box">
+                <div class="modal-box">
 
                     <strong>
                         ${treino.duracao}
                     </strong>
 
                     <span>
-                        duração estimada
+                        Duração estimada
                     </span>
 
                 </div>
 
 
-                <div class="summary-box">
+                <div class="modal-box">
 
                     <strong>
-                        ${treino.descanso}
+                        ${treino.nivel}
                     </strong>
 
                     <span>
-                        descanso
+                        Nível
                     </span>
 
                 </div>
 
             `;
+
+
+            document.getElementById("modalObjective").textContent =
+                treino.objetivo;
 
 
             document.getElementById("modalExercises").innerHTML =
@@ -2331,26 +2266,15 @@
 
                         return `
 
-                            <div class="modal-exercise">
+                            <li>
 
-                                <div>
+                                ${exercicio[0]}
 
-                                    <div class="modal-exercise-name">
-                                        ${exercicio.nome}
-                                    </div>
+                                <span>
+                                    ${exercicio[1]}
+                                </span>
 
-                                    <div class="modal-exercise-description">
-                                        ${exercicio.descricao}
-                                    </div>
-
-                                </div>
-
-
-                                <div class="modal-exercise-data">
-                                    ${exercicio.dados}
-                                </div>
-
-                            </div>
+                            </li>
 
                         `;
 
@@ -2358,8 +2282,8 @@
                     .join("");
 
 
-            document.getElementById("modalInstructions").textContent =
-                treino.instrucoes;
+            document.getElementById("modalGuidance").textContent =
+                treino.orientacao;
 
 
             document
@@ -2368,13 +2292,14 @@
                 .add("show");
 
 
-            document.body.classList.add("modal-open");
+            document.body.style.overflow =
+                "hidden";
 
         }
 
 
         /* =========================
-           FECHAR MODAL
+           FECHAR TREINO
         ========================= */
 
         function fecharTreino() {
@@ -2385,7 +2310,8 @@
                 .remove("show");
 
 
-            document.body.classList.remove("modal-open");
+            document.body.style.overflow =
+                "auto";
 
         }
 
@@ -2398,7 +2324,9 @@
             .getElementById("trainingModal")
             .addEventListener("click", function(event) {
 
-                if (event.target === this) {
+                if (
+                    event.target === this
+                ) {
 
                     fecharTreino();
 
